@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FLAREMOB: SAGIP - Officials Administrator Panel">
+    <meta name="author" content="Jaca; Ayson">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <title>FLAREMOB: SAGIP - Officials</title>
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <!--<script src="js/myapp2.js"></script>-->
+    <!--<script src="firebasejsquerys/myapp.js"></script>-->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <style>
+        #newEvacCenter {
+            display: none;
+        }
+        .text-success{
+            font-size: 30dp;
+        }
+    </style>
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">FLAREMOB: SAGIP  Officials - Admin Panel</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="index.html">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
+                <a class="nav-link" href="flood.html">
+                    <i class="fa fa-fw fa-map"></i>
+                    <span class="nav-link-text">Flood Monitoring</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation">
+                <a class="nav-link" href="pledging.html">
+                    <i class="fa fa-fw fa-calculator"></i>
+                    <span class="nav-link-text">Donation</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-database"></i>
+                    <span class="nav-link-text">Donation Monitoring</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseComponents">
+                    <li>
+                        <a href="donationman.html">Donation Items</a>
+                    </li>
+                    <li>
+                        <a href="donationcash.html">Donation Cash</a>
+                    </li>
+                    <li>
+                        <a href="updateforluquidation.html">Liquidation</a>
+                    </li>
+                    <li>
+                        <a href="Inventory.html">Inventory</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-pencil"></i>
+                    <span class="nav-link-text">Registration</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseComponents1">
+                    <li>
+                        <a href="registrationadmin.html">Registration for Admin</a>
+                    </li>
+                    <li>
+                        <a href="DriverDetailsManagement.html">Registration for Drivers</a>
+                    </li>
+                    <li>
+                        <a href="registrationevachead.html">Registration for Evacuation Heads</a>
+                    </li>
+                    <li>
+                        <a href="TargetLocationDetailsManagement.html">Registration for New Evacuation Center</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                <a class="nav-link" data-toggle="modal" data-target="#evac_needs">
+                    <i class="fa fa-fw fa-exclamation-triangle"></i>
+                    <span class="nav-link-text">Evacuation Center Needs</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                <a class="nav-link" href="DeliveryMonitoring.html">
+                    <i class="fa fa-fw fa-car"></i>
+                    <span class="nav-link-text">Delivery Monitoring</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                <a class="nav-link" href="dm7prototype.html">
+                    <i class="fa fa-fw fa-car"></i>
+                    <span class="nav-link-text">Delivery Management</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Evacuees Allocation">
+                <a class="nav-link" href="evacfamcount2.html">
+                    <i class="fa fa-fw fa-map"></i>
+                    <span class="nav-link-text">Evacuees Allocation</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-address-card"></i>
+                    <span class="nav-link-text">User Management</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseComponents2">
+                    <li>
+                        <a href="AdminUserManagement.html">Admin User Management</a>
+                    </li>
+                    <li>
+                        <a href="EvacHeadUserManagement.html">Evacuation Head User Management</a>
+                    </li>
+                    <li>
+                        <a href="UserManagement.html">User Management</a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Components</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="navbar.html">Navbar</a>
+            </li>
+            <li>
+              <a href="cards.html">Cards</a>
+            </li>
+          </ul>
+        </li> -->
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Example Pages</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+            <li>
+              <a href="login.html">Login Page</a>
+            </li>
+            <li>
+              <a href="register.html">Registration Page</a>
+            </li>
+            <li>
+              <a href="forgot-password.html">Forgot Password Page</a>
+            </li>
+            <li>
+              <a href="blank.html">Blank Page</a>
+            </li>
+          </ul>
+        </li> -->
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">Menu Levels</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li> -->
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Link</span>
+          </a>
+        </li> -->
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item">
+                <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-fw fa-envelope"></i>
+                <span class="d-lg-none">Messages
+                  <span class="badge badge-pill badge-primary">4 New</span>
+                </span>
+                <span class="indicator text-primary d-none d-lg-block">
+                  <i class="fa fa-fw fa-circle"></i>
+                </span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">New Messages:</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                  <strong>Cap. Randy Leal</strong>
+                  <span class="small float-right text-muted">5:43 PM</span>
+                  <div class="dropdown-message small">
+                    Please inform Bagong Silang residents to evacuate as soon as possible. Thank you.
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                  <strong>Dave David</strong>
+                  <span class="small float-right text-muted">4:37 PM</span>
+                  <div class="dropdown-message small">
+                    Marikina alert level has been raised to 2nd Alert due to critical water level of Marikina River.
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                  <strong>Nikko Jaca</strong>
+                  <span class="small float-right text-muted">4:00 PM</span>
+                  <div class="dropdown-message small">
+                    Flood prediction testing has been initiated. Please prepare.
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item small" href="#">View all messages</a>
+              </div>
+            </li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-bell"></i>
+                    <span class="d-lg-none">Alerts
+              <span class="badge badge-pill badge-warning">6 New</span>
+            </span>
+                    <span class="indicator text-warning d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+                    <h6 class="dropdown-header">New Alerts:</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+              <span class="text-black">
+                <strong>
+                  <i class="fa fa-bell fa-fw"></i>Marikina DRRMO</strong>
+              </span>
+                        <span class="small float-right text-muted">4:37 PM</span>
+                        <div class="dropdown-message small">Marikina Alert Level has been raised to 2nd (Evacuation)</div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+              <span class="text-black">
+                <strong>
+                  <i class="fa fa-bell fa-fw"></i>ALISTO Weather Forecast</strong>
+              </span>
+                        <span class="small float-right text-muted">4:31 PM</span>
+                        <div class="dropdown-message small">Weather shows a 6-hour continuous heavy rain.</div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+              <span class="text-danger">
+                <strong>
+                  <i class="fa fa-exclamation-circle fa-fw"></i>ALISTO Flood Prediction</strong>
+              </span>
+                        <span class="small float-right text-muted">4:22 AM</span>
+                        <div class="dropdown-message small">Bagong Silang is critically flooded due to heavy rain.</div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item small" href="#">View all alerts</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0 mr-lg-2">
+
+                    <!-- THE BELOW COMMENTED CODE IS A SEARCH BAR -->
+                    <!-- <div class="input-group">
+                      <input class="form-control" type="text" placeholder="Search for...">
+                      <span class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                          <i class="fa fa-search"></i>
+                        </button>
+                      </span>
+                    </div> -->
+                    <!-- SEARCH BAR CODE ENDS HERE -->
+
+                    <!-- Refer to clock.js -->
+                    <div id="clock" class="navbar-text clock">Time is loading...</div>
+                </form>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Approval</a>
+            </li>
+            <li class="breadcrumb-item active">Monitoring or Family Count</li>
+        </ol>
+
+            <div class="row">
+                <div class="col-lg-12">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <i class="fa fa-line-chart"></i> Family Count per Evacuation Center</div>
+                            <div class="card-body" >
+                                    <div class="col-sm-12 my-auto">
+                                        <div id="evacfamcountchart" style="height: 425px;margin-top:-60px;"></div>
+                                        <!--<canvas id="myChart" width="400" height="200"></canvas>-->
+    
+                                    </div>
+                                    
+                            </div>
+                            <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+                        </div>
+                    </div>
+                </div>
+        
+        <center>                        
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa"></i> Total Evacuees</div>
+                            <div class="list-group list-group-flush small" style="width: 100%">
+                                <div class="card-body" style="text-align:center">
+                                        <span class="text-success" id="totalevacuees" style="font-size:50px;font-style:bold;" ></span>
+                                    </div>
+    
+                            </div>
+                            <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+                        </div>
+                    </div>
+
+                <div class="col-lg-3">                            
+                    <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa"></i> Nangka Elementary School</div>
+                            <div class="list-group list-group-flush small" style="width: 100%">
+                                <div class="card-body" style="text-align:center">
+                                        <span class="text-success" id="totalevacueesnes" style="font-size:50px;font-style:bold;" ></span>
+                                    </div>
+    
+                            </div>
+                            <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+                    </div>
+                </div>
+
+                <div class="col-lg-3">                        
+                    <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa"></i> Nangka High School</div>
+                            <div class="list-group list-group-flush small" style="width: 100%">
+                                <div class="card-body" style="text-align:center">
+                                        <span class="text-success" id="totalevacueesnhs" style="font-size:50px;font-style:bold;" ></span>
+                                    </div>
+    
+                            </div>
+                            <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+                    </div>
+                </div>
+
+                <div class="col-lg-3">                        
+                    <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa"></i> Ateneoville Covered Court</div>
+                            <div class="list-group list-group-flush small" style="width: 100%">
+                                <div class="card-body" style="text-align:center">
+                                        <span class="text-success" id="totalevacueesacc" style="font-size:50px;font-style:bold;" ></span>
+                                    </div>
+    
+                            </div>
+                            <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+                    </div>
+                </div>
+                
+            </div>
+        </center>
+
+        <div style="float: right; width: 100%">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Evacuees</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Family Allocation</a>
+                    <!--<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>-->
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <h3>Evacuees Allocation</h3>              
+                        <table class="table table-hover" id="alloc">
+                        <thead>
+                            <tr>
+                                <th>Name</th>                                                                
+                                <th>Address</th>
+                                <th>Evacuation Center Assigned</th>    
+                                <th>Status of Evacuee</th>                                
+                            </tr>
+                        </thead>
+                        <tbody id="table_body">
+                            
+                        </tbody>
+                        </table>
+                </div>
+
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <h3>Families</h3>              
+                        <table class="table table-hover" id="famalloc">
+                        <thead>
+                            <tr>
+                                <th>Family Name</th>                                                                
+                                <th>Family Count</th>
+                                <th>Family Members</th>                                
+                            </tr>
+                        </thead>
+                        <tbody id="table_body">
+                            
+                        </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>                
+                
+
+
+
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+        <div class="container">
+            <div class="text-center">
+                <small>2018 FLAREMOB ALISTO WEB PANEL</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" id="logout" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="evac_needs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Needs in the Evacuation Center</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="needs">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Food
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="food" value="Food" type="checkbox"/>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Water
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="water" value="Water" type="checkbox"/>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Medicine
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="medicine" value="Medicine" type="checkbox"/>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Clothes
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="clothes" value="Clothes" type="checkbox"/>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Toiletries
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="toiletries" value="Toiletries" type="checkbox"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="onameee" id="onameee" style="display:none">
+                        <input type="text" class="form-control" id="othersname" class="form-control" name="othersname" width="50%">
+                    </div>
+                    <br>
+                    <script>
+                        if (document.getElementById("othersss").checked==true){
+                            document.getElementById("onameee").style.display = "block";
+                        }
+                    </script>
+                    <div class="form-group">
+                        Which EVACUATION CENTER?
+                        <select class="form-control" id="evaccenter">
+                            <option value="Nangka Elementary School">Nangka Elementary School</option>
+                            <option value="St. Mary Elementary School">St. Mary Elementary School</option>
+                            <option value="Ateneoville Covered Court">Ateneoville Covered Court</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familycount">Family Count:</label>
+                        <input type="number" class="form-control" id="familycount" class="form-control" name="familycount" width="50%">
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" id="evacneeds" onclick="submit()">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!--Pie Slices Label Plugin for Chart.js-->
+    <script src="vendor/chart-piece-label.js/Chart.PieceLabel.js"></script>
+    <!-- Moment plugin for real-time clock display -->
+    <script src="vendor/moment/moment.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="js/sb-admin-charts.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <!--<script>-->
+    <!--// Initialize Firebase-->
+    <!--var config = {-->
+    <!--apiKey: "AIzaSyABJ3MmCKzQCVKm-FcZdXFHWlbK9am00O8",-->
+    <!--authDomain: "flaremob-aa0aa.firebaseapp.com",-->
+    <!--databaseURL: "https://flaremob-aa0aa.firebaseio.com",-->
+    <!--projectId: "flaremob-aa0aa",-->
+    <!--storageBucket: "flaremob-aa0aa.appspot.com",-->
+    <!--messagingSenderId: "715257296951"-->
+    <!--};-->
+    <!--firebase.initializeApp(config);-->
+    <!--</script>-->
+    <!-- <script src="firebasejsquerys/registernewevaccenter.js"></script> -->
+
+    <script>
+        // Initialize Firebase
+        var config = {
+/*            apiKey: "AIzaSyCdFCBLv7alztLHBBODLIOep339D8IybvQ",
+            authDomain: "evacmagnoversion.firebaseapp.com",
+            databaseURL: "https://evacmagnoversion.firebaseio.com",
+            projectId: "evacmagnoversion",
+            storageBucket: "evacmagnoversion.appspot.com",
+            messagingSenderId: "742241423121"*/
+            apiKey: "AIzaSyAsREyRj2u1GDG1sKF1gyAE476u5pp2PxQ",
+            authDomain: "flaremob-b55d8.firebaseapp.com",
+            databaseURL: "https://flaremob-b55d8.firebaseio.com",
+            projectId: "flaremob-b55d8",
+            storageBucket: "flaremob-b55d8.appspot.com",
+            messagingSenderId: "27793888698"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!--TRIAL GETTING DATA-->
+        <!--<script type="text/javascript" src="vendor/datatables/datatables.min.js"></script>-->
+        <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.flash.min.js"></script>
+        <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="vendor/datatables/JSZip-2.5.0/jszip.min.js"></script>
+        <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
+        <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+
+    <!-- <script type="text/javascript" src="firebasejsquerys/needsforevac.js"></script>
+    <script type="text/javascript" src="firebasejsquerys/count.js"></script>
+    <script type="text/javascript" src="firebasejsquerys/gototable.js"></script> -->
+    <!--<script type="text/javascript" src="firebasejsquerys/totaldonationreport.js"></script>-->
+    <script src="vendor/echarts/echarts.js">
+
+    </script>
+    <script src="firebasejsquerys/evacfamcount2.js"></script>    
+    <!-- <script src="firebasejsquerys/evacneedspro.js"></script>
+    <script src="firebasejsquerys/logout.js"></script>
+    <script src="firebasejsquerys/Checkintro.js"></script> -->
+    <script src="firebasejsquerys/chartfamcount.js"></script>
+    
+
+</div>
+</body>
+
+</html>

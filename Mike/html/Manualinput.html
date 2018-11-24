@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+</head>
+<body>
+ITEM_ID : <input type="text" id="item_id"><br>
+Title : <input type="text" id="title"><br>
+Description : <input type="text" id="description"><br>
+Quantity : <input type="text" id="quantity"><br>
+Unit : <input type="text" id="unit"><br>
+Type : <input type="text" id="type"><br>
+DATETIME_PLEDGED : <input type="text" id="datetime_pledged"><br>
+Status : <input type="text" id="status"><br>
+DONOR_ID : <input type="text" id="donor_id"><br>
+<button id="save_button">SAVE</button>
+<button id="load_button">LOAD</button>
+<button id="clear_button">CLEAR</button>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyC8soYRO3h0rz-uraxBXjGb-QyFPUnw15U",
+        authDomain: "flaremob-alisto1.firebaseapp.com",
+        databaseURL: "https://flaremob-alisto1.firebaseio.com",
+        projectId: "flaremob-alisto1",
+        storageBucket: "flaremob-alisto1.appspot.com",
+        messagingSenderId: "184613341230"
+    };
+    firebase.initializeApp(config);
+
+    $('#save_button').click(function () {
+        rootRef.push({var rootRef = firebase.database().ref().child('tbldonateditems')
+            title:$('#title').val(),
+            description:$('#description').val(),
+            quantity:$('#quantity').val(),
+            unit:$('#unit').val(),
+            type:$('#type').val(),
+            datetime_pledged:$('#datetime_pledged').val(),
+            status:$('#status').val()
+        });
+    });
+
+    var alldatas = firebase.database().ref('tbldonateditems').orderByKey();
+
+</script>
+<!--Here starts CRUD -->
+
+<!--END-->
+</body>
+</html>

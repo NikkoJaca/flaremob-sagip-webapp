@@ -1,0 +1,114 @@
+/* body{font-family:calibri;} */
+
+.tabmain {
+	position:relative;
+    overflow: auto;
+    /*border: 1px solid #ccc;*/
+    background-color: #9b9d9f;/* #647EBD */ /*#f1f1f1;*/
+}
+.tabmain span {
+	display:block;
+	margin-left:20px;
+    background-color: #f1f1f1; /*inherit;*/
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 24px;
+    transition: 0.3s;
+	font-size:15px;
+	font-weight:bold;
+	color: #444;
+}
+.tabmain span:hover {
+    background-color:#dddd;
+}
+.tabmain span.active {
+    background-color: #bbbb;
+}
+
+.smallImage{
+	width:180px;height:180px;object-fit:contain;display:block;margin:auto;
+}
+
+div.enclosure{
+	margin:auto;
+	width:1000px;
+	/* box-shadow:0 4px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 50px 0 rgba(0, 0, 0, 0.19); */
+}
+div.topSpacer{
+	margin-top:50px;
+}
+
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    height:520px;
+	width:1000px;
+	margin:auto;
+}
+div.mapBar{
+	height:80px;
+	width:1000px;
+	background-color:#9b9d9f;/* #647EBD; */ /* 992099; */
+	margin:auto;
+}
+div.barEnder{
+	height:50px;
+	width:1000px;
+	background-color:#9b9d9f;/* #647EBD; */ /* 992099; */
+	/* background:linear-gradient(#647EBD,#485c8c); */
+	margin:auto;
+}
+table.table1{
+	border-collapse:collapse;
+	width:1000px;
+	margin:auto;
+}
+table.table1 td{
+	padding:10px;
+}
+table.table1 th{
+	background-color:#9b9d9f;/* #647EBD; */ /* 992099; */
+	text-align:center;
+	padding-bottom:10px;
+	padding-top:30px;
+	width:10%;
+	color:#ffffff;
+	word-wrap: break-word;
+}
+table.table1 tr:nth-child(even){
+	background-color:#FFFFFF; /* e4caff; */
+}
+table.table1 tr:nth-child(odd){
+	background-color:#f1f1f1;/* #D3DBED; */ /* cc99ff; */
+}
+table.table1 tr:hover{
+	background-color:#eeeeee;
+	/* opacity:0.5; */
+}
+.hide{
+	display:none;
+}
+.imgth{
+	display: block;
+	margin: auto;
+}
+.headerparinline h2,p{
+	display: inline;
+	padding-left:10px;
+	padding-right:20px;
+}
+.divbgcolor{
+	background-color:#434954;/* #284282; */
+}
+.h2C {
+	color:#ffffff;
+	font-size:20px;
+}
+.parC{
+	color:#c7cddb;
+}
+.tdPad{
+	padding-left:30px;
+}

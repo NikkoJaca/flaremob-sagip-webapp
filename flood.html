@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="1800">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FlareMob: Sagip - Officials Admin Panel">
+    <meta name="author" content="FlareMob Team - TIPQC">
+    <link rel="icon" type="image/png" href="images/icons/alisto.ico" />
+    <title>Sagip: Flood Monitoring</title>
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css" rel="stylesheet" />
+    <link href="leaflet/leaflet.css" rel="stylesheet" />
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="index.html">FlareMob: Sagip - Officials Admin Panel</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" style="overflow-y: auto" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <a class="nav-link" href="index.html">
+                        <i class="fa fa-fw fa-dashboard"></i>
+                        <span class="nav-link-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
+                    <a class="nav-link" href="flood.html">
+                        <i class="fa fa-fw fa-map"></i>
+                        <span class="nav-link-text">Flood Monitoring</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation">
+                    <a class="nav-link" href="pledging.html">
+                        <i class="fa fa-fw fa-calculator"></i>
+                        <span class="nav-link-text">Donation</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-database"></i>
+                        <span class="nav-link-text">Donation Monitoring</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                        <li>
+                            <a href="donationman.html">Donation Items</a>
+                        </li>
+                        <li>
+                            <a href="donationcash.html">Donation Cash</a>
+                        </li>
+                        <li>
+                            <a href="updateforluquidation.html">Liquidation</a>
+                        </li>
+                        <li>
+                            <a href="Inventory.html">Inventory</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-pencil"></i>
+                        <span class="nav-link-text">Registration</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents1">
+                        <li>
+                            <a href="registrationadmin.html">Registration for Admin</a>
+                        </li>
+                        <li>
+                            <a href="DriverDetailsManagement.html">Registration for Drivers</a>
+                        </li>
+                        <li>
+                            <a href="registrationevachead.html">Registration for Evacuation Heads</a>
+                        </li>
+                        <li>
+                            <a href="TargetLocationDetailsManagement.html">Registration for New Evacuation Center</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                    <a class="nav-link" data-toggle="modal" data-target="#evac_needs">
+                        <i class="fa fa-fw fa-exclamation-triangle"></i>
+                        <span class="nav-link-text">Evacuation Center Needs</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                    <a class="nav-link" href="DeliveryMonitoring.html">
+                        <i class="fa fa-fw fa-car"></i>
+                        <span class="nav-link-text">Delivery Monitoring</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                    <a class="nav-link" href="dm7prototype.html">
+                        <i class="fa fa-fw fa-car"></i>
+                        <span class="nav-link-text">Delivery Management</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Evacuees Allocation">
+                    <a class="nav-link" href="evacfamcount2.html">
+                        <i class="fa fa-fw fa-map"></i>
+                        <span class="nav-link-text">Evacuees Allocation</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-address-card"></i>
+                        <span class="nav-link-text">User Management</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents2">
+                        <li>
+                            <a href="AdminUserManagement.html">Admin User Management</a>
+                        </li>
+                        <li>
+                            <a href="EvacHeadUserManagement.html">Evacuation Head User Management</a>
+                        </li>
+                        <li>
+                            <a href="UserManagement.html">User Management</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-wrench"></i>
+                <span class="nav-link-text">Components</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseComponents">
+                <li>
+                  <a href="navbar.html">Navbar</a>
+                </li>
+                <li>
+                  <a href="cards.html">Cards</a>
+                </li>
+              </ul>
+            </li> -->
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-file"></i>
+                <span class="nav-link-text">Example Pages</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+                <li>
+                  <a href="login.html">Login Page</a>
+                </li>
+                <li>
+                  <a href="register.html">Registration Page</a>
+                </li>
+                <li>
+                  <a href="forgot-password.html">Forgot Password Page</a>
+                </li>
+                <li>
+                  <a href="blank.html">Blank Page</a>
+                </li>
+              </ul>
+            </li> -->
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-sitemap"></i>
+                <span class="nav-link-text">Menu Levels</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseMulti">
+                <li>
+                  <a href="#">Second Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Second Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Second Level Item</a>
+                </li>
+                <li>
+                  <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+                  <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                    <li>
+                      <a href="#">Third Level Item</a>
+                    </li>
+                    <li>
+                      <a href="#">Third Level Item</a>
+                    </li>
+                    <li>
+                      <a href="#">Third Level Item</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li> -->
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+              <a class="nav-link" href="#">
+                <i class="fa fa-fw fa-link"></i>
+                <span class="nav-link-text">Link</span>
+              </a>
+            </li> -->
+            </ul>
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-envelope"></i>
+                    <span class="d-lg-none">Messages
+                      <span class="badge badge-pill badge-primary">4 New</span>
+                    </span>
+                    <span class="indicator text-primary d-none d-lg-block">
+                      <i class="fa fa-fw fa-circle"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                    <h6 class="dropdown-header">New Messages:</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <strong>Cap. Randy Leal</strong>
+                      <span class="small float-right text-muted">5:43 PM</span>
+                      <div class="dropdown-message small">
+                        Please inform Bagong Silang residents to evacuate as soon as possible. Thank you.
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <strong>Dave David</strong>
+                      <span class="small float-right text-muted">4:37 PM</span>
+                      <div class="dropdown-message small">
+                        Marikina alert level has been raised to 2nd Alert due to critical water level of Marikina River.
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <strong>Nikko Jaca</strong>
+                      <span class="small float-right text-muted">4:00 PM</span>
+                      <div class="dropdown-message small">
+                        Flood prediction testing has been initiated. Please prepare.
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item small" href="#">View all messages</a>
+                  </div>
+                </li> -->
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-bell"></i>
+                        <span class="d-lg-none">Alerts
+              <span class="badge badge-pill badge-warning">6 New</span>
+            </span>
+                        <span class="indicator text-warning d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+                        <h6 class="dropdown-header">New Alerts:</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+              <span class="text-black">
+                <strong>
+                  <i class="fa fa-bell fa-fw"></i>Marikina DRRMO</strong>
+              </span>
+                            <span class="small float-right text-muted">4:37 PM</span>
+                            <div class="dropdown-message small">Marikina Alert Level has been raised to 2nd (Evacuation)</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+              <span class="text-black">
+                <strong>
+                  <i class="fa fa-bell fa-fw"></i>ALISTO Weather Forecast</strong>
+              </span>
+                            <span class="small float-right text-muted">4:31 PM</span>
+                            <div class="dropdown-message small">Weather shows a 6-hour continuous heavy rain.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+              <span class="text-danger">
+                <strong>
+                  <i class="fa fa-exclamation-circle fa-fw"></i>ALISTO Flood Prediction</strong>
+              </span>
+                            <span class="small float-right text-muted">4:22 AM</span>
+                            <div class="dropdown-message small">Bagong Silang is critically flooded due to heavy rain.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item small" href="#">View all alerts</a>
+                    </div>
+                </li> -->
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0 mr-lg-2">
+
+                        <!-- THE BELOW COMMENTED CODE IS A SEARCH BAR -->
+                        <!-- <div class="input-group">
+                          <input class="form-control" type="text" placeholder="Search for...">
+                          <span class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                              <i class="fa fa-search"></i>
+                            </button>
+                          </span>
+                        </div> -->
+                        <!-- SEARCH BAR CODE ENDS HERE -->
+
+                        <!-- Refer to clock.js -->
+                        <div id="clock" class="navbar-text clock">Time is loading...</div>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Admin Panel</a>
+                </li>
+                <li class="breadcrumb-item active">Flood Monitoring and Forcasting</li>
+            </ol>
+
+            <div class="col mb-3">
+                <div id="floodCritical" class="card text-white bg-danger h-100" style="display: none">
+                    <div class="card-body">
+                        <div class="card-body-icon">
+                            <i class="fa fa-fw fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="mr-5">
+                            <strong>ALERTO! </strong> Kritikal na lebel ng pagbabaha ay maaring maranasan. <br>Kaagarang
+                            lumikas sa pinakamalapit na evacuation center!
+                        </div>
+                    </div>
+                    <div class="card-footer text-white clearfix small z-1" href="#">
+                        <span class="float-left">Flood Alert Message</span>
+                        <span class="float-right">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-3">
+                <div id="floodNormal" class="card text-white bg-success h-100" style="display: none">
+                    <div class="card-body">
+                        <div class="card-body-icon">
+                            <i class="fa fa-fw fa-check-circle"></i>
+                        </div>
+                        <div class="mr-5">
+                            <strong>Normal na kundisyon.</strong> Kasalukuyang walang lebel ng pagbaha ang inaasahan.<br>
+                        </div>
+                    </div>
+                    <div class="card-footer text-white clearfix small z-1" href="#">
+                        <span class="float-left">Flood Alert Message</span>
+                        <span class="float-right">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-3">
+                <div id="floodMedium" class="card bg-warning h-100 " style="display: none">
+                    <div class="card-body">
+                        <div class="card-body-icon">
+                            <i class="fa fa-fw fa-info-circle"></i>
+                        </div>
+                        <div class="mr-5 text-black">
+                            <strong>BABALA! </strong> Inaasahang lagpas tuhod na pag-baha ang maaring maranasan.
+                            <br>Humanda at pumunta sa pinakamalapit na evacuation center!
+                            <br>
+
+                        </div>
+                    </div>
+                    <div class="card-footer text-white clearfix small z-1" href="#">
+                        <span class="float-left">Flood Alert Message</span>
+                        <span class="float-right">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 my-auto ">
+                    <div class="card shadow-lg mb-3" style="width: 100%; height: 420px">
+                        <div class="card-header">
+                            <i class="fa"></i>
+                            Rain Volume Forecast
+                        </div>
+                        <span id="rainIntensityLineChart" style="width: 100%; height: 100%"></span>
+                        <span class="text-center mx-auto my-auto">
+                            <span class="h4 mb-0 text-primary" id="rainfallVolume">Loading...</span>
+                            <span class="h4 mb-0 text-primary">mm</span>
+                            <div class="small text-muted">3-hour Rain Volume</div>
+                            <hr>
+                            <div class="h4 mb-0 text-primary" id="weatherForecast">Loading...</div>
+                            <div class="small text-muted">Weather Condition</div>
+                        </span>
+
+                    </div>
+                    <!-- <iframe src="http://localhost:3000/rastiles/#55ee1d89765ae57d8a8c0fe33b5d22d7" name="RASTiles" frameborder="0" style="width: 100%; height: 720px"></iframe> -->
+                </div>
+                <div class="col-lg-4 ml-auto mr-auto">
+                    <div class="card shadow-lg mb-3 rounded" style="width: 100%; height: 420px">
+                        <div class="card-header">
+                            <i class="fa"></i>
+                            Predicted Flood Conditions
+                        </div>
+                        <div class="text-center my-auto mx-auto">
+                            <span class="h4 mb-0 text-primary" id="maxDischargeLevel3hr">Loading...</span>
+                            <span class="h4 mb-0 text-primary">m<sup>3</sup>/s</span>
+                            <div class="small text-muted">3-hour Max Flood Discharge</div>
+                            <hr>
+                            <span id="riverLevel3hr" class="h4 mb-0 text-primary">Loading...</span><span class="h4 mb-0 text-primary">
+                                m</span>
+                            <div class="small text-muted">3-hour Estimated River Level (Sto. Niño)</div>
+                            <hr>
+                            <span id="riverLevel1hr" class="h4 mb-0 text-primary">Loading...</span><span class="h4 mb-0 text-primary">
+                                m</span>
+                            <div class="small text-muted">1-hour Estimated River Level (Sto. Niño)</div>
+                            <hr>
+                            <div id="floodConditionTxt" class="h4 mb-0 text-primary">Loading...</div>
+                            <div class="small text-muted">Flood Condition</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg mb-3 rounded">
+                        <div class="card-header">
+                            <i class="fa"></i>
+                            Marikina River Livestream
+                        </div>
+                        <div class="col-sm-6 my-auto mx-auto py-1 text-center">
+                            <img class="img-fluid" src="http://121.58.202.110:8080/jpeg?cam=4" alt="The Marikina river livestream is loading (or it isn't currently working...)" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ml-auto mr-auto">
+                    <div class="card shadow-lg mb-3 rounded">
+                        <div class="card-header">
+                            <i class="fa"></i>
+                            Manual Flood Monitoring
+                        </div>
+                        <div class="col-sm-12 my-auto mx-auto py-1">
+                            <div>
+                                Use the buttons below to send flood warning notifications to mobile users manually.
+                                This overrides the automatic flood warning notification.
+                            </div>
+                            <hr>
+                            <button type="button" data-toggle="modal" data-target="#overrideModerateWarningModal" class="btn btn-warning btn-block">Send
+                                Moderate Flood
+                                Warning</button>
+                            <button type="button" data-toggle="modal" data-target="#overrideCriticalWarningModal" class="btn btn-danger btn-block">Send
+                                Critical Flood
+                                Warning</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-map"></i> Flood Monitoring Map</div>
+                <div class="card-body">
+                </div>
+                <div class="card-footer small text-muted">Updated 5 minutes ago</div>
+            </div> -->
+
+    <!-- <div class="row">
+            <div class="col-lg-8">
+
+            </div>
+
+            <div class="col-lg-4">
+
+            </div>
+        </div> -->
+
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+        <div class="container">
+            <div class="text-center">
+                <small>FlareMob: Sagip - Officials Admin Panel 2018</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal confirmation for Warning Override (Moderate)-->
+    <div class="modal fade" id="overrideModerateWarningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <span class="fa fa-warning"></span>
+                        WARNING! Send a Moderate Flood Warning Manually?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">You are about to send a Moderate Flood Warning to mobile app users.</div>
+                <div class="form-group p-3">
+                    <label for="inputCurrentUserPasswordModerate">Please enter your admin password to proceed:</label>
+                    <input type="password" class="form-control" id="inputCurrentUserPasswordModerate" placeholder="Admin Password">
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="btnManualSendModerateWarning" class="btn btn-info">Proceed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal confirmation for Warning Override (Critical)-->
+    <div class="modal fade" id="overrideCriticalWarningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <span class="fa fa-warning"></span>
+                        WARNING! Send a Critical Flood Warning Manually?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">You are about to send a Critical Flood Warning to mobile app users.</div>
+                <div class="form-group p-3">
+                        <label for="inputCurrentUserPasswordCritical">Please enter your admin password to proceed:</label>
+                        <input type="password" class="form-control" id="inputCurrentUserPasswordCritical" placeholder="Admin Password">
+                    </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-info"
+                        id="btnManualSendCriticalWarning">Proceed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--modal confirmed for (moderate) flooding-->
+    <div class="modal fade" id="confirmedOverrideModerateWarningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <span class="fa fa-check-circle"></span>
+                        Success!</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">Moderate flood alert notification has been sent to mobile users!</div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-info">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--modal wrong password for (moderate) flooding-->
+    <div class="modal fade" id="wrongPasswordOverrideModerateWarningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <span class="fa fa-exclamation-circle"></span>
+                    Invalid Input!</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="modal-body">Password is incorrect or invalid!</div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!--modal confirmed for critical flooding-->
+    <div class="modal fade" id="confirmedOverrideCriticalWarningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <span class="fa fa-check-circle"></span>
+                        Success!</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">Critical flood alert notification has been sent to mobile users!</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--modal wrong password for (critical) flooding-->
+    <div class="modal fade" id="wrongPasswordOverrideCriticalWarningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <span class="fa fa-exclamation-circle"></span>
+                    Invalid Input!</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="modal-body">Password is incorrect or invalid!</div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--Mike's Evac Needs-->
+    <div class="modal fade" id="evac_needs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Needs in the Evacuation Center</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="needs">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Food
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="food" value="Food" type="checkbox" />
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Water
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="water" value="Water" type="checkbox" />
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Medicine
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="medicine" value="Medicine" type="checkbox" />
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Clothes
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="clothes" value="Clothes" type="checkbox" />
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Toiletries
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="toiletries" value="Toiletries" type="checkbox" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="onameee" id="onameee" style="display:none">
+                        <input type="text" class="form-control" id="othersname" class="form-control" name="othersname"
+                            width="50%">
+                    </div>
+                    <br>
+                    <script>
+                        if (document.getElementById("othersss").checked==true){
+                            document.getElementById("onameee").style.display = "block";
+                        }
+                    </script>
+                    <div class="form-group">
+                        Which EVACUATION CENTER?
+                        <select class="form-control" id="evaccenter">
+                            <option value="Nangka Elementary School">Nangka Elementary School</option>
+                            <option value="St. Mary Elementary School">St. Mary Elementary School</option>
+                            <option value="Ateneoville Covered Court">Ateneoville Covered Court</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familycount">Family Count:</label>
+                        <input type="number" class="form-control" id="familycount" class="form-control" name="familycount"
+                            width="50%">
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" id="evacneeds" onclick="submit()">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Moment plugin for real-time clock display -->
+    <script src="vendor/moment/moment.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="js/sb-admin-charts.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="vendor/echarts/echarts.js"></script>
+
+    <!-- firebase API -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAsREyRj2u1GDG1sKF1gyAE476u5pp2PxQ",
+            authDomain: "flaremob-b55d8.firebaseapp.com",
+            databaseURL: "https://flaremob-b55d8.firebaseio.com",
+            projectId: "flaremob-b55d8",
+            storageBucket: "flaremob-b55d8.appspot.com",
+            messagingSenderId: "27793888698"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <!--Flood prediction and monitoring calculation-->
+    <script src="js/floodCalc.js"></script>
+    <script src="firebasejsquerys/logout.js"></script>
+    <script src="firebasejsquerys/evacneedspro.js"></script>
+    <script src="firebasejsquerys/CHECKINGIFUSER.js" type="text/javascript"></script>
+    <script src="firebasejsquerys/Checkintro.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+/* body{font-family:calibri;} */
+
+        /*modal confirm result*/
+        .ModalBG {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 1000px; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+		}
+
+		/* Modal Content/Box */
+        /* .ModalConfirmMsg {
+			position:absolute;
+			cursor:pointer;
+			height:30px;
+			top:180px;
+			width: 100%;
+			text-align:center;
+			opacity:0.9;
+			transition: 0.3s;
+		} */
+		.ModalConfirmMsg{
+			position:absolute;
+			top:190px;
+			/* max-width:1000px; */
+			width:1000px; /*inherit;*/
+			/*background-color: #8cb8ff;*/ /*inherit;*/
+			padding-top:7px;
+			padding-bottom:7px;    
+			/*padding:20px;*/
+			transition: 0.3s;
+			font-size:12px;
+			text-align:center;
+			opacity:0.9;
+			visibility: hidden;
+			cursor:pointer;
+		}
+		.MsgXBtn {
+			position:absolute;
+			right:20px;
+			top:5px;
+			color: #b7b7b7;
+			font-weight: bold;
+			float: right;
+			font-size: 22px;
+			line-height: 20px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+		
+		.MsgXBtn:hover {
+			color: black;
+		}
+		
+.tabmain {
+	position:relative;
+    overflow: auto;
+    /*border: 1px solid #ccc;*/
+    background-color: #647EBD /*#f1f1f1;*/
+}
+.tabmain span {
+	display:block;
+	margin-left:20px;
+    background-color: #f1f1f1; /*inherit;*/
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 24px;
+    transition: 0.3s;
+	font-size:15px;
+	font-weight:bold;
+	color: #444;
+}
+.tabmain span:hover {
+    background-color:#ddd;
+}
+.tabmain span.active {
+    background-color: #ccc;
+}
+
+div.enclosure{
+	margin:auto;
+	width:1000px;
+	/* box-shadow:0 4px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 50px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.btnImg {
+	display: block;
+	/*margin-left: auto;
+	margin-right: auto;*/
+	margin:auto;
+}
+
+.btn{
+	float:left;	
+	display:block;
+	/* background-color:#DEE9EB; */
+	color:#ffffff;/* #f2fdff; *//* #647EBD; */
+	border: none;
+	padding: 5px 5px;
+	width:70px;
+	height:110px;
+	font-size: 16px;
+	font-weight:bold;
+	cursor: pointer;
+	text-align:center;
+	word-wrap: break-word;
+}
+.btn:hover{
+	background-color:#f1f1f1;/* #f2fdff; */
+	color:#434954;/* #647EBD; */
+	transition:0.5s;
+}
+.btnWrapper{
+	/* position: absolute; */
+	/* float:right; */
+	right:15px;
+	/* left:730px; */
+	bottom:370px;
+	/* margin-left:-100px; */
+}
+
+div.mapBar{
+	height:80px;
+	width:1000px;
+	background-color:#9b9d9f;/* #647EBD; */ /* 992099; */
+	margin:auto;
+}
+div.barEnder{
+	height:50px;
+	width:1000px;
+	background-color:#9b9d9f;/* #647EBD; */ /* 992099; */
+	/* background:linear-gradient(#647EBD,#485c8c); */
+	margin:auto;
+}
+table.table1{
+	border-collapse:collapse;
+	width:100%;
+	/* max-width:960px; */
+	margin:auto;
+}
+table.table1 td{
+	padding:10px;
+}
+table.table1 th{
+	background-color:#9b9d9f;/* #647EBD; */ /* 992099; */
+	text-align:center;
+	padding-bottom:10px;
+	padding-top:30px;
+	width:10%;
+	color:#ffffff;
+	word-wrap: break-word;
+}
+table.table1 tr:nth-child(even){
+	background-color:#FFFFFF; /* e4caff; */
+}
+table.table1 tr:nth-child(odd){
+	background-color:#f1f1f1;/* #D3DBED; */ /* cc99ff; */
+}
+table.table1 tr:hover{
+	background-color:#eeeeee;
+	/* opacity:0.5; */
+}
+
+table.table3{
+	border-collapse:collapse;
+	/*border: 1px solid pink;*/
+	/* max-width:950px; */
+	/* max-width:950px;width:100%;margin:auto; */
+	/* width:100%; */
+	/* margin:auto; */
+  }
+  table.table3 input{
+	width:90%;
+  }
+  table.table3 td{
+	  text-align:right;
+	  padding-top:3px;
+	  padding-bottom:3px;
+  }  
+  table.table3 th{
+	  font-weight:normal;
+	  text-align:left;
+	  padding-left:20px;
+	  padding-top:30px;
+  }
+  table.table3 img{
+	  /*display:inline-block;*/
+	  padding-top:3px;
+	  max-width:550px;max-height:300px;width:100%;height:100%;object-fit:contain;
+  }
+  
+.hide{
+	display:none;
+}
+.imgth{
+	display: block;
+	margin: auto;
+}
+.headerparinline h2,p{
+	display: inline;
+	padding-left:10px;
+	padding-right:20px;
+}
+.divbgcolor{
+	background-color:#434954;/* #284282; */
+}
+.h2C {
+	color:#ffffff;
+	font-size:20px;
+}
+.parC{
+	color:#c7cddb;
+}
+.tdPad{
+	padding-left:30px;
+}

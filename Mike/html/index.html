@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Flaremob Alisto</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!-- toast CSS -->
+    <link href="../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <!-- morris CSS -->
+    <link href="../plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <!-- chartist CSS -->
+    <link href="../plugins/bower_components/chartist-js/dist/chartist.min.css" rel="stylesheet">
+    <link href="../plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!--Datatable css-->
+    <link rel="stylesheet" type="text/css" href="../plugins/bower_components/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../plugins/bower_components/DataTables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../plugins/bower_components/DataTables/Buttons-1.5.2/css/buttons.dataTables.min.css"/>
+    <!--End of datatable css-->
+</head>
+
+<body class="fix-header">
+    <!-- ============================================================== -->
+    <!-- Preloader -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
+    <div id="wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <div class="top-left-part">
+                    <!-- Logo -->
+                    <a class="logo" href="index.html">
+                        <!-- Logo icon image, you can use font-icon also --><b>
+                        <!--This is dark logo icon--> <!--This is light logo icon-->
+                     </b>
+                        <!--&lt;!&ndash; Logo text image you can use text also &ndash;&gt;<span class="hidden-xs">-->
+                        <!--This is dark logo text-->
+                     </span> </a>
+                </div>
+                <!-- /Logo -->
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar">
+                <div class="sidebar-head">
+                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3>
+                </div>
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 70px 0 0;">
+                        <a href="index.html" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
+                        <a href="cashmonitoring.html" class="waves-effect"><i class="fa fa-money fa-fw" aria-hidden="true"></i>Money Monitoring</a>
+                    </li>
+
+                </ul>
+
+            </div>
+            
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Dashboard</h4> </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <!-- ============================================================== -->
+                <!-- Different data widgets -->
+                <!-- ============================================================== -->
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Total Donated Item</h3>
+                            <ul class="list-inline two-part">
+                                <li>
+                                    <div id="sparklinedash"></div>
+                                </li>
+                                <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success" id="donateditem"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Total Donors</h3>
+                            <ul class="list-inline two-part">
+                                <li>
+                                    <div id="sparklinedash2"></div>
+                                </li>
+                                <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple" id="donors"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Total Deliveries made</h3>
+                            <ul class="list-inline two-part">
+                                <li>
+                                    <div id="sparklinedash3"></div>
+                                </li>
+                                <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info" id="deliverymade"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--/.row -->
+                <!--row -->
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Yearly Donations</h3>
+                            <!--<ul class="list-inline text-right">-->
+                                <!--<li>-->
+                                    <!--<h5><i class="fa fa-circle m-r-5 text-info"></i>Mac</h5> </li>-->
+                                <!--<li>-->
+                                    <!--<h5><i class="fa fa-circle m-r-5 text-inverse"></i>Windows</h5> </li>-->
+                            <!--</ul>-->
+                            <div id="columnchart_values" style="height: 405px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- table -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">List of Donations</h3>
+                            <div class="table-responsive">
+                                <table class="table display" id="itemtable">
+                                    <thead>
+                                    <tr>
+                                        <th>Donor_id</th>
+                                        <th>Item Description</th>
+                                        <th>Item Name</th>
+                                        <th>Item Plegde Date</th>
+                                        <th>Quantity</th>
+                                        <th>Unit</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    </thead>
+                                    <!--<tr>-->
+                                    <!--<th>ITEM_ID</th><th>TITLE</th><th>DESCRIPTION</th><th>QUANTITY</th><th>UNIT</th><th>TYPE</th><th>DATETIME_PLEDGED</th><th>STATUS</th><th>DONOR_ID</th>-->
+                                    <!--</tr>-->
+                                    <!--<tbody id="bitems"></tbody>-->
+                                    <tfoot>
+                                    <tr>
+                                        <th>Donor_id</th>
+                                        <th>Item Description</th>
+                                        <th>Item Name</th>
+                                        <th>Item Plegde Date</th>
+                                        <th>Quantity</th>
+                                        <th>Unit</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- chat-listing & recent comments -->
+                <!-- ============================================================== -->
+
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center"> 2018 &copy; Flaremob </footer>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page Content -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Counter js -->
+    <script src="../plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="../plugins/bower_components/counterup/jquery.counterup.min.js"></script>
+    <!-- chartist chart -->
+    <script src="../plugins/bower_components/chartist-js/dist/chartist.min.js"></script>
+    <script src="../plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <!-- Sparkline chart JavaScript -->
+    <script src="../plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        // var config = {
+        //     apiKey: "AIzaSyC8soYRO3h0rz-uraxBXjGb-QyFPUnw15U",
+        //     authDomain: "flaremob-alisto1.firebaseapp.com",
+        //     databaseURL: "https://flaremob-alisto1.firebaseio.com",
+        //     projectId: "flaremob-alisto1",
+        //     storageBucket: "flaremob-alisto1.appspot.com",
+        //     messagingSenderId: "184613341230"
+        // };
+        var config = {
+            apiKey: "AIzaSyC8soYRO3h0rz-uraxBXjGb-QyFPUnw15U",
+            authDomain: "flaremob-alisto1.firebaseapp.com",
+            databaseURL: "https://flaremob-alisto1.firebaseio.com",
+            projectId: "flaremob-alisto1",
+            storageBucket: "flaremob-alisto1.appspot.com",
+            messagingSenderId: "184613341230"
+        };
+        firebase.initializeApp(config);
+
+
+
+
+        // var table = $('#table').DataTable ( {
+        //     "bFilter": false
+        // } );
+        //
+        // firebase.database().ref('tblDonatedItems').on('child_added',function(snapshot) {
+        //     var dataSet = [snapshot.key, snapshot.val()];
+        //     table.rows.add([dataSet]).draw();
+        // });
+    //    https://flaremob-alisto1.firebaseio.com/tblDonors
+
+        // var upvotesRef = new Firebase('https://flaremob-alisto1.firebaseio.com/tblDonors');
+        // upvotesRef.transaction(function (current_value) {
+        //     return (current_value || 0) + 1;
+        //
+        // });
+        // firebase.once('value', function(snapshot) { alert('Count: ' + snapshot.numChildren()); });
+    </script>
+    <script src="jsfirebase/count.js"></script>
+    <!--<script src="jsfirebase/retrievetable.js"></script>-->
+    <!--https://code.jquery.com/jquery-3.3.1.js-->
+    <!--https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js-->
+    <!--https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js-->
+    <!--https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js-->
+    <!--https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js-->
+    <!--https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js-->
+    <!--https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js-->
+    <!--https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js-->
+    <!--https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js-->
+    <!--<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
+
+    <script type="text/javascript" src="../plugins/bower_components/DataTables/datatables.min.js"></script>
+    <script type="text/javascript" src="../plugins/bower_components/DataTables/Buttons-1.5.2/js/buttons.flash.min.js"></script>
+    <script type="text/javascript" src="../plugins/bower_components/DataTables/Buttons-1.5.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="../plugins/bower_components/DataTables/Buttons-1.5.2/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="../plugins/bower_components/DataTables/Buttons-1.5.2/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="../plugins/bower_components/DataTables/JSZip-2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="../plugins/bower_components/DataTables/pdfmake-0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="../plugins/bower_components/DataTables/pdfmake-0.1.36/vfs_fonts.js"></script>
+
+    <script type="text/javascript" src="jsfirebase/gototable.js">
+        // $(document).ready(function() {
+        //     $('#itemtable').DataTable();
+        // } );
+        // $('#itemtable').DataTable({
+        //     buttons: [
+        //         {
+        //             extend: 'print',
+        //             text: 'Print current page',
+        //             autoPrint: false
+        //         }
+        //     ]
+        // });
+        //WORKING
+        // $(document).ready(function () {
+        //
+        //     database5 = firebase.database();
+        //     var itemss = database5.ref('tblDonatedItems');
+        //     // $('#itemtable').DataTable({
+        //     //     dom: 'Bfrtip',
+        //     //     buttons: [
+        //     //         { extend:'copy', attr: { id: 'allan' } }, 'csv', 'excel', 'pdf', 'print'
+        //     //     ]
+        //     // } );
+        //
+        //     var table1 = $('#itemtable').DataTable({
+        //         // bSort: false,
+        //         // _aSortData:true,
+        //         // "scrollY":        "300px",
+        //         "scrollCollapse": true,
+        //         // "info":           true,
+        //         "paging":         true,
+        //         dom: 'Bfrtip',
+        //         buttons: [
+        //             { extend:'copy', attr: { id: 'allan' } }, 'csv', 'excel',{extend:'pdf',
+        //
+        //             } ,'print'
+        //         ]
+        //     });
+            //END OF WORKING
+
+
+
+            // table1.buttons().container()
+            //     .appendTo( $('.col-sm-6:eq(0)', table1.table().container() ) );
+            // itemss.on('child_added',snap=>
+            // {
+            //     var dataSet = [snap.child("ITEM_ID").val(), snap.child("TITLE").val(), snap.child("DESCRIPTION").val(),
+            //     snap.child("QUANTITY").val(), snap.child("UNIT").val(),snap.child("TYPE").val(),snap.child("DATETIME_PLEDGED").val(),
+            //     snap.child("STATUS").val()]});
+
+            // HERE STARTS THE WORKING INPUT
+            // itemss.on('child_added',snap=>{
+            //     var dataSet = [snap.child("ITEM_ID").val(), snap.child("TITLE").val(), snap.child("DESCRIPTION").val(),
+            //         snap.child("QUANTITY").val(), snap.child("UNIT").val(),snap.child("TYPE").val(),snap.child("DATETIME_PLEDGED").val(),
+            //         snap.child("STATUS").val()];
+            //     // console.log(dataSet);
+            //     table1.rows.add([dataSet]).draw();
+            // });
+            //END OF WORKING INPUT
+
+
+            // itemss.on('child_added',snap=> {
+            //     var itemid=snap.child("ITEM_ID").val();
+            //     var title=snap.child("TITLE").val();
+            //     var desc=snap.child("DESCRIPTION").val();
+            //     var quan=snap.child("QUANTITY").val();
+            //     var unit=snap.child("UNIT").val();
+            //     var type=snap.child("TYPE").val();
+            //     var datetime=snap.child("DATETIME_PLEDGED").val();
+            //     var status=snap.child("STATUS").val();
+            //     var donorid=snap.child("DONOR_ID").val();
+            //
+            //
+            //     $("#itemtable").append('<tr><td>'+itemid+'</td>'+
+            //     '<td>'+title+'</td>'+
+            //     '<td>'+desc+'</td>'+
+            //     '<td>'+quan+'</td>'+
+            //     '<td>'+unit+'</td>'+
+            //     '<td>'+type+'</td>'+
+            //     '<td>'+datetime+'</td>'+
+            //     '<td>'+status+'</td>'+
+            //     '<td>'+donorid+'</td></tr>');
+            // });
+        // });
+
+    </script>
+    <!--Start Chart-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        database5=firebase.database();
+        var ref6 = database5.ref('tblDonatedItems');
+        ref6.on('value',getDATA10,errData);
+
+        function getDATA10(data){
+            var year = data.val();
+            var keyys = Object.keys(year);
+            var count = 0;
+            console.log(keyys);
+            for(var i=0;i<keyys.length;i++){
+                var k = keyys[i];
+                var date2 = year[k].DATETIME_PLEDGED;
+                // console.log(date2);
+                var year2=parseInt(date2);
+                if(year2==null){
+
+                }else{
+                    count++;
+                    // console.log(count);
+                }
+                // console.log(year2);
+            }
+            console.log(count);
+
+        }
+
+
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ["Organization", "Donated"],
+            ['Local Goverment Unit',5],['Individual',37],['Non-Goverment Organization',64],['Goverment Organization',5]
+        ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                { calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation" }
+            ]);
+
+            var options = {
+                title: "Total donation Report",
+                width: 600,
+                height: 400,
+                bar: {groupWidth: "95%"},
+                legend: { position: "none" },
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+            chart.draw(view, options);
+        }
+    </script>
+    <!--End Chart-->
+</body>
+
+</html>

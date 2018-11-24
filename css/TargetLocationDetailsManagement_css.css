@@ -1,0 +1,268 @@
+/* body{font-family:calibri;} */
+
+/*maps api search box*/
+#description {
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+#infowindow-content .title {
+	font-weight: bold;
+}
+
+#infowindow-content {
+	display: none;
+}
+
+#infowindow-content {
+	display: inline;
+}
+.pac-card {
+	margin: 10px 10px 0 0;
+	border-radius: 2px 0 0 2px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	background-color: #fff;
+	font-family: Roboto;
+}
+
+#pac-container {
+	padding-bottom: 12px;
+	margin-right: 12px;
+}
+
+.pac-controls {
+	display: inline-block;
+	padding: 5px 11px;
+}
+
+.pac-controls label {
+	font-family: Roboto;
+	font-size: 13px;
+	font-weight: 300;
+}
+
+#pacInput {
+	background-color: #fff;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+	margin-left: 12px;
+	padding: 0 11px 0 13px;
+	text-overflow: ellipsis;
+	width: 400px;
+}
+
+#pacInput:focus {
+	border-color: #4d90fe;
+}
+
+#title {
+	color: #fff;
+	background-color: #4d90fe;
+	font-size: 25px;
+	font-weight: 500;
+	padding: 6px 12px;
+}
+#target {
+	width: 345px;
+}
+/*end of maps api search box*/
+
+
+div.enclosure{
+				margin:auto;
+				width:1000px;
+				/* box-shadow:0 4px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 50px 0 rgba(0, 0, 0, 0.19); */
+				position:relative;
+			}
+			div.topSpacer{
+				margin-top:50px;
+			}
+			div.main {
+				height:500px;
+				width:1000px;
+				margin:auto;
+				display:inline-block;
+			}
+			div.mapBar{
+				height:80px;
+				width:1000px;
+				background-color:#9b9d9f;/* #647EBD; */
+				margin:auto;
+				position:relative;
+			}
+			
+			table.table1{
+				border-collapse:collapse;
+				width:1000px;
+				margin:auto;
+			}
+			
+			table.table1 td{
+				padding:10px;
+				
+			}
+			
+			table.table1 th{
+				background-color:#9b9d9f;/* #647EBD; */
+				text-align:center;
+				padding-bottom:10px;
+				padding-top:30px;
+				width:10%;
+			}
+			
+			table.table1 th{
+				padding-right:20px;
+				padding-top:18px;
+				color:#ffffff;
+			}
+			
+			table.table1 tr:nth-child(even){
+				background-color:#FFFFFF;
+			}
+			
+			table.table1 tr:nth-child(odd){
+				background-color:#f1f1f1;/* #D3DBED; */ /* cc99ff; */
+			}
+			
+			table.table1 tr:hover{
+				background-color:#eeeeee;
+				/*cursor:pointer;
+				opacity:0.5;*/
+			}
+			
+			table.table1 td{
+				padding-left:14px;
+			}
+			
+			.hide{
+				display:none;
+			}
+			
+			table.table2{
+				border-collapse:collapse;
+				border-spacing:0;
+				width:100%;
+				margin:auto;
+				background-color:#ffffff;
+			}
+			
+			table.table2 th{
+				background-color:#f1f1f1;/* #DEE9EB; */
+				text-align:center;
+			}
+			
+			.txtLabel{
+				padding-top:12px;
+				vertical-align: text-top;
+				text-align:right;
+			}
+			
+			.heading1{
+				font-size:24px;
+				font-weight:bold;
+				opacity:0.75;
+				/*padding-bottom:0px;
+				padding-top:0px;*/
+			}
+			
+			#VehicleImg {
+				width:650px; /* or any custom size */
+				height:500px; 
+				object-fit: contain;
+			}
+			
+			.btnImg {
+				display: block;
+				/*margin-left: auto;
+				margin-right: auto;*/
+				margin:auto;
+			}
+			
+			.btn{
+				float:left;	
+				display:block;
+				/* background-color:#f1f1f1; *//* #DEE9EB; */
+				color:#ffffff;/* #647EBD; */
+				border: none;
+				padding: 5px 5px;
+				width:70px;
+				height:100px;
+				font-size: 16px;
+				font-weight:bold;
+				cursor: pointer;
+				text-align:center;
+				word-wrap: break-word;
+			}
+			.btn:hover{
+				background-color:#f1f1f1;/* #f2fdff; */
+				color:#434954; /* #9b9d9f; */ /* #f2fdff; */
+				transition:0.5s;
+			}
+			.btnWrapper{
+				position:absolute;
+				float:right;
+				right:12px;
+				bottom:3px;
+			}
+			.searchBox{
+				position:absolute;
+				/* display:inline-block; */
+				float:left;
+				top:40px;
+				left:30px;
+				color:#7b7d7f;
+			}
+			.txtReadonly{
+				background-color:#efefef;
+				border: 1px solid #a5a5a5;
+				/* height:16px; */
+			}
+			.tabmain {
+				/* position:relative; */
+				position:absolute;
+				float:left;
+				left:20px;
+				top:-49px;
+				overflow: auto;
+				/*border: 1px solid #ccc;*/
+				/*background-color: #647EBD /*#f1f1f1;*/
+			}
+			.tabmain span {
+				display:block;
+				margin-left:20px;
+				background-color: #f1f1f1; /*inherit;*/
+				float: left;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				padding: 14px 24px;
+				transition: 0.3s;
+				font-size:15px;
+				font-weight:bold;
+				color: #444;
+			}
+			.tabmain span:hover {
+				background-color:#ddd;
+			}
+			.tabmain span.active {
+				background-color: #DEE9EB;
+			}
+			.tabcontent {
+				display: none;
+				position:relative;
+				/*padding: 6px 12px;*/
+				/*border: 1px solid #ccc;*/
+				border-top: none;
+				height:500px;
+				overflow: hidden;
+			}
+			#map{
+				height:520px;
+				width:1000px;
+				margin:auto;
+			}

@@ -1,0 +1,76 @@
+.modal-color{
+    background-color: #a40000;
+}
+
+.modal-button{
+    background-color: #e00000;
+    color:white;
+}
+
+#mySidenav a {
+    position: absolute;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 200px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #a8a6a7;
+  }
+  
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #a40000;
+    color: #ffffff;
+  }
+  
+  .topnav a.active {
+    background-color: #a40000;
+    color: #686868;
+  }
+  
+  .btnc {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    }
+
+    .margintop{
+        margin-top: 20%;
+    }
+
+    .navbar-custom {
+        background-color: #a40000;
+    }
+    .navbar {
+        background-color: #a40000;
+    }
+    /* change the brand and text color */
+    .navbar-custom .navbar-brand,
+    .navbar-custom .navbar-text {
+        color: rgba(255,255,255,.8);
+    }
+    /* change the link color */
+    .navbar-custom .navbar-nav .nav-link {
+        color: rgba(255,255,255,.5);
+    }
+    /* change the color of active or hovered links */
+    .navbar-custom .nav-item.active .nav-link,
+    .navbar-custom .nav-item:hover .nav-link {
+        color: #ffffff;
+    }
+

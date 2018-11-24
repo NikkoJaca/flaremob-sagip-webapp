@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FlareMob: Sagip - Officials Admin Panel">
+    <meta name="author" content="FlareMob Team - TIP QC">
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyDTUm6z0pdodJD7ATQxl99rowga2pij-po",
+				authDomain: "flaremob-b55d8.firebaseapp.com",
+				databaseURL: "https://flaremob-b55d8.firebaseio.com",
+				projectId: "flaremob-b55d8", //893ae",
+				storageBucket: "flaremob-b55d8.appspot.com",
+				messagingSenderId: "27793888698"//431077212235"
+				};
+				firebase.initializeApp(config);
+        </script> -->
+        
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAsREyRj2u1GDG1sKF1gyAE476u5pp2PxQ",
+            authDomain: "flaremob-b55d8.firebaseapp.com",
+            databaseURL: "https://flaremob-b55d8.firebaseio.com",
+            projectId: "flaremob-b55d8",
+            storageBucket: "flaremob-b55d8.appspot.com",
+            messagingSenderId: "27793888698"
+          };
+          firebase.initializeApp(config);
+        </script>
+    <link rel="icon" type="image/png" href="images/icons/alisto.ico" />
+    <title>Sagip: Delivery Management</title>
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/dm7prototype_css.css" rel="stylesheet" type="text/css">	
+    <script src="js/dm7prototype_js.js"></script>
+    <script src="js/CharRestrictions_js.js"></script>
+    <!-- <script src="firebase-notification-handler.js"></script> -->
+</head>
+
+<body onload="stepTabs.style.pointerEvents='none';PreLoad();" class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="index.html">FlareMob: Sagip - Officials Admin Panel</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" style="overflow-y: auto" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <a class="nav-link" href="index.html">
+                        <i class="fa fa-fw fa-dashboard"></i>
+                        <span class="nav-link-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
+                    <a class="nav-link" href="flood.html">
+                        <i class="fa fa-fw fa-map"></i>
+                        <span class="nav-link-text">Flood Monitoring</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation">
+                    <a class="nav-link" href="pledging.html">
+                        <i class="fa fa-fw fa-calculator"></i>
+                        <span class="nav-link-text">Donation</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-database"></i>
+                        <span class="nav-link-text">Donation Monitoring</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                        <li>
+                            <a href="donationman.html">Donation Items</a>
+                        </li>
+                        <li>
+                            <a href="donationcash.html">Donation Cash</a>
+                        </li>
+                        <li>
+                            <a href="updateforluquidation.html">Liquidation</a>
+                        </li>
+                        <li>
+                            <a href="Inventory.html">Inventory</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-pencil"></i>
+                        <span class="nav-link-text">Registration</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents1">
+                        <li>
+                            <a href="registrationadmin.html">Registration for Admin</a>
+                        </li>
+                        <li>
+                            <a href="DriverDetailsManagement.html">Registration for Drivers</a>
+                        </li>
+                        <li>
+                            <a href="registrationevachead.html">Registration for Evacuation Heads</a>
+                        </li>
+                        <li>
+                            <a href="TargetLocationDetailsManagement.html">Registration for New Evacuation Center</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                    <a class="nav-link" data-toggle="modal" data-target="#evac_needs">
+                        <i class="fa fa-fw fa-exclamation-triangle"></i>
+                        <span class="nav-link-text">Evacuation Center Needs</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                    <a class="nav-link" href="DeliveryMonitoring.html">
+                        <i class="fa fa-fw fa-car"></i>
+                        <span class="nav-link-text">Delivery Monitoring</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                    <a class="nav-link" href="dm7prototype.html">
+                        <i class="fa fa-fw fa-car"></i>
+                        <span class="nav-link-text">Delivery Management</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Evacuees Allocation">
+                    <a class="nav-link" href="evacfamcount2.html">
+                        <i class="fa fa-fw fa-map"></i>
+                        <span class="nav-link-text">Evacuees Allocation</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-address-card"></i>
+                        <span class="nav-link-text">User Management</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents2">
+                        <li>
+                            <a href="AdminUserManagement.html">Admin User Management</a>
+                        </li>
+                        <li>
+                            <a href="EvacHeadUserManagement.html">Evacuation Head User Management</a>
+                        </li>
+                        <li>
+                            <a href="UserManagement.html">User Management</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                        <span id="deliveryNotifBadge" class="badge badge-pill badge-warning"></span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-envelope"></i>
+                        <span class="d-lg-none">Messages
+                            <span class="badge badge-pill badge-primary">4 New</span>
+                        </span>
+                        <span class="indicator text-primary d-none d-lg-block">
+                            <i class="fa fa-fw fa-circle"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                        <h6 class="dropdown-header">New Messages:</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>Cap. Randy Leal</strong>
+                            <span class="small float-right text-muted">5:43 PM</span>
+                            <div class="dropdown-message small">
+                                Please inform Bagong Silang residents to evacuate as soon as possible. Thank you.
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>Dave David</strong>
+                            <span class="small float-right text-muted">4:37 PM</span>
+                            <div class="dropdown-message small">
+                                Marikina alert level has been raised to 2nd Alert due to critical water level of Marikina River.
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>Nikko Jaca</strong>
+                            <span class="small float-right text-muted">4:00 PM</span>
+                            <div class="dropdown-message small">
+                                Flood prediction testing has been initiated. Please prepare.
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item small" href="#">View all messages</a>
+                    </div>
+                </li> -->
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-bell"></i>
+                        <span class="d-lg-none">Alerts
+                            <span class="badge badge-pill badge-warning">6 New</span>
+                        </span>
+                        <span class="indicator text-warning d-none d-lg-block">
+                            <i class="fa fa-fw fa-circle"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+                        <h6 class="dropdown-header">New Alerts:</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-black">
+                                <strong>
+                                    <i class="fa fa-bell fa-fw"></i>Marikina DRRMO</strong>
+                            </span>
+                            <span class="small float-right text-muted">4:37 PM</span>
+                            <div class="dropdown-message small">Marikina Alert Level has been raised to 2nd (Evacuation)</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-black">
+                                <strong>
+                                    <i class="fa fa-bell fa-fw"></i>ALISTO Weather Forecast</strong>
+                            </span>
+                            <span class="small float-right text-muted">4:31 PM</span>
+                            <div class="dropdown-message small">Weather shows a 4-hour continuous heavy rain.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-danger">
+                                <strong>
+                                    <i class="fa fa-exclamation-circle fa-fw"></i>ALISTO Flood Prediction</strong>
+                            </span>
+                            <span class="small float-right text-muted">4:22 AM</span>
+                            <div class="dropdown-message small">Bagong Silang is critically flooded due to heavy rain.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item small" href="#">View all alerts</a>
+                    </div>
+                </li> -->
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0 mr-lg-2">
+
+                        <!-- Refer to clock.js -->
+                        <div id="clock" class="navbar-text clock">Time is loading...</div>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Admin Panel</a>
+                </li>
+                <li class="breadcrumb-item active">Delivery Management</li>
+            </ol>
+
+            <div class="card mb-3">
+                <div class="card-header">
+                        <!--<iframe style="width:100%;height:1000px;" src="http://localhost/Flaremob_Firebase/DeliveryManagement2.html"></iframe>-->
+                    <i class="fa fa-table"></i> Delivery Management</div>
+                <div class="card-body">
+                        <!--<iframe style="width:100%;height:1500px;" src="http://localhost/Flaremob_Firebase/DeliveryManagement2.html"></iframe>-->
+                </div>
+                <div class="enclosure">
+                    <div id="map" class="map"></div>
+                    <div class="mapBar"></div>
+                    
+                    <div class="tabmain"><!--Main tab links -->
+                        <span id="lnkCreate" class="maintablinks" onclick="DoMainTab1(0);">Deliver an Item</span>
+                        <span id="lnkModify" class="maintablinks" onclick="DoMainTab2(0);">Modify a Delivery</span>
+                        <span id="lnkCancel" class="maintablinks" onclick="DoMainTab3(0);">Cancel a Delivery</span>
+                    </div>
+                
+                    <div class="tab" id="stepTabs"><!--Tab links -->
+                        <span id="lnkStep1" class="tablinks" onclick="openTab(event,'Step1')">Step 1</span>
+                        <span id="lnkStep2" class="tablinks" onclick="openTab(event,'Step2');LoadStep2(0);">Step 2</span>
+                        <span id="lnkStep3" class="tablinks" onclick="openTab(event,'Step3')">Step 3</span>
+                        <span id="lnkStep31" class="tablinks" onclick="openTab(event,'Step31');LoadStep31(1);">Step 4</span>
+                        <span id="lnkStep4" class="tablinks" onclick="openTab(event,'Step4')">Step 5</span>
+                    </div>
+                    <div id="Step1" class="tabcontent"> <!-- style="height:1000px;"> -->
+                        <!--Tab description -->
+                        <div class="headerparinline divbgcolor"><!-- <div class="divbgcolor"> -->
+                            <h2 class="h2C">Step 1</h2><p id="Step1Desc" class="parC">i dont play games mah niggah</p>
+                        </div><!-- </div> -->
+                
+                        <div id="Step1ModifyADelivery">
+                            <div style="background-color:#9b9d9f;padding-top:7px;padding-bottom:3px;">
+                                <p id="Step1DatePickerDesc" style="font-weight:normal;color:#fff;">Specify the pickup date of the donated item:
+                                    <form id="idFrmDISearch" method="GET" style="display:inline-block;">
+                                        <input type="date" id="idSlcDate" onchange="idTxtStrDate.value=this.value;" />
+                                        <input type="text" id="idTxtStrDate" class="hide" />
+                                        <input type="text" id="txtActionWhichSQL" class="hide" />
+                                        <span id="txtDlvCurrentStat" class="hide"></span>
+                                    </form>
+                                    <button name="SlcDateSearch" id="SlcDateSearch" onclick="SearchStep1(1);">Search</button>
+                                </p>
+                            </div>
+
+                            <div style="height:400px;width:1000px;overflow-x:scroll;overflow-y:scroll;">
+                                <table class="table1" id="tblItemList" style="white-space:nowrap;">
+                                    <thead>
+                                        <tr><!--list of donated items that needs to be fetch/delivered-->
+                                            <th><p class="th">Donor</p></th><!--donorId should be a join-->
+                                            <th><p class="th">Item status</p></th><!--itemStatus mask -->
+                                            <th><p class="th">Category</p></th> <!--itemCat / itemSubCat-->
+                                            <th><p class="th">Description</p></th><!--itemDesc-->
+                                            <th><p class="th">Volume</p></th><!--itemQty itemUnit-->
+                                            <th style="white-space:nowrap;"><p class="th">Pledge date</p></th><!--itemPleadgeDate-->
+                                            <th style="white-space:nowrap;"><p class="th">Pickup location</p></th><!--srcLoc-->
+                                            <th style="white-space:nowrap;"><p class="th">Pickup date</p></th><!--delPick can be null-->
+                                            <th style="white-space:nowrap;"><p class="th">Dropoff location</p></th><!--tLocId join-->
+                                            <th style="white-space:nowrap;"><p class="th">Dropoff date</p></th><!--delDrop can be null-->
+                                            <th style="white-space:nowrap;"><p class="th">Delivery status</p></th><!--delStatus mask-->
+                                            <th><p class="th">Vehicle</p></th><!--vhcId mask, can be null-->
+                                            <!--donorId-->
+                                            <!--delStatus-->
+                                            <!--imageUrl-->
+                                            <!--itemCategory-->
+                                            <!--itemQty-->
+                                            <!--itemStatus-->
+                                            <!--itemSubCategory-->
+                                            <!--itemUnit-->
+                                            <!--srcLat-->
+                                            <!--srcLng-->
+                                            <!--tLocId-->
+                                            <!--vhcId-->
+                                            <!--key-->
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tBodyItemList">
+                                        <!-- <tr><td>hello !!</td><td>hello !!</td><td>hello !!</td></tr> -->
+                                        <!-- <tr onclick="alert((rowIndex-rowIndex).focus());"><td colspan="3">Back to top</td></tr> -->
+                                    </tbody>
+                                </table>
+                             
+                            </div>
+                
+                            <!--Step1 input fields -->
+                            <table class="table3" style="max-width:950px;width:100%;">
+                                <tr>
+                                    <td colspan="4" style="text-align:left;width:950px;">
+                                        <h2 style="opacity:0.7;padding:10px 0px 20px 30px;">Donated item details</h2>
+                                    </td>
+                                </tr>
+                                <form id="frmStep1ModifyFields">
+                                <tr>
+                                    <td style="width:150px;">
+                                        <label for="txtStep1ModifyItemCategory">Item Category</label>
+                                    </td>
+                                    <td style="width:250px;">
+                                        <select id="txtStep1ModifyItemCategory" onchange="Step1DisplayItemSubCategory(this.value,txtStep1ModifyItemSubCategory);" class="slcExtended">
+                                            <option value=''>Choose an item category</option>
+                                            <option value="Clothes">Clothes</option>
+                                            <option value="Food">Food</option>
+                                            <option value="Medicine">Medicine</option>
+                                            <option value="Toiletries">Toiletries</option>
+                                            <option value="Water">Water</option>
+                                            <option value="Others">Others</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="2" rowspan="8" style="width:550px;">
+                                        <img id="DonatedItemImage" src="img/present-3-512_2.png" style="max-width:550px;max-height:300px;width:100%;height:100%;object-fit:contain;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:150px;">
+                                        <label for="txtStep1ModifyItemSubCategory">Item Sub-category</label>
+                                    </td>
+                                    <td style="width:250px;">
+                                        <select id="txtStep1ModifyItemSubCategory" onchange="Step1DisplayItemUnit(this.value,txtStep1ModifyItemUnit);" class="slcExtended">
+                                            <option value="">Choose an item sub category</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:150px;">
+                                        <label for="txtStep1ModifyItemDescription">Item Description</label>
+                                    </td>
+                                    <td style="width:250px;">
+                                        <input type="text" id="txtStep1ModifyItemDescription" onkeyup="CharRestriction(7,this);" placeholder=" Item description" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:150px;">
+                                        <label for="txtStep1ModifyItemUnit">Item Unit</label>
+                                    </td>
+                                    <td style="width:250px;">
+                                        <select id="txtStep1ModifyItemUnit" class="slcExtended">
+                                            <option value="">Choose an item unit</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:150px;">
+                                        <label for="txtStep1ModifyItemQty">Item Qty</label>
+                                    </td>
+                                    <td style="width:250px;">
+                                        <input type="text" id="txtStep1ModifyItemQty" onkeyup="CharRestriction(8,this);" placeholder=" Item quantity" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:150px;">
+                                        <label for="idSlcItemStat">Item Status</label>
+                                    </td>
+                                    <td style="width:250px;">
+                                        <select id="idSlcItemStat" class="slcExtended">
+                                            <option value=''>Choose an item status</option>
+                                            <option value=0>Delivered by the barangay</option>
+                                            <option value=1>Delivered by the donor</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:150px;">
+                                        <label for="idSlcDlvStat">Delivery Status</label>
+                                    </td>
+                                    <td style="width:250px;">
+                                        <select id="idSlcDlvStat" class="slcExtended">
+                                            <option value=''>Choose a delivery status</option>
+                                            <option value=0>Pick up</option>
+                                            <option value=1>Drop off</option>
+                                            <option value=2>Cancel</option>
+                                            <option value=3>On going</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:150px;">
+                                        <label for="txtStep1ModifyItemPledgeDate">Item Pledge Date</label>
+                                    </td>
+                                    <td style="width:250px;">
+                                        <input type="text" id="txtStep1ModifyItemPledgeDate" placeholder=" Item pledge date" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:150px;">
+                                        <label for="txtStep1ModifyDonorId">Donor ID</label>
+                                    </td>
+                                    <td style="width:250px;">
+                                        <input type="text" id="txtStep1ModifyDonorId" placeholder=" Donor ID" readonly />
+                                    </td>
+                                    <td style="width:90px;padding-left:10px;">
+                                        <input type="file" id="ImageOpenModify" onchange="openImage(event,this,DonatedItemImage,txtStep1ModifyImageUrl);" accept=".jpg,.jpeg,.JPG,.JPEG" />
+                                    </td>
+                                    <td style="width:300px;text-align:left;">
+                                        <input type="text" id="txtStep1ModifyImageUrl" placeholder=" No file selected" readonly />
+                                    </td>
+                                </tr>
+                                </form>                     
+                                
+                            </table>
+                            <input type="text" id="txtStep1ModifyKey" class="hide" />
+                        </div>
+
+                        <div id="Step1CreateADelivery" class="hide">
+                                <table class="table3" style="max-width:950px;width:100%;">
+                                        <tr>
+                                            <td colspan="4" style="text-align:left;width:950px;">
+                                                <h2 style="opacity:0.7;padding:10px 0px 20px 30px;">Donation details</h2>
+                                            </td>
+                                        </tr>
+                                        <form id="frmStep1Temp">
+                                        <tr>
+                                            <td style="width:150px;">
+                                                <label for="txtStep1ItemCategory">Item Category</label>
+                                            </td>
+                                            <td style="width:250px;">
+                                                <select id="txtStep1ItemCategory" onchange="Step1DisplayItemSubCategory(this.value,txtStep1ItemSubCategory);" class="slcExtended">
+                                                    <option value=''>Choose an item category</option>
+                                                    <option value="Clothes">Clothes</option>
+                                                    <option value="Food">Food</option>
+                                                    <option value="Medicine">Medicine</option>
+                                                    <option value="Toiletries">Toiletries</option>
+                                                    <option value="Water">Water</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                            </td>
+                                            <td colspan="2" rowspan="6" style="width:550px;">
+                                                <img id="VehicleImg" src="img/present-3-512_2.png" style="max-width:450px;max-height:250px;width:100%;height:100%;object-fit:contain;" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:150px;">
+                                                <label for="txtStep1ItemSubCategory">Item Sub-category</label>
+                                            </td>
+                                            <td style="width:250px;">
+                                                <select id="txtStep1ItemSubCategory" onchange="Step1DisplayItemUnit(this.value,txtStep1ItemUnit);" class="slcExtended">
+                                                    <option value="">Choose an item sub category</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:150px;">
+                                                <label for="txtStep1ItemDescription">Item Description</label>
+                                            </td>
+                                            <td style="width:250px;">
+                                                <input type="text" id="txtStep1ItemDescription" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:150px;">
+                                                <label for="txtStep1ItemUnit">Item Unit</label>
+                                            </td>
+                                            <td style="width:250px;">
+                                                <select id="txtStep1ItemUnit" class="slcExtended">
+                                                    <option value="">Choose an item unit</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:150px;">
+                                                <label for="txtStep1ItemQty">Item Qty</label>
+                                            </td>
+                                            <td style="width:250px;">
+                                                <input type="text" id="txtStep1ItemQty" />
+                                            </td>
+                                        </tr>
+                                        <!-- <tr class="hide">
+                                            <td style="width:150px;">
+                                                <label for="idSlcItemStat">Item Status</label>
+                                            </td>
+                                            <td style="width:250px;">
+                                                <select id="idSlcItemStat" class="slcExtended">
+                                                    <option value=''>Choose an item status</option>
+                                                    <option value=0>Delivered by the barangay</option>
+                                                    <option value=1>Delivered by the donor</option>
+                                                </select>
+                                            </td>
+                                        </tr> -->
+                                        <!-- <tr>
+                                            <td style="width:150px;">
+                                                <label for="idSlcDlvStat">Delivery Status</label>
+                                            </td>
+                                            <td style="width:250px;">
+                                                <select id="idSlcDlvStat" class="slcExtended">
+                                                    <option value=''>Choose a delivery status</option>
+                                                    <option value=0>Pick up</option>
+                                                    <option value=1>Drop off</option>
+                                                    <option value=2>Cancel</option>
+                                                    <option value=3>On going</option>
+                                                </select>
+                                            </td>
+                                        </tr> -->
+                                        <tr>
+                                            <td style="width:150px;">
+                                                <label for="txtStep1ItemPledgeDate">Item Pledge Date</label>
+                                            </td>
+                                            <td style="width:250px;">
+                                                <input type="text" id="txtStep1ItemPledgeDate" readonly />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:150px;">
+                                                <button type="button" onclick="ModalDonorLogin.style.display='block';txtStep1DonorLoginEMail.focus();">Donor ID</button>
+                                                <!-- <label for="txtStep1DonorId">Donor ID</label> -->
+                                            </td>
+                                            <td style="width:250px;">
+                                                <input type="text" id="txtStep1DonorId" readonly />
+                                            </td>
+                                            <td style="width:70px;padding-left:30px;">
+                                                <input type="file" id="ImageOpen" onchange="openImage(event,this,VehicleImg,txtStep1ImageUrl);" accept=".jpg,.jpeg,.JPG,.JPEG" />
+                                            </td>
+                                            <td style="width:330px;">
+                                                <input type="text" id="txtStep1ImageUrl" />
+                                            </td>
+                                        </tr>
+
+                                        <input type="text" id="txtStep1ItemStatus" value="0" class="hide" />
+                                        <input type="text" id="txtStep1DelStatus" value="0" class="hide" />
+
+                                        </form>                     
+                                        
+                                    </table>
+
+                            <div id="ModalDonorLogin" class="ModalBG"><!--  onclick="this.style.display='none';"> -->
+                                <div id="ModalDonorLoginContainer" class="ModalContainer">
+                                    <h4 id="ModalDonorLoginTitle" style="opacity:0.7;padding:10px 0px 20px 30px;">Identify the donor</h4>
+                                    <table style="margin:auto;">
+                                        <!-- <tr><td colspan="2"></td></tr> -->
+                                    <tr>
+                                        <td style="text-align:right;width:40px;padding-right:15px;"><label for="txtStep1DonorLoginEMail">E-mail</label></td>
+                                        <td style="padding:0px 10px 15px 0px;width:70px;"><input type="text" id="txtStep1DonorLoginEMail" placeholder="E-mail address" required /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right;width:40px;padding-right:15px;"><label for="txtStep1DonorLoginPassword">Password</label></td>
+                                        <td style="padding:0px 10px 30px 0px;"><input type="password" id="txtStep1DonorLoginPassword" required /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align:center">
+                                            <button type="button" onclick="ModalDonorLogin.style.display='none';">Cancel</button>
+                                            <button type="button" onclick="DonorLogin(txtStep1DonorLoginEMail,txtStep1DonorLoginPassword)">Login</button>
+                                        </td>
+                                    </tr>
+                                    
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        
+                        
+                        <div id="Step1DeliverAnItem">
+                            <div style="height:250px;overflow-y:scroll;">
+                                <table class="table1" id="tblStep1DIItemList">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="3" style="text-align:left;">
+                                                <p id="Step1DatePickerDesc" style="font-weight:normal;">Select the year and the month of the donated item was pledged:</p>
+                                                <form id="frmStep1DISearch" method="GET" style="display:inline-block;">
+                                                    <input type="month" id="slcStep1DIDate" onchange="txtStep1DIStrDate.value=this.value;" />
+                                                    <input type="text" id="txtStep1DIStrDate" class="hide" />
+                                                    <input type="text" id="txtStep1DIActionWhichSQL" class="hide" />
+                                                    <input type="text" class="hide" id="txtStep1DIDonorID" />
+                                                    <input type="text" class="hide" id="txtStep1DIImageURL" />
+                                                    <input type="text" class="hide" id="txtStep1DIItemCategory" />
+                                                    <input type="text" class="hide" id="txtStep1DIItemDescription" />
+                                                    <input type="text" class="hide" id="txtStep1DIItemPledgeDate" />
+                                                    <input type="text" class="hide" id="txtStep1DIItemQty" />
+                                                    <input type="text" class="hide" id="txtStep1DIItemStatus" />
+                                                    <input type="text" class="hide" id="txtStep1DIItemSubCategory" />
+                                                    <input type="text" class="hide" id="txtStep1DIItemUnit" />
+                                                    <span id="txtStep1DIDlvCurrentStat" class="hide"></span>
+                                                </form>
+                                                <button id="btnStep1DIDateSearch" onclick="SearchStep1(0);">Search</button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th><p class="th">Item ID</p></th>
+                                            <th><p class="th">Item</p></th>
+                                            <th><p class="th">Description</p></th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody id="tBodyStep1DIItemList"></tbody>
+                                    <!-- <tr><td>sample item ID</td><td>sample item</td><td>sample description</td></tr> -->
+                                </table>
+                            </div>
+                
+                            <table class="table2">
+                                <tr><th>Item ID:</th><th>Selected Item:</th><th>Delivery status:</th></tr>
+                                <tr><form id="frmStep1DI">
+                                    <td><textarea class="textExtended" id="txtStep1DIItemID" readonly></textarea></td>
+                                    <td><textarea type="text" class="textExtended" id="idTxtSelectedItem" readonly></textarea></td>
+                                    <td><select id="slcStep1DIDlvStat" class="slcExtended">
+                                        <option value=''>Choose a delivery status</option>
+                                        <option value=0>Pick up</option>
+                                        <option value=1>Drop off</option>
+                                        <option value=2>Cancel</option>
+                                        <option value=3>On going</option>
+                                        </select></form>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                        <div id="divMsgWrapperStep1" class="FloatingMsgBox" style="background-color:#c1ffc6;cursor:pointer;" onclick="LoadDoMainTab();">
+                            <span id="spanResultStep1"></span>
+                            <!-- <span class="MsgXBtn" onclick="LoadDoMainTab();">&times;</span> -->
+                        </div>
+                        <!--<button onclick="DropOffUISettings(1);spanResultStep1.innerHTML='The Item successfully dropped off.';">try</button>-->
+                        <div id="divTab2Step1" class="tab2" style="left:852px;"><!--Step1 options -->
+                            <span class="tablinks" onclick="ResetStep1()">Reset</span>
+                            <span class="tablinks" onclick="ValidateStep1(0)">Next</span>
+                        </div>
+                    </div><!--///////////////////////////// end of first tab /////////////////////////////////////-->
+                
+                    <div id="Step2" class="tabcontent">
+                        <div class="headerparinline"><div class="divbgcolor">
+                            <h2 class="h2C">Step 2</h2><p class="parC">Set the date and time when to pick up and when to drop off.</p>
+                        </div></div>
+                        <table class="table2">
+                            <tr>
+                                <th style="padding-left:0px;text-align:center;">
+                                    <img src="img/delivery-pick.png" title="Pick up date/time" />
+                                </th>
+                                <th style="padding-left:0px;text-align:center;">
+                                    <img src="img/delivery-drop.png" title="Drop off date/time" />
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:bold;text-align:center;">
+                                    Date/Time Pick
+                                </td>
+                                <td style="font-weight:bold;text-align:center;">
+                                    Date/Time Drop
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="date" id="idDPick" />
+                                    <select id="Step2SlcTPick"></select><br /><br />
+                                    <!-- <input type="time" id="idTPick" /><br><br> -->
+                                    <span style="color:#a7a7a7;">Set the Date and the Time when to pick up the donated item</span>
+                                </td>
+                                <td>
+                                    <input type="date" id="idDDrop" />
+                                    <select id="Step2SlcTDrop"></select><br /><br />
+                                    <!-- <input type="time" id="idTDrop" /><br><br> -->
+                                    <span style="color:#a7a7a7;">Set the Date and the Time when to drop off the donated item</span>
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="text" id="idTxtDateRetainer" class="hide" />
+                        <input type="text" id="idTxtValidateRetainer" class="hide" />
+                        <input type="text" id="txtDateNowRetainer" class="hide">
+                        <div class="tab2">
+                            <span class="tablinks" onclick="ResetStep2()">Reset</span>
+                            <span class="tablinks" onclick="openTab(event,'Step1');lnkStep1.click();">Back</span>
+                            <span class="tablinks" onclick="ValidateStep2(0)">Next</span>
+                        </div>
+                    </div><!--///////////////////////////// end of second tab /////////////////////////////////////-->
+                
+                    <div id="Step3" class="tabcontent">
+                        <div class="headerparinline"><div class="divbgcolor">
+                            <h2 class="h2C">Step 3</h2><p class="parC">Click a place marker in the map to point the pick up location.</p>
+                        </div></div>
+                
+                        <!--this input text will be placed inside the map-->
+                        <input type="text" id="pacInput" class="control" placeholder="Type an address" />
+                
+                        <table style="max-width:1000px;width:100%;">
+                            <tr>
+                                <td style="text-align:left;">
+                                    <h2 style="opacity:0.7;padding:10px 0px 20px 30px;">Location details</h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:50px;width:40%;vertical-align:top">
+                                    <br />
+                                    <table>
+                                        <form id="frmStep3">
+                                        <tr><td class="TxtLabel">Source Location: </td><td><textarea id="idTxtSourceLoc" style="height:70px;width:400px;" readonly></textarea><br><br></td></tr>
+                                        <tr><td class="TxtLabel">Latitude: </td><td><input type="text" id="idTxtSLLat" style="width:200px;" readonly /></td></tr>
+                                        <tr><td class="TxtLabel">Longitude: </td><td><input type="text" id="idTxtSLLng" style="width:200px;" readonly /></td></tr>
+                                        </form>
+                                    </table>
+                                </td>
+                                
+                                <!-- <td style="text-align:center;width:60%;">
+                                <h2 style="text-align:left;opacity:0.7;padding-left:30px;">Vehicle details</h2>
+                                    Choose a vehicle to deliver:<br>
+                                    <select id="idSlcVID" class="slcExtended">
+                                        <option value=''>Choose a vehicle</option>
+                                    </select></form>
+                                    <br><br>
+                                    
+                                    <div style="margin:auto;width:90%;height:200px;overflow-y:scroll;">
+                                    <table class="table1" style="width:100%">
+                                        <tr><th colspan="3">List of vehicles on delivery</th></tr>
+                                    <tr><th>Plate No</th><th>Delivery Start</th><th>Delivery End</th></tr>
+
+                                    </table></div>
+                                </td> -->
+                            </tr>
+                        </table>
+                        
+                        <div class="tab2">
+                            <span class="tablinks" onclick="ResetStep3();">Reset</span>
+                            <span class="tablinks" onclick="openTab(event,'Step2');lnkStep2.click();">Back</span>
+                            <span class="tablinks" onclick="ValidateStep3(0)">Next</span>
+                        </div>
+                    </div><!--///////////////////////////// end of third tab /////////////////////////////////////-->
+
+                    <div id="Step31" class="tabcontent" style="height:670px;">
+                        <div class="headerparinline divbgcolor">
+                            <h2 class="h2C">Step 4</h2><p class="parC">Choose a vehicle to deliver. Have a look on the displayed information in the table below.</p>
+                        </div>
+                        <h2 style="text-align:left;opacity:0.7;padding:10px 0px 20px 30px;">Vehicle delivery event details</h2>
+                        <table>
+                            <tr>
+                                <td style="text-align:left;width:60%;padding-left:30px;">
+                                    <label for="idSlcVID" class="TxtLabel">Choose a vehicle to deliver:</label>
+                                </td>
+                                <!-- <td></td> -->
+                                <td style="text-align:left;padding-left:100px;">
+                                    <label for="Step31PickupDate" class="TxtLabel">Pickup date:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:30px;">
+                                    <div style="display:inline-block">
+                                        <select id="idSlcVID" class="slcExtended" onchange="" style="width:100%;padding-right:0px">
+                                            <option value=''>Choose a vehicle</option>
+                                        </select>
+                                    </div>
+                                <!-- <td style="text-align:left;"> -->
+                                    <button id="btnStep31Search" onclick="Step31LookForDeliveryEvents();" style="vertical-align:middle;">Search</button>
+                                <!-- </td> -->
+                                    <input type="text" id="Step31HoldSlcVIDValue" class="hide" />
+                                    <input type="text" id="Step31CheckForCollisionValue" class="hide" />
+                                    <input type="text" id="Step31DTPickRetainer" class="hide" />
+                                    <input type="text" id="Step31DTDropRetainer" class="hide" />
+                                    <!-- <input type="text" id="Step31CheckForRowOverlapValue" class="" />
+                                    <textarea id="txAreaTest" class=""></textarea> -->
+                                </td>
+                                <td style="padding-left:100px;">
+                                    <input type="date" id="Step31PickupDate" />
+                                </td>
+                            </tr>
+                        </table>
+
+                        <br />
+
+                        <div style="margin:auto;width:94%;height:370px;overflow-y:scroll;">
+                            <table id="Step31TblEventDelivery2" class="table1" style="width:100%;">
+                                <thead id="Step31THead2">
+                                    <tr><th id="Step31THeadRow12" colspan="4">List of delivery events</th></tr>
+                                    <tr id="Step31THeadRow22">
+                                        <th style="width:30%;min-width:100px;max-width:100px;">Pickup location</th>
+                                        <th style="width:30%;min-width:100px;max-width:100px;">Drop off location</th>
+                                        <th style="width:auto;">Pickup date & time</th>
+                                        <th style="width:auto;">Drop off date & time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="Step31TBody2"></tbody>
+                            </table>
+                            <table id="Step31TblEventDelivery" class="table1 hide" style="width:100%;">
+                                <thead id="Step31THead">
+                                    <tr><th id="Step31THeadRow1" colspan="0">List of delivery events</th></tr>
+                                    <tr id="Step31THeadRow2"><th colspan="2" style="width:60px;min-width:60px;max-width:60px;">Time</th></tr>
+                                </thead>
+                                <tbody id="Step31TBody">
+                                    <!-- <tr id="Step310800"><td><input type="checkbox" id="chkStep310800" />08:00</td></tr>
+                                    <tr id="Step310830"><td><input type="checkbox" id="chkStep310830" />08:30</td></tr>
+                                    <tr id="Step310900"><td><input type="checkbox" id="chkStep310900" />09:00</td></tr>
+                                    <tr id="Step310930"><td><input type="checkbox" id="chkStep310930" />09:30</td></tr>
+                                    <tr id="Step311000"><td><input type="checkbox" id="chkStep311000" />10:00</td></tr>
+                                    <tr id="Step311030"><td><input type="checkbox" id="chkStep311030" />10:30</td></tr>
+                                    <tr id="Step311100"><td><input type="checkbox" id="chkStep311100" />11:00</td></tr>
+                                    <tr id="Step311130"><td><input type="checkbox" id="chkStep311130" />11:30</td></tr>
+                                    <tr id="Step311200"><td><input type="checkbox" id="chkStep311200" />12:00</td></tr>
+                                    <tr id="Step311230"><td><input type="checkbox" id="chkStep311230" />12:30</td></tr>
+                                    <tr id="Step311300"><td><input type="checkbox" id="chkStep311300" />13:00</td></tr>
+                                    <tr id="Step311330"><td><input type="checkbox" id="chkStep311330" />13:30</td></tr>
+                                    <tr id="Step311400"><td><input type="checkbox" id="chkStep311400" />14:00</td></tr>
+                                    <tr id="Step311430"><td><input type="checkbox" id="chkStep311430" />14:30</td></tr>
+                                    <tr id="Step311500"><td><input type="checkbox" id="chkStep311500" />15:00</td></tr>
+                                    <tr id="Step311530"><td><input type="checkbox" id="chkStep311530" />15:30</td></tr>
+                                    <tr id="Step311600"><td><input type="checkbox" id="chkStep311600" />16:00</td></tr>
+                                    <tr id="Step311630"><td><input type="checkbox" id="chkStep311630" />16:30</td></tr>
+                                    <tr id="Step311700"><td><input type="checkbox" id="chkStep311700" />17:00</td></tr> -->
+                                    <!-- <tr id="Step310800"><td>08:00</td></tr>
+                                    <tr id="Step310830"><td>08:30</td></tr>
+                                    <tr id="Step310900"><td>09:00</td></tr>
+                                    <tr id="Step310930"><td>09:30</td></tr>
+                                    <tr id="Step311000"><td>10:00</td></tr>
+                                    <tr id="Step311030"><td>10:30</td></tr>
+                                    <tr id="Step311100"><td>11:00</td></tr>
+                                    <tr id="Step311130"><td>11:30</td></tr>
+                                    <tr id="Step311200"><td>12:00</td></tr>
+                                    <tr id="Step311230"><td>12:30</td></tr>
+                                    <tr id="Step311300"><td>13:00</td></tr>
+                                    <tr id="Step311330"><td>13:30</td></tr>
+                                    <tr id="Step311400"><td>14:00</td></tr>
+                                    <tr id="Step311430"><td>14:30</td></tr>
+                                    <tr id="Step311500"><td>15:00</td></tr>
+                                    <tr id="Step311530"><td>15:30</td></tr>
+                                    <tr id="Step311600"><td>16:00</td></tr>
+                                    <tr id="Step311630"><td>16:30</td></tr>
+                                    <tr id="Step311700"><td>17:00</td></tr> -->
+                                    <tr id="Step310000"><td>00:00</td></tr>
+                                    <tr id="Step310100"><td>01:00</td></tr>
+                                    <tr id="Step310200"><td>02:00</td></tr>
+                                    <tr id="Step310300"><td>03:00</td></tr>
+                                    <tr id="Step310400"><td>04:00</td></tr>
+                                    <tr id="Step310500"><td>05:00</td></tr>
+                                    <tr id="Step310600"><td>06:00</td></tr>
+                                    <tr id="Step310700"><td>07:00</td></tr>
+                                    <tr id="Step310800"><td>08:00</td></tr>
+                                    <tr id="Step310900"><td>09:00</td></tr>
+                                    <tr id="Step311000"><td>10:00</td></tr>
+                                    <tr id="Step311100"><td>11:00</td></tr>
+                                    <tr id="Step311200"><td>12:00</td></tr>
+                                    <tr id="Step311300"><td>13:00</td></tr>
+                                    <tr id="Step311400"><td>14:00</td></tr>
+                                    <tr id="Step311500"><td>15:00</td></tr>
+                                    <tr id="Step311600"><td>16:00</td></tr>
+                                    <tr id="Step311700"><td>17:00</td></tr>
+                                    <tr id="Step311800"><td>18:00</td></tr>
+                                    <tr id="Step311900"><td>19:00</td></tr>
+                                    <tr id="Step312000"><td>20:00</td></tr>
+                                    <tr id="Step312100"><td>21:00</td></tr>
+                                    <tr id="Step312200"><td>22:00</td></tr>
+                                    <tr id="Step312300"><td>23:00</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="tab2">
+                            <span class="tablinks" onclick="ResetStep31();">Reset</span>
+                            <span class="tablinks" onclick="openTab(event,'Step3');lnkStep3.click();">Back</span>
+                            <span class="tablinks" onclick="ValidateStep31(0)">Next</span>
+                        </div>
+                    </div><!--///////////////////////////// end of 31 tab /////////////////////////////////////-->
+
+                    <div id="Step4" class="tabcontent">
+                        <div class="headerparinline"><div class="divbgcolor">
+                        <h2 class="h2C">Step 5</h2><p class="parC">Choose a Drop off location.</p>
+                        </div></div>
+                        <div style="display:block;padding:20px;">
+                            <label for="idSlcTLoc">Choose a target location:</label>
+                            <select id="idSlcTLoc" class="slcExtended" onchange="idSlcTLocSelectOpt(this.value);">
+                                <option value=''>Choose a dropoff location</option>
+                            </select>
+                            <select id="slcTLoc2" class="slcExtended hide" onchange="idSlcTLocSelectOpt(this.value);"> <!--onchange="alert(this.value);">-->
+                                <option value=''>Choose a dropoff location</option>
+                                <!-- <option value='20180831193533129'>Nangka Elementary School</option>
+                                <option value='20180831194332291'>St. Mary Elementary School</option>
+                                <option value='20180831195511734'>Ateneoville Covered Court</option> -->
+                            </select>
+                            <!--as idSlcTLoc changes options, Step4TLocCoords clicks a row with respect to chosen <option>-->
+                            <table class="hide">
+                                <tbody id="Step4TLocCoords"></tbody>
+                                <tbody id="Step4TLocNameAdd"></tbody>
+                            </table>
+                        </div>
+
+                        <form id="frmStep4" method="GET" class="hide">
+                                <input type="text" id="txtItemCategoryRec" />
+                                <input type="text" id="txtItemSubCategoryRec" />
+                                <input type="text" id="txtItemDescriptionRec" />
+                                <input type="text" id="txtItemUnitRec" />
+                                <input type="text" id="txtItemQtyRec" />
+                                <input type="text" id="txtItemStatusRec" />
+                                <input type="text" id="txtDelStatusRec" />
+                                <input type="text" id="txtItemPledgeDateRec" />
+                                <input type="text" id="txtDonorIdRec" />
+                                <input type="text" id="txtStep1ImageUrlRec" />
+                                <input type="text" name="txtDTPickRec" id="txtDTPickRec">
+                                <input type="text" name="txtDTDropRec" id="txtDTDropRec">
+                                <input type="text" name="txtSLocRec" id="txtSLocRec">
+                                <input type="text" name="txtSLLatRec" id="txtSLLatRec">
+                                <input type="text" name="txtSLLngRec" id="txtSLLngRec">
+                                <input type="text" name="txtDlvStatRec" id="txtDlvStatRec">
+                                <input type="text" name="txtTLocIDRec" id="txtTLocIDRec">
+                                <input type="text" name="txtVIDRec" id="txtVIDRec">
+                                
+                                <input type="text" name="txtVIDRetainer" id="txtVIDRetainer">
+                        </form>
+                        <input type="text" name="txtAction" id="txtAction" class="hide"> <!--value="0">-->
+                        <span id="spanMsg" class="hide"></span>
+
+                        <div id="divMsgWrapper" class="MsgWrapper">
+                            <span id="spanResult" style="margin:auto"></span>
+                        </div>
+                
+                        <!-- <div class="tab2" style="transform:translateX(-25px);" id="tab2Step4"> -->
+                        <div class="tab2" style="transform:translateX(-25px);" id="tab2Step4">
+                            <span class="tablinks" onclick="idSlcTLoc.value='';">Reset</span>
+                            <span class="tablinks" onclick="openTab(event,'Step31');lnkStep31.click();">Back</span>
+                            <span class="tablinks" id="spanStep4CommitBtn" onclick="ValidateStep4()">Create a Delivery record</span>
+                        </div>
+                        
+                        <div class="tab2" style="visibility:hidden;left:915px;" id="tab4Done">
+                            <span class="tablinks" onclick="AfterResult();" id="spanStep4Done">Done</span>
+                        </div>
+
+                    </div><!--///////////////////////////// end of fourth tab /////////////////////////////////////-->
+                    <div class="mapBar" style="height:120px"></div>
+                
+
+                </div>
+                <div class="card-footer small text-muted">Updated 5 minutes ago</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+
+            </div>
+
+            <div class="col-lg-4">
+
+            </div>
+        </div>
+
+        <!-- /.container-fluid-->
+        <!-- /.content-wrapper-->
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="text-center">
+                    <small>FlareMob: Sagip - Officials Admin Panel 2018</small>
+                </div>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Page level plugin JavaScript-->
+        <script src="vendor/chart.js/Chart.min.js"></script>
+        <script src="vendor/datatables/jquery.dataTables.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+        <!-- Moment plugin for real-time clock display -->
+        <script src="vendor/moment/moment.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin.min.js"></script>
+        <!-- Custom scripts for this page-->
+        <script src="js/sb-admin-datatables.min.js"></script>
+        <script src="js/sb-admin-charts.js"></script>
+        <script src="js/clock.js"></script>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmuF57f5IZf45UG2xM-8m3h2pU9i-gQIE&libraries=places,geometry&callback=initMap"
+    async defer></script>
+</body>
+
+</html>

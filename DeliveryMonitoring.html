@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FlareMob: Sagip - Officials Admin Panel">
+    <meta name="author" content="FlareMob Team - TIPQC">
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDTUm6z0pdodJD7ATQxl99rowga2pij-po",
+            authDomain: "dummy-85528.firebaseapp.com",
+            databaseURL: "https://dummy-85528.firebaseio.com",
+            projectId: "dummy-85528", /*893ae",*/
+            storageBucket: "dummy-85528.appspot.com",
+            messagingSenderId: "431077212235"
+            };
+            firebase.initializeApp(config);
+    </script> -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAsREyRj2u1GDG1sKF1gyAE476u5pp2PxQ",
+        authDomain: "flaremob-b55d8.firebaseapp.com",
+        databaseURL: "https://flaremob-b55d8.firebaseio.com",
+        projectId: "flaremob-b55d8",
+        storageBucket: "flaremob-b55d8.appspot.com",
+        messagingSenderId: "27793888698"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <link rel="icon" type="image/png" href="images/icons/alisto.ico" />
+    <title>Sagip: Delivery Monitoring</title>
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/DeliveryMonitoring_css.css" rel="stylesheet" type="text/css">
+    <script src="js/DeliveryMonitoring_js.js"></script>
+</head>
+
+<body onload="PreLoad();" class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="index.html">FlareMob: Sagip - Officials Admin Panel</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" style="overflow-y: auto" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <a class="nav-link" href="index.html">
+                        <i class="fa fa-fw fa-dashboard"></i>
+                        <span class="nav-link-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
+                    <a class="nav-link" href="flood.html">
+                        <i class="fa fa-fw fa-map"></i>
+                        <span class="nav-link-text">Flood Monitoring</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation">
+                    <a class="nav-link" href="pledging.html">
+                        <i class="fa fa-fw fa-calculator"></i>
+                        <span class="nav-link-text">Donation</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents"
+                        data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-database"></i>
+                        <span class="nav-link-text">Donation Monitoring</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                        <li>
+                            <a href="donationman.html">Donation Items</a>
+                        </li>
+                        <li>
+                            <a href="donationcash.html">Donation Cash</a>
+                        </li>
+                        <li>
+                            <a href="updateforluquidation.html">Liquidation</a>
+                        </li>
+                        <li>
+                            <a href="Inventory.html">Inventory</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1"
+                        data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-pencil"></i>
+                        <span class="nav-link-text">Registration</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents1">
+                        <li>
+                            <a href="registrationadmin.html">Registration for Admin</a>
+                        </li>
+                        <li>
+                            <a href="DriverDetailsManagement.html">Registration for Drivers</a>
+                        </li>
+                        <li>
+                            <a href="registrationevachead.html">Registration for Evacuation Heads</a>
+                        </li>
+                        <li>
+                            <a href="TargetLocationDetailsManagement.html">Registration for New Evacuation Center</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                    <a class="nav-link" data-toggle="modal" data-target="#evac_needs">
+                        <i class="fa fa-fw fa-exclamation-triangle"></i>
+                        <span class="nav-link-text">Evacuation Center Needs</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                    <a class="nav-link" href="DeliveryMonitoring.html">
+                        <i class="fa fa-fw fa-car"></i>
+                        <span class="nav-link-text">Delivery Monitoring</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                    <a class="nav-link" href="dm7prototype.html">
+                        <i class="fa fa-fw fa-car"></i>
+                        <span class="nav-link-text">Delivery Management</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Evacuees Allocation">
+                    <a class="nav-link" href="evacfamcount2.html">
+                        <i class="fa fa-fw fa-map"></i>
+                        <span class="nav-link-text">Evacuees Allocation</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2"
+                        data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-address-card"></i>
+                        <span class="nav-link-text">User Management</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents2">
+                        <li>
+                            <a href="AdminUserManagement.html">Admin User Management</a>
+                        </li>
+                        <li>
+                            <a href="EvacHeadUserManagement.html">Evacuation Head User Management</a>
+                        </li>
+                        <li>
+                            <a href="UserManagement.html">User Management</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-envelope"></i>
+                        <span class="d-lg-none">Messages
+                            <span class="badge badge-pill badge-primary">4 New</span>
+                        </span>
+                        <span class="indicator text-primary d-none d-lg-block">
+                            <i class="fa fa-fw fa-circle"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                        <h6 class="dropdown-header">New Messages:</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>Cap. Randy Leal</strong>
+                            <span class="small float-right text-muted">5:43 PM</span>
+                            <div class="dropdown-message small">
+                                Please inform Bagong Silang residents to evacuate as soon as possible. Thank you.
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>Dave David</strong>
+                            <span class="small float-right text-muted">4:37 PM</span>
+                            <div class="dropdown-message small">
+                                Marikina alert level has been raised to 2nd Alert due to critical water level of Marikina River.
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>Nikko Jaca</strong>
+                            <span class="small float-right text-muted">4:00 PM</span>
+                            <div class="dropdown-message small">
+                                Flood prediction testing has been initiated. Please prepare.
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item small" href="#">View all messages</a>
+                    </div>
+                </li> -->
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-bell"></i>
+                        <span class="d-lg-none">Alerts
+                            <span class="badge badge-pill badge-warning">6 New</span>
+                        </span>
+                        <span class="indicator text-warning d-none d-lg-block">
+                            <i class="fa fa-fw fa-circle"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+                        <h6 class="dropdown-header">New Alerts:</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-black">
+                                <strong>
+                                    <i class="fa fa-bell fa-fw"></i>Marikina DRRMO</strong>
+                            </span>
+                            <span class="small float-right text-muted">4:37 PM</span>
+                            <div class="dropdown-message small">Marikina Alert Level has been raised to 2nd
+                                (Evacuation)</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-black">
+                                <strong>
+                                    <i class="fa fa-bell fa-fw"></i>ALISTO Weather Forecast</strong>
+                            </span>
+                            <span class="small float-right text-muted">4:31 PM</span>
+                            <div class="dropdown-message small">Weather shows a 4-hour continuous heavy rain.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-danger">
+                                <strong>
+                                    <i class="fa fa-exclamation-circle fa-fw"></i>ALISTO Flood Prediction</strong>
+                            </span>
+                            <span class="small float-right text-muted">4:22 AM</span>
+                            <div class="dropdown-message small">Bagong Silang is critically flooded due to heavy rain.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item small" href="#">View all alerts</a>
+                    </div>
+                </li> -->
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0 mr-lg-2">
+
+                        <!-- Refer to clock.js -->
+                        <div id="clock" class="navbar-text clock">Time is loading...</div>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Admin Panel</a>
+                </li>
+                <li class="breadcrumb-item active">Delivery Monitoring</li>
+            </ol>
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    <!--<iframe style="width:100%;height:1000px;" src="http://localhost/Flaremob_Firebase/DeliveryManagement2.html"></iframe>-->
+                    <i class="fa fa-table"></i> Delivery Monitoring</div>
+                <div class="card-body">
+                    <!--<iframe style="width:100%;height:1500px;" src="http://localhost/Flaremob_Firebase/DeliveryManagement2.html"></iframe>-->
+                </div>
+                <div class="enclosure">
+                    <!-- <div class="topSpacer"></div> -->
+
+                    <div id="map"></div>
+                    <div class="mapBar"></div>
+                    <div class="tabmain">
+                        <!--Main tab links -->
+                        <span id="lnkLiveDelivery" class="maintablinks" onclick="MainTabLiveDelivery();">Live Delivery</span>
+                        <span id="lnkLogDelivery" class="maintablinks" onclick="MainTabLogDelivery();">Log Delivery</span>
+                        <button type="button" id="btnGlobalReset" class="hide">Global Reset</button>
+                        <button type="button" id="btnSrcTargtReset" class="hide">Source n Target Reset</button>
+                        <button type="button" id="btnSrcLocReset" class="hide">Source Reset</button>
+                        <button type="button" id="btnTargetLocReset" class="hide">Target Reset</button>
+                        <button type="button" id="btnRowIndex" class="hide">RowIndex</button>
+                        <input type="text" id="txtRowIndex" class="hide" />
+                    </div>
+                    <div class="headerparinline">
+                        <div class="divbgcolor">
+                            <h2 class="h2C">Delivery table</h2>
+                            <p class="parC">Click on the row(s) to identify the vehicle in the map.</p>
+                        </div>
+                    </div>
+                    <!-- <div style="max-width:1000px;max-height:500px;width:100%;height:100%;overflow-y:scroll;"> -->
+                    <div id="divLogDelivery" class="mapBar" style="height:10px;padding-top:5px;display:none;">
+                        <span style="padding:0px 30px 0px 30px;color:#fff;">Specify the pickup date
+                            <span style="padding:0px 10px 0px 30px;">
+                                <input type="date" id="dateLogDeliveryPickDate" />
+                                <input type="text" id="txtAction" class="hide" />
+                                <input type="text" id="txtLogDeliveryPickDateRetainer" class="hide">
+                            </span>
+                            <button type="button" id="btnLogDeliveryPickDate" onclick="ValidateLogDeliveryPickDate();">Search</button>
+                        </span>
+                    </div>
+                    <table id="idTable1" class="table1">
+                        <tr>
+                            <th>Plate No. & Delivery Status</th>
+                            <th>No. of Items</th>
+                            <th>No. of Source Loc</th>
+                            <th>No. of Target Loc</th>
+                        </tr>
+                        <tbody id="tBodyDelivery"></tbody>
+                    </table>
+
+                    <!-- </div> -->
+                    <div class="barEnder"></div>
+                    <div class="headerparinline">
+                        <div class="divbgcolor">
+                            <h2 class="h2C">Items table</h2>
+                            <p class="parC">List of items per delivery.</p>
+                        </div>
+                    </div>
+                    <!--To relist all the delivery items, click <table><tr onclick="ShowDelivery(this)"><td></td><td>here</td></tr></table></p>-->
+                    <table id="idTable2" class="table1">
+                        <tr>
+                            <th><img class="imgth" src="img/donor.png" title="donor">Donor</th>
+                            <th><img class="imgth" src="img/orgpsn.png" title="organization/position">Organization<br>/Position</th>
+                            <th colspan="2"><img class="imgth" src="img/donation.png" title="donation">Donation</th>
+                            <!-- <th><img class="imgth" src="img/pick.png" title="pickup location">Pickup Location</th>
+                                    <th><img class="imgth" src="img/drop.png" title="dropoff location">Dropoff Location</th> -->
+                            <th><img class="imgth" src="img/pledged.png" title="date & time pledged">Pledged on</th>
+                            <th><img class="imgth" src="img/ico-delivery-pick.png" title="delivery status">Pickup date</th>
+                            <th><img class="imgth" src="img/ico-delivery-drop.png" title="delivery status">Dropoff date</th>
+                            <th><img class="imgth" src="img/dlvstatus.png" title="delivery status">Delivery Status</th>
+
+                        </tr>
+                        <tbody id="tBodyItems"></tbody>
+                    </table>
+                    <table width="1000">
+                        <tr onclick="ShowAllDelivery()" style="cursor:pointer;background-color:#e7e7e7;">
+                            <!-- <td class="hide"></td> -->
+                            <td style="text-align:center;">Click here to show all the items</td>
+                        </tr>
+                    </table>
+
+                    <div class="barEnder" style="height:120px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+
+        </div>
+
+        <div class="col-lg-4">
+
+        </div>
+    </div>
+
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+        <div class="container">
+            <div class="text-center">
+                <small>FlareMob: Sagip - Officials Admin Panel 2018</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Moment plugin for real-time clock display -->
+    <script src="vendor/moment/moment.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="js/sb-admin-charts.js"></script>
+    <script src="js/clock.js"></script>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmuF57f5IZf45UG2xM-8m3h2pU9i-gQIE&libraries=places,geometry&callback=initMap"
+        async defer></script>
+
+</body>
+
+</html>

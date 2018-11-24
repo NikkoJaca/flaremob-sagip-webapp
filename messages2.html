@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FLAREMOB: Alisto Administrator Panel">
+    <meta name="author" content="Jaca; Ayson">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <title>FLAREMOB: ALISTO</title>
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="index.html">FLAREMOB: ALISTO - Admin Panel</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <a class="nav-link" href="index.html">
+                        <i class="fa fa-fw fa-dashboard"></i>
+                        <span class="nav-link-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Marikina River Water Levels">
+          <a class="nav-link" href="river.html">
+            <i class="fa fa-fw fa-tint"></i>
+            <span class="nav-link-text">Marikina River Water Levels</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
+          <a class="nav-link" href="flood.html">
+            <i class="fa fa-fw fa-map"></i>
+            <span class="nav-link-text">Flood Monitoring</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Weather Forecasts">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-cloud"></i>
+            <span class="nav-link-text">Weather Forecasts</span>
+          </a>
+        </li>
+            </ul>
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-envelope"></i>
+                        <span class="d-lg-none">Messages
+                            <span class="badge badge-pill badge-primary">4 New</span>
+                        </span>
+                        <span class="indicator text-primary d-none d-lg-block">
+                            <i class="fa fa-fw fa-circle"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                        <h6 class="dropdown-header">New Messages:</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>Cap. Randy Leal</strong>
+                            <span class="small float-right text-muted">5:43 PM</span>
+                            <div class="dropdown-message small">
+                                Please inform Bagong Silang residents to evacuate as soon as possible. Thank you.
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>Dave David</strong>
+                            <span class="small float-right text-muted">4:37 PM</span>
+                            <div class="dropdown-message small">
+                                Marikina alert level has been raised to 2nd Alert due to critical water level of Marikina River.
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <strong>Nikko Jaca</strong>
+                            <span class="small float-right text-muted">4:00 PM</span>
+                            <div class="dropdown-message small">
+                                Flood prediction testing has been initiated. Please prepare.
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item small" href="#">View all messages</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-bell"></i>
+                        <span class="d-lg-none">Alerts
+                            <span class="badge badge-pill badge-warning">6 New</span>
+                        </span>
+                        <span class="indicator text-warning d-none d-lg-block">
+                            <i class="fa fa-fw fa-circle"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+                        <h6 class="dropdown-header">New Alerts:</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-black">
+                                <strong>
+                                    <i class="fa fa-bell fa-fw"></i>Marikina DRRMO</strong>
+                            </span>
+                            <span class="small float-right text-muted">4:37 PM</span>
+                            <div class="dropdown-message small">Marikina Alert Level has been raised to 2nd (Evacuation)</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-black">
+                                <strong>
+                                    <i class="fa fa-bell fa-fw"></i>ALISTO Weather Forecast</strong>
+                            </span>
+                            <span class="small float-right text-muted">4:31 PM</span>
+                            <div class="dropdown-message small">Weather shows a 4-hour continuous heavy rain.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <span class="text-danger">
+                                <strong>
+                                    <i class="fa fa-exclamation-circle fa-fw"></i>ALISTO Flood Prediction</strong>
+                            </span>
+                            <span class="small float-right text-muted">4:22 AM</span>
+                            <div class="dropdown-message small">Bagong Silang is critically flooded due to heavy rain.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item small" href="#">View all alerts</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0 mr-lg-2">
+
+                        <!-- Refer to clock.js -->
+                        <div id="clock" class="navbar-text clock">Time is loading...</div>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Admin Panel</a>
+                </li>
+                <li class="breadcrumb-item active">Marikina River Water Levels</li>
+            </ol>
+
+            <!-- <div class="col mb-3">
+                <div class="card text-white bg-danger o-hidden h-100">
+                    <div class="card-body">
+                        <div class="card-body-icon">
+                            <i class="fa fa-fw fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="mr-5">
+                            <Strong>ALERT! </Strong> Marikina Alert Level has been raised to <strong>2nd level (Evacuate)</strong>. Please take appropriate measures.
+                        </div>
+                    </div>
+                    <div class="card-footer text-white clearfix small z-1" href="#">
+                        <span class="float-left">5 minutes ago</span>
+                        <span class="float-right">
+                        </span>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa"></i>Messages</div>
+                <div class="card-body">
+                        <ng ng-app="myApp">
+                            <div class="container">
+                                <h1>Inbox</h1>
+                        
+                                <div class="row" ng-controller="inboxCtrl">
+                                    <aside class="col-md-2 pad-right-0">
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li class="active">
+                                                <a href="javascript:;" ng-click="groupToPages()">
+                                                    <span class="badge pull-right">{{items.length}}</span> Inbox </a>
+                                            </li>
+                                            <!-- <li>
+                                                    <a href="javascript:;">Archived</a>
+                                                </li> -->
+                                            <!-- <li>
+                                                    <a href="javascript:;">Important</a>
+                                                </li> -->
+                                            <li>
+                                                <a href="javascript:;">Sent</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <span class="badge pull-right">3</span>Drafts</a>
+                                            </li>
+                                        </ul>
+                                        <!-- <hr>
+                                            <div class="storage">
+                                                <p>2.85 GB of
+                                                    <strong>15 GB</strong>
+                                                </p>
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar progress-bar-primary" style="width:30%;"></div>
+                                                </div>
+                                            </div>
+                                            <hr> -->
+                                        <!-- <ul class="nav nav-pills nav-stacked">
+                                                <li class="active">
+                                                    <a href="javascript:;">Settings</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/gallery">Images (12)</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">Documents (19)</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/calendar">Calendar</a>
+                                                </li>
+                                            </ul> -->
+                                    </aside>
+                                    <div class="col-md-10">
+                                        <!--inbox toolbar-->
+                                        <div class="row" ng-show="!isMessageSelected()">
+                                            <div class="col-xs-12">
+                                                <a class="btn btn-default btn-lg" data-toggle="tooltip" title="Refresh" id="refreshInbox" href="javascript:;">
+                                                    <span class="fa fa-refresh fa-lg"></span>
+                                                </a>
+                                                <button class="btn btn-default btn-lg" title="Compose New" data-toggle="modal" data-target="#modalCompose">
+                                                    <span class="fa fa-edit fa-lg"></span>
+                                                </button>
+                                                <div class="btn-group btn-group-lg">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                        More
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li>
+                                                            <a href="javascript:;" ng-click="readAll()">Mark all as read</a>
+                                                        </li>
+                                                        <li class="divider"></li>
+                                                        <li>
+                                                            <a href="" data-toggle="modal" data-target="#modalCompose">Compose new</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;" class="text-muted">Settings</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <span class="text-muted">
+                                                        <b>{{(itemsPerPage * currentPage) + 1}}</b>–
+                                                        <b>{{(itemsPerPage * currentPage) + pagedItems[currentPage].length}}</b> of
+                                                        <b>{{items.length}}</b>
+                                                    </span>
+                                                    <div class="btn-group btn-group">
+                                                        <button type="button" class="btn btn-default btn-lg" ng-class="{disabled: currentPage == 0}" ng-click="prevPage()">
+                                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-default btn-lg" ng-class="{disabled: currentPage == pagedItems.length - 1}" ng-click="nextPage()">
+                                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/col-->
+                                            <div class="col-xs-12 spacer5"></div>
+                                        </div>
+                                        <!--/row-->
+                                        <!--/inbox toolbar-->
+                                        <div class="panel panel-default inbox" id="inboxPanel">
+                                            <!--message list-->
+                                            <div class="table-responsive" ng-show="!isMessageSelected()">
+                                                <table class="table table-striped table-hover refresh-container pull-down">
+                                                    <thead class="hidden-xs">
+                                                        <tr>
+                                                            <td class="col-sm-1">
+                                                                <input type="checkbox" title="Mark all">
+                                                            </td>
+                                                            <td class="col-sm-3">
+                                                                <a href="javascript:;">
+                                                                    <strong>Date</strong>
+                                                                </a>
+                                                            </td>
+                                                            <td class="col-sm-1"></td>
+                                                            <td class="col-sm-2">
+                                                                <a href="javascript:;">
+                                                                    <strong>From</strong>
+                                                                </a>
+                                                            </td>
+                                                            <td class="col-sm-4">
+                                                                <a href="javascript:;">
+                                                                    <strong>Subject</strong>
+                                                                </a>
+                                                            </td>
+                                                            <td class="col-sm-1"></td>
+                                                        </tr>
+                                                    </thead>
+                        
+                                                    <tbody>
+                                                        <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
+                                                            <td class="col-sm-1 col-xs-4">
+                                                                <input type="checkbox" title="Mark this item here">
+                                                            </td>
+                                                            <td class="col-sm-3 col-xs-4" ng-click="readMessage($index)">
+                                                                <span ng-class="{strong: !item.read}">{{item.dtSent}}</span>
+                                                            </td>
+                                                            <td class="col-sm-1 col-xs-4">
+                                                                <a ng-class="{strong: !item.read}" ng-click="deleteItem($index)" title="Delete item" href="javascript:;">
+                                                                    <i class="fa fa-trash-o"></i>
+                                                                </a>
+                                                                <a title="Mark item" href="javascript:;">
+                                                                    <i class="fa fa-flag"></i>
+                                                                </a>
+                                                            </td>
+                                                            <td class="col-sm-2 col-xs-4" ng-click="readMessage($index)">
+                                                                <span ng-class="{strong: !item.read}">{{item.from}}</span>
+                                                            </td>
+                                                            <td class="col-sm-4 col-xs-6" ng-click="readMessage($index)">
+                                                                <span ng-class="{strong: !item.read}">{{item.subject}}</span>
+                                                            </td>
+                                                            <td class="col-sm-1 col-sm-2" ng-click="readMessage($index)">
+                                                                <span ng-show="item.attachment" class="glyphicon glyphicon-paperclip pull-right"></span>
+                                                                <span ng-show="item.priority==1" class="pull-right glyphicon glyphicon-warning-sign text-danger"></span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!--message detail-->
+                                            <div class="container-fluid" ng-show="isMessageSelected()">
+                                                <div class="row" ng-controller="messageCtrl">
+                                                    <div class="col-xs-12">
+                                                        <h3 title="subject">
+                                                            <button type="button" class="close pull-right" ng-click="closeMessage()" aria-hidden="true">×</button>
+                                                            <a href="javascript:;" ng-click="groupToPages()">Inbox</a> &gt; {{selected.subject}}</h3>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <blockquote class="bg-info small">
+                                                            <strong>{{selected.from}}</strong> &lt;{{selected.fromAddress}}&gt; on 10:14AM, 22 May 2014
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="btn-group btn-group-lg pull-right">
+                                                            <button class="btn btn-primary" title="Reply to this message" data-toggle="tooltip">
+                                                                <i class="fa fa-reply"></i> Reply
+                                                            </button>
+                                                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="More options">
+                                                                <i class="fa fa-angle-down"></i>
+                                                            </button>
+                                                            <ul class="dropdown-menu pull-right">
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <i class="fa fa-reply"></i> Reply</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <i class="fa fa-mail-forward"></i> Forward</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <i class="fa fa-print"></i> Print</a>
+                                                                </li>
+                                                                <li class="divider"></li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <i class="fa fa-ban"></i> This is Spam</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <i class="fa fa-trash-o"></i> Send to Trash</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="spacer5 pull-right"></div>
+                                                        <button class="btn btn-lg btn-primary pull-right" ng-click="deleteItem(selected.$index)" title="Delete this message" data-toggle="tooltip">
+                                                            <i class="fa fa-trash-o fa-1x"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <!--message body-->
+                                                        <div ng-bind-html="renderMessageBody(selected.body)"></div>
+                                                        <!--/message body-->
+                                                    </div>
+                                                    <div class="col-xs-12 clearfix">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <a href="javascript:;" title="Download attachment" ng-show="selected.attachment">
+                                                            <span class="glyphicon glyphicon-paperclip"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!--/row-->
+                                            </div>
+                                        </div>
+                                        <!--/inbox panel-->
+                                        <div class="well well-s text-right">
+                                            <em>Inbox last updated:
+                                                <span id="lastUpdated">{{date | date:'MM-dd-yyyy HH:mm:ss'}}</span>
+                                            </em>
+                                        </div>
+                                    </div>
+                                    <!--/col-9-->
+                                    <!-- /.modal compose message -->
+                                    <div class="modal fade" id="modalCompose">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title">Compose Message</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form role="form" class="form-horizontal">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2" for="inputTo">To</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="email" class="form-control" id="inputTo" placeholder="comma separated list of recipients">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2" for="inputSubject">Subject</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" id="inputSubject" placeholder="subject">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-12" for="inputBody">Message</label>
+                                                            <div class="col-sm-12">
+                                                                <textarea class="form-control" id="inputBody" rows="12"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-warning pull-left">Save Draft</button>
+                                                    <button type="button" class="btn btn-primary ">Send
+                                                        <i class="fa fa-arrow-circle-right fa-lg"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
+                                    <!-- /.modal compose message -->
+                                    <div>
+                                        <!--/row ng-controller-->
+                        
+                                    </div>
+                                    <!--/container-->
+                        
+                                </div>
+                        
+                            </div>
+                        </ng>
+                </div>
+            </div>
+                
+        
+
+            <!-- Area Chart Example-->
+            <!-- <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-area-chart"></i> Marikina River Water Level (based on STO. NIÑO)</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-8 my-auto">
+                            <canvas id="marikinaRiverLevelChart" width="100%" height="30"></canvas>
+                        </div>
+                        <div class="col-sm-4 text-center my-auto">
+                            <div class="h4 mb-0 text-primary">16.00m</div>
+                            <div class="small text-muted">Current Level</div>
+                            <hr>
+                            <div class="h4 mb-0 text-primary">21.00m</div>
+                            <div class="fa fa-long-arrow-up text-danger">5</div>
+                            <div class="small text-muted">Predicted Level (at 19:00)</div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer small text-muted">Updated 5 minutes ago</div>
+            </div> -->
+        </div>
+            <div class="row">
+                <div class="col-lg-8">
+
+                </div>
+
+                <div class="col-lg-4">
+
+                </div>
+            </div>
+
+            <!-- /.container-fluid-->
+            <!-- /.content-wrapper-->
+            <footer class="sticky-footer">
+                <div class="container">
+                    <div class="text-center">
+                        <small>2018 FLAREMOB ALISTO WEB PANEL</small>
+                    </div>
+                </div>
+            </footer>
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+            <!-- Logout Modal-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" href="login.html">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // sandbox disable popups
+                if (window.self !== window.top && window.name != "view1") {
+                    ;
+                    window.alert = function () {/*disable alert*/ };
+                    window.confirm = function () {/*disable confirm*/ };
+                    window.prompt = function () {/*disable prompt*/ };
+                    window.open = function () {/*disable open*/ };
+                }
+
+                // prevent href=# click jump
+                document.addEventListener("DOMContentLoaded", function () {
+                    var links = document.getElementsByTagName("A");
+                    for (var i = 0; i < links.length; i++) {
+                        if (links[i].href.indexOf('#') != -1) {
+                            links[i].addEventListener("click", function (e) {
+                                console.debug("prevent href=# click");
+                                if (this.hash) {
+                                    if (this.hash == "#") {
+                                        e.preventDefault();
+                                        return false;
+                                    }
+                                    else {
+                                        /*
+                                        var el = document.getElementById(this.hash.replace(/#/, ""));
+                                        if (el) {
+                                          el.scrollIntoView(true);
+                                        }
+                                        */
+                                    }
+                                }
+                                return false;
+                            })
+                        }
+                    }
+                }, false);
+            </script>
+
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- Core plugin JavaScript-->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+            <!-- Page level plugin JavaScript-->
+            <script src="vendor/chart.js/Chart.min.js"></script>
+            <script src="vendor/datatables/jquery.dataTables.js"></script>
+            <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+            <!-- Moment plugin for real-time clock display -->
+            <script src="vendor/moment/moment.js"></script>
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin.min.js"></script>
+            <!-- Custom scripts for this page-->
+            <script src="js/sb-admin-datatables.min.js"></script>
+            <script src="js/sb-admin-charts.js"></script>
+            <script src="js/clock.js"></script>
+            <script src="js/chart-river-level.js"></script>
+            <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-sanitize.js"></script>
+
+<script>
+    var app = angular.module("myApp", ["ngSanitize"]);
+
+    var messages = [
+        { "id": 1, "from": "Gary Lewis", "fromAddress": "test@testdomain.com", "subject": "Posting on board", "dtSent": "Today, 9:18AM", "read": false, "body": "Hey Mark,<br><br>I saw your post on the message board and I was wondering if you still had that item available. Can you call me if you still do?<br><br>Thanks,<br><b>Gary Lewis</b>" },
+        { "id": 2, "from": "Bob Sutton", "fromAddress": "test@testdomain.com", "subject": "In Late Today", "dtSent": "Today, 8:54AM", "read": false, "body": "Mark,<br>I will be in late today due to an appt.<br>v/r Bob", "attachment": true },
+        { "id": 3, "from": "Will Adivo", "fromAddress": "test@testdomain.com", "subject": "New developer", "dtSent": "Yesterday, 4:48PM", "read": true, "body": "The message body goes here..." },
+        { "id": 4, "from": "Al Kowalski", "fromAddress": "test@testdomain.com", "subject": "RE: New developer", "dtSent": "Yesterday, 4:40PM", "read": false, "body": "The message body goes here...", "priority": 1 },
+        { "id": 4, "from": "Beth Maloney", "fromAddress": "test@testdomain.com", "subject": "July Reports", "dtSent": "3 Days Ago", "read": true, "body": "PYC Staff-<br> Our weekly meeting is canceled due to the holiday. Please review and submit your PID report before next week's meeting.<br>Thanks,<br>Beth" },
+        { "id": 6, "from": "Jason Furgano", "fromAddress": "test@testdomain.com", "subject": "New developer", "dtSent": "3 Days Ago", "read": true, "body": "All,<br>I'd like to introduce Joe Canfigliata our new S/W developer. If you see him in the office introduce yourself and make him feel welcome." },
+        { "id": 7, "from": "Bob Sutton", "fromAddress": "test@testdomain.com", "subject": "Tasking request", "dtSent": "3 Days Ago", "read": true, "body": "Ovi lipsu doir. The message body goes here..." },
+        { "id": 8, "from": "Will Adivo", "fromAddress": "test@testdomain.com", "subject": "Proposal for Avid Consulting", "dtSent": "3 Days Ago", "read": true, "body": "Mark, I reviewed your proposal with Beth and we have a few questions. Let me know when you time to meet." },
+        { "id": 9, "from": "Philip Corrigan", "fromAddress": "test@testdomain.com", "subject": "Follow-up Appt.", "dtSent": "4 Days Ago", "read": true, "body": "Hi,<br>Can you please confirm the expense report I submitted for my last trip to SD?<br>Thanks,<br>Tom Grey" },
+        { "id": 10, "from": "Will Adivo", "fromAddress": "test@testdomain.com", "subject": "FWD: Subject", "dtSent": "4 Days Ago", "read": true, "body": "The message body goes here dapibus nec velit egdiet tempu...", "priority": 1 },
+        { "id": 11, "from": "Will Adivo", "fromAddress": "test@testdomain.com", "subject": "Subject", "dtSent": "Last Week", "read": true, "body": "The message body goes here... <br>Regards,Fagan" },
+        { "id": 12, "from": "Parker Dunlap", "fromAddress": "test@testdomain.com", "subject": "Subject", "dtSent": "Aug 14 5:09PM", "read": true, "body": "Hello,<br>The message body goes here...", "attachment": true },
+        { "id": 13, "from": "Hannah Marks", "fromAddress": "test@testdomain.com", "subject": "Subject", "dtSent": "Aug 14 4:18PM", "read": true, "body": "Dear Mark,<br>We've missed you at the shop. How are you and the fam? Let's get together soon.<br> - James" },
+        { "id": 14, "from": "Parker Dunlap", "fromAddress": "test@testdomain.com", "subject": "Subject", "dtSent": "Aug 14 5:09PM", "read": true, "body": "The message body goes here...", "attachment": true },
+        { "id": 15, "from": "Hannah Marks", "fromAddress": "hmarks@testdomain.com", "subject": "Subject", "dtSent": "Aug 14 4:18PM", "read": true, "body": "The message body goes here..." },
+        { "id": 16, "from": "Parker Dunlap", "fromAddress": "parker@testdomain.com", "subject": "Subject", "dtSent": "Aug 14 5:09PM", "read": true, "body": "The message body goes here...", "attachment": true },
+        { "id": 17, "from": "Amy Davis", "fromAddress": "amy@testdomain.com", "subject": "Subject", "dtSent": "Aug 14 4:18PM", "read": true, "body": "The message body goes here..." }
+    ];
+
+
+    app.controller('inboxCtrl', ['$scope', '$filter', function ($scope, $filter) {
+
+
+        $scope.date = new Date;
+        $scope.sortingOrder = 'id';
+        $scope.pageSizes = [10, 20, 50, 100];
+        $scope.reverse = false;
+        $scope.filteredItems = [];
+        $scope.groupedItems = [];
+        $scope.itemsPerPage = 10;
+        $scope.pagedItems = [];
+        $scope.currentPage = 0;
+
+        /* inbox functions -------------------------------------- */
+
+        // get data and init the filtered items
+        $scope.init = function () {
+
+            $scope.items = messages;
+            $scope.search();
+
+        }
+
+        var searchMatch = function (haystack, needle) {
+            if (!needle) {
+                return true;
+            }
+            return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+        };
+
+        // filter the items
+        $scope.search = function () {
+            $scope.filteredItems = $filter('filter')($scope.items, function (item) {
+                for (var attr in item) {
+                    if (searchMatch(item[attr], $scope.query))
+                        return true;
+                }
+                return false;
+            });
+            $scope.currentPage = 0;
+            // now group by pages
+            $scope.groupToPages();
+        };
+
+        // calculate page in place
+        $scope.groupToPages = function () {
+            $scope.selected = null;
+            $scope.pagedItems = [];
+
+            for (var i = 0; i < $scope.filteredItems.length; i++) {
+                if (i % $scope.itemsPerPage === 0) {
+                    $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [$scope.filteredItems[i]];
+                } else {
+                    $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]);
+                }
+            }
+        };
+
+        $scope.range = function (start, end) {
+            var ret = [];
+            if (!end) {
+                end = start;
+                start = 0;
+            }
+            for (var i = start; i < end; i++) {
+                ret.push(i);
+            }
+            return ret;
+        };
+
+        $scope.prevPage = function () {
+            if ($scope.currentPage > 0) {
+                $scope.currentPage--;
+            }
+            return false;
+        };
+
+        $scope.nextPage = function () {
+            if ($scope.currentPage < $scope.pagedItems.length - 1) {
+                $scope.currentPage++;
+            }
+            return false;
+        };
+
+        $scope.setPage = function () {
+            $scope.currentPage = this.n;
+        };
+
+        $scope.deleteItem = function (idx) {
+            var itemToDelete = $scope.pagedItems[$scope.currentPage][idx];
+            var idxInItems = $scope.items.indexOf(itemToDelete);
+            $scope.items.splice(idxInItems, 1);
+            $scope.search();
+
+            return false;
+        };
+
+        $scope.isMessageSelected = function () {
+            if (typeof $scope.selected !== "undefined" && $scope.selected !== null) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
+
+        $scope.readMessage = function (idx) {
+            $scope.items[idx].read = true;
+            $scope.selected = $scope.items[idx];
+        };
+
+        $scope.readAll = function () {
+            for (var i in $scope.items) {
+                $scope.items[i].read = true;
+            }
+        };
+
+        $scope.closeMessage = function () {
+            $scope.selected = null;
+        };
+
+        $scope.renderMessageBody = function (html) {
+            return html;
+        };
+
+        /* end inbox functions ---------------------------------- */
+
+
+        // initialize
+        $scope.init();
+
+    }])// end inboxCtrl
+        .controller('messageCtrl', ['$scope', function ($scope) {
+
+            $scope.message = function (idx) {
+                return messages(idx);
+            };
+
+        }]);// end messageCtrl
+
+
+
+
+
+//$(document).ready(function(){});
+</script>
+        </div>
+</body>
+
+</html>

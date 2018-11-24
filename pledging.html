@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FlareMob: Sagip - Donor's Pledging">
+    <meta name="author" content="FlareMob Team - TIPQC">
+    <link rel="icon" type="image/png" href="images/icons/alisto.ico" />
+    <title>Sagip: Donor's Pledging</title>
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="#">FlareMob: Sagip - Donor's Pledging</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" style="overflow-y: auto" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation">
+                    <a class="nav-link" href="pledging.html">
+                        <i class="fa fa-fw fa-calculator"></i>
+                        <span class="nav-link-text">Donation</span>
+                    </a>
+                </li>
+            
+            </ul>
+
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-wrench"></i>
+                <span class="nav-link-text">Components</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseComponents">
+                <li>
+                  <a href="navbar.html">Navbar</a>
+                </li>
+                <li>
+                  <a href="cards.html">Cards</a>
+                </li>
+              </ul>
+            </li> -->
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-file"></i>
+                <span class="nav-link-text">Example Pages</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+                <li>
+                  <a href="login.html">Login Page</a>
+                </li>
+                <li>
+                  <a href="register.html">Registration Page</a>
+                </li>
+                <li>
+                  <a href="forgot-password.html">Forgot Password Page</a>
+                </li>
+                <li>
+                  <a href="blank.html">Blank Page</a>
+                </li>
+              </ul>
+            </li> -->
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-sitemap"></i>
+                <span class="nav-link-text">Menu Levels</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseMulti">
+                <li>
+                  <a href="#">Second Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Second Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Second Level Item</a>
+                </li>
+                <li>
+                  <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+                  <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                    <li>
+                      <a href="#">Third Level Item</a>
+                    </li>
+                    <li>
+                      <a href="#">Third Level Item</a>
+                    </li>
+                    <li>
+                      <a href="#">Third Level Item</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li> -->
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+              <a class="nav-link" href="#">
+                <i class="fa fa-fw fa-link"></i>
+                <span class="nav-link-text">Link</span>
+              </a>
+            </li> -->
+            </ul>
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-envelope"></i>
+                    <span class="d-lg-none">Messages
+                      <span class="badge badge-pill badge-primary">4 New</span>
+                    </span>
+                    <span class="indicator text-primary d-none d-lg-block">
+                      <i class="fa fa-fw fa-circle"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                    <h6 class="dropdown-header">New Messages:</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <strong>Cap. Randy Leal</strong>
+                      <span class="small float-right text-muted">5:43 PM</span>
+                      <div class="dropdown-message small">
+                        Please inform Bagong Silang residents to evacuate as soon as possible. Thank you.
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <strong>Dave David</strong>
+                      <span class="small float-right text-muted">4:37 PM</span>
+                      <div class="dropdown-message small">
+                        Marikina alert level has been raised to 2nd Alert due to critical water level of Marikina River.
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <strong>Nikko Jaca</strong>
+                      <span class="small float-right text-muted">4:00 PM</span>
+                      <div class="dropdown-message small">
+                        Flood prediction testing has been initiated. Please prepare.
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item small" href="#">View all messages</a>
+                  </div>
+                </li> -->
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-bell"></i>
+                        <span class="d-lg-none">Alerts
+              <span class="badge badge-pill badge-warning">6 New</span>
+            </span>
+                        <span class="indicator text-warning d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+                        <h6 class="dropdown-header">New Alerts:</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+              <span class="text-black">
+                <strong>
+                  <i class="fa fa-bell fa-fw"></i>Marikina DRRMO</strong>
+              </span>
+                            <span class="small float-right text-muted">4:37 PM</span>
+                            <div class="dropdown-message small">Marikina Alert Level has been raised to 2nd (Evacuation)</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+              <span class="text-black">
+                <strong>
+                  <i class="fa fa-bell fa-fw"></i>ALISTO Weather Forecast</strong>
+              </span>
+                            <span class="small float-right text-muted">4:31 PM</span>
+                            <div class="dropdown-message small">Weather shows a 6-hour continuous heavy rain.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+              <span class="text-danger">
+                <strong>
+                  <i class="fa fa-exclamation-circle fa-fw"></i>ALISTO Flood Prediction</strong>
+              </span>
+                            <span class="small float-right text-muted">4:22 AM</span>
+                            <div class="dropdown-message small">Bagong Silang is critically flooded due to heavy rain.</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item small" href="#">View all alerts</a>
+                    </div>
+                </li> -->
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0 mr-lg-2">
+
+                        <!-- THE BELOW COMMENTED CODE IS A SEARCH BAR -->
+                        <!-- <div class="input-group">
+                          <input class="form-control" type="text" placeholder="Search for...">
+                          <span class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                              <i class="fa fa-search"></i>
+                            </button>
+                          </span>
+                        </div> -->
+                        <!-- SEARCH BAR CODE ENDS HERE -->
+
+                        <!-- Refer to clock.js -->
+                        <div id="clock" class="navbar-text clock">Time is loading...</div>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Admin Panel</a>
+                </li>
+                <li class="breadcrumb-item active">Delivery Management</li>
+            </ol>
+
+            <div class="card mb-3">
+                <div class="card-header">
+                <i class="fa fa-table"></i> Pledging</div>
+                <div class="card-body">
+
+                              <!-- <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                  <a class="nav-link active" data-toggle="tab" href="#evac_needs_table">Evacuation Center Needs</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" data-toggle="tab" href="#donation">Donations</a>
+                                </li>
+                              </ul> -->
+
+                    <div class="container-fluid" style="margin-top:1%;">
+
+                            <!-- <div class="tab-content"> -->
+                                    <!-- <div id="evac_needs_table" class="container tab-pane active"><br> -->
+                                        <h3>Evacuation Center Needs</h3>
+                                        
+                                              <table class="table table-hover" id="evac_table">
+                                                <thead>
+                                                  <tr>
+                                                    <th>Evacuation Center</th>
+                                                    <th>Family Count</th>
+                                                    <th>Needs</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody id="table_body">
+                                                  
+                                                </tbody>
+                                                </table>
+                                    <!-- </div> -->
+                                    <!-- <div id="donation" class="container tab-pane fade"><br>
+                                        <h3>Donation Summary</h3>
+                                        <table class="table table-hover" id="donation_table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Type</th>
+                                                    <th>Quantity</th>
+                                                    <th>Description</th>
+                                                    <th>Pledge Date</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="table_body_don">
+                                                        
+                                                      </tbody>
+                                            </table>
+                                    </div> -->
+                                <!-- </div>   -->
+
+                            <div class="row">
+                            <div class="col-sm-3"><button type="button" class="btn btnc" data-toggle="modal" data-target="#toiletries"><img src="web/btn_toiletries.png" style="width:98%; height:95%;" class="img-rounded" alt="toiletries"></button></div>
+                            <div class="col-sm-3"><button type="button" class="btn btnc" data-toggle="modal" data-target="#water"><img src="web/btn_water.png" style="width:98%; height:95%;" class="img-rounded" alt="water"></button></div>
+                            <div class="col-sm-3"><button type="button" class="btn btnc" data-toggle="modal" data-target="#food"><img src="web/btn_food.png" style="width:98%; height:95%;" class="img-rounded" alt="food"></button></div>  
+                            <div class="col-sm-3"><button type="button" class="btn btnc" data-toggle="modal" data-target="#prepacked"><img src="web/prepacked.png" style="width:98%; height:95%;" class="img-rounded" alt="prepacked"></button></div>                                                        
+                            </div>
+                        
+                            <div class="row">
+                            <div class="col-sm-3"><button type="button" class="btn btnc" data-toggle="modal" data-target="#clothes"><img src="web/btn_clothes.png" style="width:98%; height:95%;" class="img-rounded" alt="clothes"></button></div>
+                            <div class="col-sm-3"><button type="button" class="btn btnc" data-toggle="modal" data-target="#medicine"><img src="web/btn_medicine.png" style="width:98%; height:95%;" class="img-rounded" alt="medicine"></button></div>
+                            <div class="col-sm-3"><button type="button" class="btn btnc" data-toggle="modal" data-target="#cash"><img src="web/btn_cash.png" style="width:98%; height:95%;" class="img-rounded" alt="water"></button></div>
+                            <div class="col-sm-3"><button type="button" class="btn btnc" data-toggle="modal" data-target="#other"><img src="web/btn_others.png" style="width:98%; height:95%;" class="img-rounded" alt="others"></button></div>                            
+                            </div>
+                
+                        </div>
+                        
+                          <!-- Modal -->
+                          <div class="modal fade" id="clothes" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header modal-color">
+                                            <h4 class="modal-title" style="color:white;">Donate Clothes</h4>                                            
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body modal-image">
+                                        <form class="form-horizontal">
+                                    
+                                                <div class="form-group">
+                                                    <table class="table table-hover">
+                                                    <thead>
+                                                        <th>Quantity</th>
+                                                        <th>Unit</th>
+                                                        <th>Description</th>
+                                                    </thead>
+                                                        <tbody>
+                                                            <tr>                          
+                                                                <td><input type="text" class="form-control" id="cl_q" placeholder="How many?" name="cl_q"></td>
+                                                                <td>Pieces</td>
+                                                                <td>
+                                                                    <div class="col-sm-12"><textarea class="form-control" rows="3" id="cl_d" placeholder="e.g. 50x Top, 50x pair of slippers" name="cl_d"></textarea></div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <span id="span1"></span>
+                                                    <img id="ClothesImg" name="ClothesImg" src="no_image.png" width="500dp" height="150dp"/><br>
+                                                    <input type="file" id="ClothesImageOpen" name="ClothesImageOpen" onchange="ClothesOpenImage(event);" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.PNG" />
+                                                    <input type="text" id="clothestxtCompareName" />
+                                                </div>
+                                
+                                    </div>
+                                    <div class="modal-footer modal-color">
+                                        <button type="button" class="btn modal-button" onclick="clothes()" id="donate_clothes" value="clothes">Pledge</button>
+                                    </div>
+                                    </form>   
+                                </div>
+                            
+                            </div>
+                          </div>
+                        
+                          <div class="modal fade" id="food" role="dialog">
+                            <div class="modal-dialog  modal-lg">
+                              <div class="modal-content">
+                                  <div class="modal-header modal-color">
+                                  <h4 class="modal-title" style="color:white;">Donate Food</h4>
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>                                  
+                                  </div>
+                                  <div class="modal-body">
+                        
+                                      <form class="form-horizontal" action="/action_page.php">
+                                          <div class="form-group">
+                                              <table class="table table-hover">
+                                                  <thead>
+                                                      <th>Type</th>
+                                                      <th>Quantity</th>
+                                                      <th>Unit</th>
+                                                      <th>Description</th>
+                                                  </thead>
+                        
+                                                  <tbody>
+                                                      <tr>
+                                                          <td>
+                                                              <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this,'cg_q','cg_d', 'cg_evac')" value="Canned Goods" name="food[]" id="cg">Canned Goods</label></div>
+                                                          </td>                                  
+                                                          <td><input type="number" class="form-control" id="cg_q" placeholder="How many?" name="cg_q" disabled></td>
+                                                          <td>Pieces</td>
+                                                          <td>
+                                                              <div class="col-sm-12"><textarea class="form-control" rows="3" id="cg_d" placeholder="Brand, Grams, mL,  size, etc." name="cg_d" disabled></textarea></div>
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>
+                                                              <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this,'in_q','in_d', 'in_evac')" value="Instant Noodles" name="food[]" id="in">Instant Noodles</label></div>
+                                                          </td>                                  
+                                                          <td><input type="number" class="form-control" id="in_q" placeholder="How many?" name="in_q" disabled></td>
+                                                          <td>Pieces</td>
+                                                          <td>
+                                                              <div class="col-sm-12"><textarea class="form-control" rows="3" id="in_d" placeholder="Brand, Grams, mL,  size, etc." name="in_d" disabled></textarea></div>
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>
+                                                              <div class="checkbox"><label><input type="checkbox" onclick="enableField(this,'r_q','r_u','r_d','r_evac')" value="Rice" name="food[]" id="r"> Rice</label></div>
+                                                          </td>                                  
+                                                          <td><input type="number" class="form-control" id="r_q" placeholder="How much?" name="r_q" disabled></td>
+                                                          <td>
+                                                              <div class="form-group">
+                                                              <select class="form-control" id="r_u" disabled>
+                                                                  <option value="Sacks">Sacks</option>
+                                                                  <option value="Kilos">Kilos</option>
+                                                              </select>
+                                                              </div>
+                                                          </td>
+                                                          <td>
+                                                              <div class="col-sm-12"><textarea class="form-control" rows="3" id="r_d" placeholder="Brand, Grams, mL, size, etc." name="r_d" disabled></textarea></div>
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>
+                                                              <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this,'of_q','of_d', 'of_evac')" value="Other Food" name="food[]" id="of"> Other Food</label></div>
+                                                          </td>
+                                                          <td><input type="number" class="form-control" id="of_q" placeholder="How many?" name="of_q" disabled></td>
+                                                          <td>Pieces</td>
+                                                          <td>
+                                                              <div class="col-sm-12"><textarea class="form-control" rows="3" id="of_d" placeholder="Brand, Grams, mL, size, etc." name="of_d" disabled></textarea></div>
+                                                          </td>
+                                                      </tr>
+                                                  </tbody>
+                                              </table>
+                                              <img id="FoodImg" name="FoodImg" src="no_image.png" width="500dp" height="150dp"/><br>
+                                              <input type="file" id="FoodImageOpen" name="FoodImageOpen" onchange="FoodOpenImage(event);" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.PNG" />
+                                              <input type="text" id="foodtxtCompareName" />
+                                          </div>
+                        
+                                  </div>
+                                  <div class="modal-footer modal-color">
+                                  <button type="button" class="btn modal-button" onclick="food()" id="donate_food" >Pledge</button>
+                                  </div>
+                        
+                                  </form>
+                              </div>
+                              </div>
+                        
+                          </div>
+                        
+                          <div class="modal fade" id="medicine" role="dialog">
+                            <div class="modal-dialog modal-lg" role="document">
+                              <div class="modal-content">
+                                  <div class="modal-header modal-color">
+                                      <h4 class="modal-title" style="color:white;">Donate Medicines</h4>    
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>                                      
+                                  </div>
+                        
+                                  <div class="modal-body">
+                        
+                                  <form class="form-horizontal" action="/action_page.php">
+                                  
+                                                      <div class="form-group">
+                                                          <table class="table table-hover">
+                                                              <thead>
+                                                                  <th>Type</th>
+                                                                  <th>Quantity</th>
+                                                                  <th>Unit</th>
+                                                                  <th>Description</th>
+                                                                </thead>
+                                                              <tbody>
+                                                                  <tr>
+                                                                      <td>
+                                                                          <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this, 'otccap_q', 'otccap_d', 'otccap_evac')" value="Capsule" name="med[]" id="otccap">Capsule</label></div>
+                                                                      </td>           
+                                                                      <td><input type="number" class="form-control" id="otccap_q" placeholder="How many boxes?" name="otccap_q" disabled></td>
+                                                                      <td>Boxes</td>
+                                                                      <td>
+                                                                          <div class="col-sm-12"><textarea class="form-control" rows="3" id="otccap_d" placeholder="Brand, Grams, mL,  size, etc." name="otccap_d" disabled></textarea></div>
+                                                                      </td>
+                                                                  </tr>
+                                  
+                                                                  <tr>
+                                                                      <td>
+                                                                          <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this, 'otctab_q','otctab_d', 'otctab_evac')" value="Tablet" name="med[]" id="otctab">Tablet</label></div>
+                                                                      </td>           
+                                                                      <td><input type="number" class="form-control" id="otctab_q" placeholder="How many boxes?" name="otctab_q" disabled></td>
+                                                                      <td>Boxes</td>
+                                                                      <td>
+                                                                          <div class="col-sm-12"><textarea class="form-control" rows="3" id="otctab_d" placeholder="Brand, Grams, mL,  size, etc." name="otctab_d" disabled></textarea></div>
+                                                                      </td>
+                                                                  </tr>
+                        
+                                                                  <tr>
+                                                                      <td>
+                                                                          <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this, 'otcsyr_q', 'otcsyr_d', 'otcsyr_evac')" value="Syrup" name="med[]" id="otcsyr">Syrup</label></div>
+                                                                      </td>           
+                                                                      <td><input type="number" class="form-control" id="otcsyr_q" placeholder="How many bottles?" name="otcsyr_q" disabled></td>
+                                                                      <td>Bottle</td>
+                                                                      <td>
+                                                                          <div class="col-sm-12"><textarea class="form-control" rows="3" id="otcsyr_d" placeholder="Brand, Grams, mL,  size, etc." name="otcsyr_d" disabled></textarea></div>
+                                                                      </td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                    <td><div class="checkbox"><label><input type="checkbox" value="Other Medicine and Supplies" name="wc" onclick="enableFields(this, 'om_q', 'om_d', 'om_evac')" id="om"> Others</label></div></td>
+                                                                    <td><input type="number" class="form-control" id="om_q" placeholder="How many?" name="om_q" disabled></td>
+                                                                    <td>Pieces</td>
+                                                                    <td>
+                                                                        <div class="col-sm-12"><textarea class="form-control" rows="3" id="om_d" placeholder="Brand, Grams, mL,  size, etc." name="om_d" disabled></textarea></div>
+                                                                    </td>
+                                                                </tr>
+                                                              </tbody>
+                                                          </table>
+                                                          <span id="span1"></span>
+                                                          <img id="MedicineImg" name="MedicineImg" src="no_image.png" width="500dp" height="150dp"/><br>
+                                                          <input type="file" id="MedicineImageOpen" name="MedicineImageOpen" onchange="MedicineOpenImage(event);" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.PNG" />
+                                                          <input type="text" id="medicinetxtCompareName" />
+                                                      </div>
+                                  </div>
+                        
+                                  <div class="modal-footer modal-color">
+                                  <button type="button" class="btn modal-button" onclick="medicine()" id="donate_food">Pledge</button>
+                                  </div>   
+                        
+                                  </form> 
+                              </div>
+                          </div>
+                          </div>
+                        
+                          </div>
+                        
+                          <div class="modal fade" id="toiletries" role="dialog">
+                            <div class="modal-dialog modal-lg" role="document">
+                                  <div class="modal-content">
+                                      <div class="modal-header modal-color">
+                                          <h4 class="modal-title" style="color:white;">Donate Toiletries</h4> 
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>                                          
+                                      </div>
+                        
+                                      <div class="modal-body">
+                        
+                                          <form class="form-horizontal" action="/action_page.php">
+                                              <div class="form-group">
+                                                  <table class="table table-hover">
+                                                  <thead>
+                                                      <th>Type</th>
+                                                      <th>Quantity</th>
+                                                      <th>Unit</th>
+                                                      <th>Description</th>
+                                                  </thead>
+                                                      <tbody>
+                                                          <tr>
+                                                              <td>
+                                                                  <div class="checkbox"><label><input type="checkbox" onclick="enableField(this,'sha_q','sha_u','sha_d', 'sha_evac')" value="Shampoo" name="toiletries[]" id="sha" >Shampoo</label></div>
+                                                              </td>                                
+                                                              <td><input type="text" class="form-control" id="sha_q" placeholder="How many?" name="sha_q" disabled></td>
+                                                              <td>
+                                                                  <div class="form-group">
+                                                                  <select class="form-control" id="sha_u" disabled>
+                                                                      <option value="Packs">Packs</option>
+                                                                      <option value="Bottles">Bottles</option>
+                                                                  </select>
+                                                                  </div>
+                                                              </td>
+                                                              <td>
+                                                                  <div class="col-sm-12"><textarea class="form-control" rows="3" id="sha_d" placeholder="Brand, Grams, mL,  size, etc." name="sha_d" disabled></textarea></div>
+                                                              </td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>
+                                                                  <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this,'soap_q','soap_d', 'soap_evac')" value="Soap" name="toiletries[]" id="soap">Soap</label></div>
+                                                              </td>                                  
+                                                              <td><input type="text" class="form-control" id="soap_q" placeholder="How many?" name="soap_q" disabled></td>
+                                                              <td>Bars</td>
+                                                              <td>
+                                                                  <div class="col-sm-12"><textarea class="form-control" rows="3" id="soap_d" placeholder="Brand, Grams, mL,  size, etc." name="soap_d" disabled></textarea></div>
+                                                              </td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>
+                                                              <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this,'tb_q','tb_d', 'tb_evac')" value="Toothbrush" name="toiletries[]" id="tb">Toothbrush</label></div>
+                                                              </td>                                  
+                                                              <td><input type="text" class="form-control" id="tb_q" placeholder="How many?" name="tb_q" disabled></td>
+                                                              <td>Pieces</td>
+                                                              <td>
+                                                                  <div class="col-sm-12"><textarea class="form-control" rows="3" id="tb_d" placeholder="Brand, Grams, mL,  size, etc." name="tb_d" disabled></textarea></div>
+                                                              </td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>
+                                                              <div class="checkbox"><label><input type="checkbox" onclick="enableField(this,'tp_q','tp_u','tp_d', 'tp_evac')" value="Tootpaste" name="toiletries[]" id="tp">Toothpaste</label></div>
+                                                              </td>                                  
+                                                              <td><input type="text" class="form-control" id="tp_q" placeholder="How many?" name="tp_q" disabled></td>
+                                                              <td>
+                                                                  <div class="form-group">
+                                                                  <select class="form-control" id="tp_u" disabled>
+                                                                      <option value="Tubes">Tubes</option>
+                                                                      <option value="Packs">Packs</option>
+                                                                  </select>
+                                                                  </div>
+                                                              </td>
+                                                              <td>
+                                                                  <div class="col-sm-12"><textarea class="form-control" rows="3" id="tp_d" placeholder="Brand, Grams, mL,  size, etc." name="tp_d" disabled></textarea></div>
+                                                              </td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>
+                                                              <div class="checkbox"><label><input type="checkbox" onclick="enableField(this,'deo_q','deo_u','deo_d', 'deo_evac')" value="Deodorant" name="toiletries[]" id="deo">Deodorant</label></div>
+                                                              </td>                                  
+                                                              <td><input type="text" class="form-control" id="deo_q" placeholder="How many?" name="deo_q" disabled></td>
+                                                              <td>
+                                                                  <div class="form-group">
+                                                                  <select class="form-control" id="deo_u" disabled>
+                                                                      <option value="Packs">Packs</option>
+                                                                      <option value="Roll-on">Roll-on</option>
+                                                                      <option value="Stick">Stick</option>
+                                                                  </select>
+                                                                  </div>
+                                                              </td>
+                                                              <td>
+                                                                  <div class="col-sm-12"><textarea class="form-control" rows="3" id="deo_d" placeholder="Brand, Grams, mL,  size, etc." name="deo_d" disabled></textarea></div>
+                                                              </td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>
+                                                              <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this,'sn_q','sn_d', 'sn_evac')" value="Sanitary Napkin" name="toiletries[]" id="sn">Sanitary Napkin</label></div>
+                                                              </td>                                  
+                                                              <td><input type="text" class="form-control" id="sn_q" placeholder="How many?" name="sn_q" disabled></td>
+                                                              <td>Packs</td>
+                                                              <td>
+                                                                  <div class="col-sm-12"><textarea class="form-control" rows="3" id="sn_d" placeholder="Brand, Grams, mL,  size, etc." name="sn_d" disabled></textarea></div>
+                                                              </td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>
+                                                              <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this,'ot_q','ot_d', 'ot_evac')" value="Other Toiletries" name="toiletries[]" id="ot">Other Toiletries</label></div>
+                                                              </td>                                  
+                                                              <td><input type="text" class="form-control" id="ot_q" placeholder="How many?" name="ot_q" disabled></td>
+                                                              <td>Pieces</td>
+                                                              <td>
+                                                                  <div class="col-sm-12"><textarea class="form-control" rows="3" id="ot_d" placeholder="Brand, Grams, mL,  size, etc." name="ot_d" disabled></textarea></div>
+                                                              </td>
+                                                          </tr>
+                                                      </tbody>
+                                                  </table>
+                                                  <span id="span1"></span>
+                                                  <img id="ToiletriesImg" name="ToiletriesImg" src="no_image.png" width="500dp" height="150dp"/><br>
+                                                  <input type="file" id="ToiletriesImageOpen" name="ToiletriesImageOpen" onchange="ToiletriesOpenImage(event);" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.PNG" />
+                                                  <input type="text" id="toiletriestxtCompareName" />
+                                              </div>
+                                          </form>
+                        
+                                      </div>
+                        
+                                      <div class="modal-footer modal-color">
+                                      <button type="button" class="btn modal-button" onclick="toiletries()" id="donate_others" value="others">Pledge</button>
+                                      </div>    
+                                  </div>
+                              </div>
+                          </div>
+                        
+                          </div>
+                        
+                          <form class="form-horizontal" onsubmit="water" action="javascript:void(0)">
+                            
+                          <div class="modal fade" id="water" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                              
+                                  <!-- Modal content-->
+                                  <div class="modal-content">
+                                      <div class="modal-header modal-color">
+                                          <h4 class="modal-title" style="color:white;">Donate Water</h4>
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>                                          
+                                      </div>
+                                      <div class="modal-body modal-image">
+                                      
+                                                  <div class="form-group">
+                                                      <table class="table table-hover">
+                                                      <thead>
+                                                          <th>Type</th>
+                                                          <th>Quantity</th>
+                                                          <th>Unit</th>
+                                                          <th>Description</th>
+                                                      </thead>
+                                                          <tbody>
+                                                              <tr>
+                                                                  <td>
+                                                                      <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this,'bw_q','bw_d')" value="Drinking Water (Bottled)" name="water[]" id="bw">Drinking Water (Bottled)</label></div>
+                                                                  </td>                          
+                                                                  <td><input type="text" class="form-control" id="bw_q" placeholder="How many?" name="bw_q" disabled></td>
+                                                                  <td>Bottles</td>
+                                                                  <td>
+                                                                      <div class="col-sm-12"><textarea class="form-control" rows="3" id="bw_d" placeholder="Brand, Grams, mL,  size, etc." name="bw_d" disabled></textarea></div>
+                                                                  </td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>
+                                                                      <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this,'jq_q','jq_d')" value="Drinking Water (Large Containers)" name="water[]" id="jq">Drinking Water (Large Containers)</label></div>
+                                                                  </td>                          
+                                                                  <td><input type="text" class="form-control" id="jq_q" placeholder="How many?" name="jq_q" disabled></td>
+                                                                  <td>Jugs</td>
+                                                                  <td>
+                                                                      <div class="col-sm-12"><textarea class="form-control" rows="3" id="jq_d" placeholder="Brand, Grams, mL,  size, etc." name="jq_d" disabled></textarea></div>
+                                                                  </td>
+                                                              </tr>
+                                                              <tr>
+                                                                <td>
+                                                                    <div class="checkbox"><label><input type="checkbox" onclick="enableFields(this,'gallons_q','gallons_d')" value="Drinking Water (Per Gallon)" name="water[]" id="pergallon">Drinking Water (Large Containers)</label></div>
+                                                                </td>                          
+                                                                <td><input type="text" class="form-control" id="gallons_q" placeholder="How many gallons?" name="gallons_q" disabled></td>
+                                                                <td>Gallon</td>
+                                                                <td>
+                                                                    <div class="col-sm-12"><textarea class="form-control" rows="3" id="gallons_d" placeholder="Brand, Grams, mL,  size, etc." name="gallons_d" disabled></textarea></div>
+                                                                </td>
+                                                            </tr>
+                                                          </tbody>
+                                                      </table>
+                                                      <span id="span1"></span>
+                                                      <img id="WaterImg" name="WaterImg" src="no_image.png" width="500dp" height="150dp"/><br>
+                                                      <input type="file" id="WaterImageOpen" name="WaterImageOpen" onchange="WaterOpenImage(event);" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.PNG" />
+                                                      <input type="text" id="watertxtCompareName" />          
+                                                  </div>
+                                  
+                                      </div>
+                                      <div class="modal-footer modal-color">
+                                          <button type="button" onclick="water()" class="btn modal-button">Pledge</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </form>
+                        
+                        
+                          <div class="modal fade" id="cash" role="dialog">
+                            <div class="modal-dialog modal-md">  
+                                    <div class="modal-content">
+                                        <div class="modal-header modal-color">
+                                            <h4 class="modal-title" style="color:white;">Donate Money</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>                                            
+                                        </div>
+                                        <div class="modal-body modal-image">
+                                                <div><input type="number" class="form-control" id="cash_amount" placeholder="How much do you want to donate?" name="cash_amount" required></div>
+
+                                            <span id="span1"></span>
+                                            <img id="VehicleImg" name="VehicleImg" src="no_image.png" width="470dp" height="300dp"/><br>
+                                            <input type="file" id="ImageOpen" name="ImageOpen" onchange="openImage(event);" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.PNG" />
+                                            <input type="text" id="txtCompareName" />
+                                        </div>
+                                        <div class="modal-footer modal-color">
+                                        <button id="btnUpload" class="btn modal-button" onclick="UploadImage();">Pledge</button>
+                                        </div>
+                                    </div>     
+                                </div>
+                          </div>
+                        
+                          <div class="modal fade" id="other" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                              
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                  <div class="modal-header modal-color">
+                                      <h4 class="modal-title" style="color:white;">Other Donations</h4>
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>                                      
+                                  </div>
+                                  <div class="modal-body modal-image">
+                                      <form class="form-horizontal" action="/action_page.php">
+                        
+                                          <input type="text" class="form-control" id="other_t" placeholder="What item are you going to donate?" name="otherm_quantity">
+                                  
+                                              <div class="form-group">
+                                                  <table class="table table-hover">
+                                                  <thead>
+                                                      <th>Quantity</th>
+                                                      <th>Unit</th>
+                                                      <th>Description</th>
+                                                  </thead>
+                                                      <tbody>
+                                                          <tr>                          
+                                                              <td><input type="number" class="form-control" id="other_q" placeholder="How many?" name="other_q"></td>
+                                                              <td>Pieces</td>
+                                                              <td>
+                                                                  <div class="col-sm-12"><textarea class="form-control" rows="3" id="other_d" placeholder="Brand, Grams, mL,  size, etc." name="other_d"></textarea></div>
+                                                              </td>
+                                                          </tr>
+                                                      </tbody>
+                                                  </table>
+                                                  <span id="span1"></span>
+                                                  <img id="OthersImg" name="OthersImg" src="no_image.png" width="500dp" height="150dp"/><br>
+                                                  <input type="file" id="OthersImageOpen" name="ToiletriesImageOpen" onchange="OthersOpenImage(event);" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.PNG" />
+                                                  <input type="text" id="otherstxtCompareName" />
+                                              </div>
+                              
+                                      </form>
+                                  </div>
+                                  <div class="modal-footer modal-color">
+                                      <button type="button" class="btn modal-button" onclick="others()" id="donate_others" value="others">Pledge</button>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="modal fade" id="prepacked" role="dialog">
+                                <div class="modal-dialog  modal-md">
+                                    <div class="modal-content">
+                                        <div class="modal-header modal-color">
+                                        <h4 class="modal-title" style="color:white;">Pre-packed Donations</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>                                  
+                                        </div>
+    
+                                        <div class="modal-body">
+                                            <form class="form-horizontal">
+                                                <div class="form-group">
+                                                    <div class="prepackedgoods">
+                                                    <h4>Food</h4>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item">
+                                                            Canned Goods
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Canned Goods" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                        
+                                                        <li class="list-group-item">
+                                                            Instant Noodles
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Instant Noodles" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                        
+                                                        <li class="list-group-item">
+                                                            Rice
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Rice" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                        
+                                                    <br>
+                                                    <h4>Water</h4>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item">
+                                                            Bottled
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Bottled Water" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            Jug
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Jug" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                        
+                                                    <br>
+                                                    <h4>Clothes</h4>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item">
+                                                            Clothes
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Clothes" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    
+                                                    <br>
+                                                    <h4>Toiletries</h4>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item">
+                                                            Shampoo
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Shampoo" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                        
+                                                        <li class="list-group-item">
+                                                            Soap
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Soap" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                        
+                                                        <li class="list-group-item">
+                                                            Toothbrush
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Toothbrush" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                        
+                                                        <li class="list-group-item">
+                                                            Toothpaste
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Toothpaste" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                        
+                                                        <li class="list-group-item">
+                                                            Deodorant
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Deodorant" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                        
+                                                        <li class="list-group-item">
+                                                            Sanitary Napkin
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Sanitary Napkin" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                        
+                                                        <li class="list-group-item">
+                                                            Tissue Paper
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packeddonation[]" class="packeddonation" value="Tissue Paper" type="checkbox"/>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+
+                                                    <br>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item">
+                                                            Quantity
+                                                            <div class="material-switch pull-right">
+                                                                <input name="packquant" class="packquant" id="packquant" value="How many packs?" type="number"/>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+
+                                                    <br>
+                                                    <img id="PackImg" name="PackImg" src="no_image.png" width="470dp" height="150dp"/><br>
+                                                    <input type="file" id="PackImageOpen" name="PackImageOpen" onchange="PackOpenImage(event);" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.PNG" />
+                                                    <input type="text" id="packtxtCompareName" />
+
+                                                </div>
+                                            </div>                                        
+                                        
+                                        </form>                                    
+                            
+                                        </div>
+
+                                        <div class="modal-footer modal-color">
+                                            <button type="button" class="btn modal-button" onclick="prepacked()" id="donate" >Pledge</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+
+            </div>
+
+            <div class="col-lg-4">
+
+            </div>
+        </div>
+
+        <!-- /.container-fluid-->
+        <!-- /.content-wrapper-->
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="text-center">
+                    <small>FlareMob: Sagip - Donor's Pledging Panel 2018</small>
+                </div>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="evac_needs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Needs in the Evacuation Center</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="needs">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    Food
+                                    <div class="material-switch pull-right">
+                                        <input name="someSwitchOption001" id="food" value="Food" type="checkbox"/>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    Water
+                                    <div class="material-switch pull-right">
+                                        <input name="someSwitchOption001" id="water" value="Water" type="checkbox"/>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    Medicine
+                                    <div class="material-switch pull-right">
+                                        <input name="someSwitchOption001" id="medicine" value="Medicine" type="checkbox"/>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    Clothes
+                                    <div class="material-switch pull-right">
+                                        <input name="someSwitchOption001" id="clothes" value="Clothes" type="checkbox"/>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    Toiletries
+                                    <div class="material-switch pull-right">
+                                        <input name="someSwitchOption001" id="toiletries" value="Toiletries" type="checkbox"/>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="onameee" id="onameee" style="display:none">
+                            <input type="text" class="form-control" id="othersname" class="form-control" name="othersname" width="50%">
+                        </div>
+                        <br>
+                        <script>
+                            if (document.getElementById("othersss").checked==true){
+                                document.getElementById("onameee").style.display = "block";
+                            }
+                        </script>
+                        <div class="form-group">
+                            Which EVACUATION CENTER?
+                            <select class="form-control" id="evaccenter">
+                                <option value="Nangka Elementary School">Nangka Elementary School</option>
+                                <option value="St. Mary Elementary School">St. Mary Elementary School</option>
+                                <option value="Ateneoville Covered Court">Ateneoville Covered Court</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="familycount">Family Count:</label>
+                            <input type="number" class="form-control" id="familycount" class="form-control" name="familycount" width="50%">
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" id="evacneeds" onclick="submit()">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Page level plugin JavaScript-->
+        <script src="vendor/chart.js/Chart.min.js"></script>
+        <script src="vendor/datatables/jquery.dataTables.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+        <!-- Moment plugin for real-time clock display -->
+        <script src="vendor/moment/moment.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin.min.js"></script>
+        <!-- Custom scripts for this page-->
+        <script src="js/sb-admin-datatables.min.js"></script>
+        <script src="js/sb-admin-charts.js"></script>
+        <script src="js/clock.js"></script>
+        
+    </div>
+    <!--<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>-->
+    <!--<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>-->
+    <!--<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>-->
+    <!--<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>-->
+    <!--<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-functions.js"></script>-->
+    <!--<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-storage.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js">
+
+    </script>
+    <script src="firebasejsquerys/myapp.js"></script>
+    <script src="firebasejsquerys/prepacked.js"></script>    
+    <script src="js/myfieldss.js"></script>
+    <script src="firebasejsquerys/evacneedspro.js"></script>
+    <script src="firebasejsquerys/logout.js"></script>
+</body>
+
+</html>
