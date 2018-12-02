@@ -5,7 +5,7 @@ $( document ).ready(function() {
 
         }
         else{
-            window.location = "../alisto/login.html";
+            window.location = "../flaremob-sagip-webapp/login.html";
             console.log(user);
         }
 

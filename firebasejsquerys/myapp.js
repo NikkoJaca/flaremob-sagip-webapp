@@ -20,6 +20,7 @@ var donation = firebase.database().ref().child("tblDonatedItems");
 
 let ref5 = firebase.database().ref('tblBrgyOff');
 let ref6 = firebase.database().ref('tblUsers');
+let ref7 = firebase.database().ref('tblDonors');
 
 var table1 = $('#evac_table').DataTable({
   "bPaginate": false,
@@ -72,18 +73,27 @@ const saveButton = document.querySelector("#saveButton");
 function login(){
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     if (document.querySelector("#loginemail").value == "admin" && document.querySelector("#loginpassword").value == "admin"){
-        window.location = "../alisto/index.html";
+        window.location = "../flaremob-sagip-webapp/index.html";
     } else {
-        firebase.auth().signInWithEmailAndPassword(document.querySelector("#loginemail").value, document.querySelector("#loginpassword").value).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            alert("Username and/or Password is invalid!");
-            console.log("Login Failed", errorMessage);
-            console.log(user);
-
-            // alert("Login Success", errorMessage);
-        });
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(function () {
+            return firebase.auth().signInWithEmailAndPassword(document.querySelector("#loginemail").value,document.querySelector("#loginpassword").value);
+        })
+            .catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorMessage);
+            });
+        // firebase.auth().signInWithEmailAndPassword(document.querySelector("#loginemail").value, document.querySelector("#loginpassword").value).catch(function(error) {
+        //     // Handle Errors here.
+        //     var errorCode = error.code;
+        //     var errorMessage = error.message;
+        //     alert("Username and/or Password is invalid!");
+        //     console.log("Login Failed", errorMessage);
+        //     console.log(user);
+        //
+        //     // alert("Login Success", errorMessage);
+        // });
     }
 
     //   const promise = auth.signInWithEmailAndPassword(document.querySelector("#loginemail").value, document.querySelector("#loginpassword").value);
@@ -93,14 +103,19 @@ function login(){
         if (user) {
           ref5.child(user.uid).once('value',snap =>{
             if(snap.val()) {
-                window.location = "../alisto/index.html";
+                window.location = "../flaremob-sagip-webapp/index.html";
             }
           });
           ref6.child(user.uid).once('value',snap =>{
             if(snap.val()){
-                window.location = "../alisto/pledging.html";
+                window.location = "../flaremob-sagip-webapp/pledging.html";
             }
 
+          });
+          ref7.child(user.uid).once('value',snap =>{
+              if(snap.val()){
+                  window.location = "../flaremob-sagip-webapp/pledging.html";
+              }
           });
             console.log(user.uid);
         }
@@ -158,7 +173,7 @@ function signup() {
               donorBday: birthday.value
         }).then(function(){
           alert("Successfully created account!");
-          location.replace("../alisto/pledging.html");
+          location.replace("../flaremob-sagip-webapp/pledging.html");
         }).catch(function(error) {
           alert("Failed!", error);
         });
@@ -185,7 +200,7 @@ function logout(){
     var user = firebase.auth().currentUser;
     alert(user);
     alert('Signed Out');
-    window.location.href = "../alisto/login.html";
+    window.location.href = "../flaremob-sagip-webapp/login.html";
   }, function(error) {
     console.error('Sign Out Error', error);
   });
