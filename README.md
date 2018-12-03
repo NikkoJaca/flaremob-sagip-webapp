@@ -28,6 +28,6 @@ Updated the following are the locations of updates...
         modified:   index.html
         modified:   registrationadmin.html
         modified:   registrationevachead.html
-
+Tangina mo nikko!
 Developers:
 Nikko, Gino, Javs, Mike
