@@ -31,5 +31,3 @@ Updated the following are the locations of updates...
 
 Developers:
 Nikko, Gino, Javs, Mike
-
-change
