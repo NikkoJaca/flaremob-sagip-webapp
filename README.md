@@ -28,5 +28,8 @@ Updated the following are the locations of updates...
         modified:   index.html
         modified:   registrationadmin.html
         modified:   registrationevachead.html
+
 Developers:
 Nikko, Gino, Javs, Mike
+
+MALAPIT NA TURNOVER YAAAAY
