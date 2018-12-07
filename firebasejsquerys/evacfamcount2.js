@@ -3,6 +3,8 @@ const auth = firebase.auth();
 
 var posts = firebase.database().ref().child("tblUsers");
 var residents = firebase.database().ref().child("tblResidence");
+var residents2 = firebase.database().ref().child("tblResidence");
+
 
 var alloc = $('#alloc').DataTable({
     "bPaginate": true,
@@ -57,6 +59,7 @@ var alloc = $('#alloc').DataTable({
 
     var dataset2 =[];
     var key = "";
+    var famMembers = [];                
 
     var famAlloc = $('#famalloc').DataTable({
       "bPaginate": true,
@@ -65,19 +68,22 @@ var alloc = $('#alloc').DataTable({
       "bInfo": false,
       "searching": true,
       "pageLength": 8});
+
     
       residents.on("child_added", snap=>{
         var famname = snap.child("familyName").val();
         var famcount = snap.child("familyCount").val();
         key = snap.key;
         var familyMembers = residents.child(key).child("FamilyMembers");
+        famMembers = [];            
+        
 
         familyMembers.on("child_added", snap2=>{
           var famname = snap2.child("fmName").val();
           var famstatus = snap2.child("fmStatus").val();
           var fam = famname + " : " + famstatus;
-          famMembers = [];
-          famMembers.push(fam);
+            famMembers.push(famname);            
+          
         });
         
 
@@ -85,6 +91,7 @@ var alloc = $('#alloc').DataTable({
         famAlloc.rows.add([dataset2]).draw();        
         
       });
+      console.log(famMembers);
 
       
 

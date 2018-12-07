@@ -12,7 +12,7 @@ $(document).ready(function () {
             let evacStatus = snap.child("evacStatus").val();
 
                 if (evacStatus!=0){
-                    count += evacStatus;
+                    
                     var evacId = snap.child("userEvacId").val();
 
                     var evacAssign = "";
@@ -20,14 +20,20 @@ $(document).ready(function () {
                     if (evacId == "TLOC20181023070849440"){
                         evacAssign = "Nangka High School"
                         countnhs+=1;
+                        count += 1;
+                        
                     }
                     else if (evacId == "TLOC20181023071503704"){
                         evacAssign = "Ateneoville"
                         countacc+=1;
+                        count += 1;
+                        
                     }
                     else if(evacId == "TLOC20181023070504196"){
                         evacAssign = "Nangka Elementary School";
                         countnes+=1;
+                        count += 1;
+                        
                     }else{
                         evacAssign = "Not Assigned to any Evacuation Center";
                     }

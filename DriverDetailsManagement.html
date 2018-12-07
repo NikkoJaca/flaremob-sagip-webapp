@@ -839,6 +839,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -856,6 +857,104 @@
         <script src="js/sb-admin-datatables.min.js"></script>
         <script src="js/sb-admin-charts.js"></script>
         <script src="js/clock.js"></script>
+=======
+    </div>
+    <div class="modal fade" id="evac_needs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Needs in the Evacuation Center</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="needs">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Food
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="food" value="Food" type="checkbox" />
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Water
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="water" value="Water" type="checkbox" />
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Medicine
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="medicine" value="Medicine" type="checkbox" />
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Clothes
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="clothes" value="Clothes" type="checkbox" />
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Toiletries
+                                <div class="material-switch pull-right">
+                                    <input name="someSwitchOption001" id="toiletries" value="Toiletries" type="checkbox" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="onameee" id="onameee" style="display:none">
+                        <input type="text" class="form-control" id="othersname" class="form-control" name="othersname" width="50%">
+                    </div>
+                    <br>
+                    <script>
+                        if (document.getElementById("othersss").checked==true){
+                            document.getElementById("onameee").style.display = "block";
+                        }
+                    </script>
+                    <div class="form-group">
+                        Which EVACUATION CENTER?
+                        <select class="form-control" id="evaccenter">
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familycount">Family Count:</label>
+                        <input type="number" class="form-control" id="familycount" class="form-control" name="familycount" width="50%">
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" id="evacneeds" onclick="submit()">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="firebasejsquerys/needsforevac.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Moment plugin for real-time clock display -->
+    <script src="vendor/moment/moment.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="js/sb-admin-charts.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="firebasejsquerys/CHECKINGIFUSER.js"></script>
+    <script src="firebasejsquerys/logout.js"></script>
+>>>>>>> b8360202a787f2e1635c2ca81837ac4bccf07077
     </div>
 
 </body>
