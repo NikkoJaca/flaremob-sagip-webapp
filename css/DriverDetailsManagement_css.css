@@ -120,9 +120,9 @@ div.enclosure{
 	transition:0.5s;
 }
 .btnWrapper{
-	/* position: absolute; */
+	position: absolute;
 	/* float:right; */
-	right:15px;
+	right:55px;
 	/* left:730px; */
 	bottom:370px;
 	/* margin-left:-100px; */
@@ -215,7 +215,6 @@ table.table3{
 }
 .h2C {
 	color:#ffffff;
-	font-size:20px;
 }
 .parC{
 	color:#c7cddb;

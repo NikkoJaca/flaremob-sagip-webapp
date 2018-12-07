@@ -129,8 +129,8 @@ function SearchFirebase(Filter,Action,objID){
             }
         });
     }else if(Action==2){
-        var TheChild=Filter.split('+')[0]; //alert(TheChild);
-        var TheFilter=Filter.split('+')[1]; //alert(TheChild+": "+TheFilter);
+        var TheChild=Filter.split('+')[0];
+        var TheFilter=Filter.split('+')[1];
         var refFBDB=FBDB.ref('tblDrivers').orderByChild(TheChild).startAt(TheFilter).endAt(TheFilter+'\uf8ff');
         refFBDB.once('value',function(data){
             if(data.exists()){
