@@ -219,7 +219,7 @@ function RecordFirebase(PSV,Action){
                                 firebase.auth().signOut().then(function() {
                                     firebase.auth().onAuthStateChanged(function(user) {
                                         if (user) {
-
+//test test gago
                                         }
                                     });
                                 }, function(error) {
