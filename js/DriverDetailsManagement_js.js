@@ -192,14 +192,35 @@ function RecordFirebase(PSV,Action){
 
         //setTimeout(function(){ //alert(AuthResult); //returns object [Object]
             if(IsAuthError==false){
-                var refFBDB=FBDB.ref('tblDrivers');
-                refFBDB.push(TheData,function(error){
-                    if(!error){
-                        DisplayMessageResult(1,'Record successfully created.');
-                    }else{
-                        DisplayMessageResult(0,error);
-                    } 
+                firebase.auth().signInWithEmailAndPassword(String(PSV.split('+')[0]),String(PSV.split('+')[4]));
+                firebase.auth().onAuthStateChanged(function(user) {
+                    if (user)
+                    {
+                        var refFBDB=FBDB.ref('tblDrivers');
+                        refFBDB.child(user.uid).set(TheData,function(error){
+                            if(!error){
+                                DisplayMessageResult(1,'Record successfully created.');
+                                firebase.auth().signOut().then(function() {
+                                    firebase.auth().onAuthStateChanged(function(user) {
+                                        if (user) {
+
+                                        }
+                                        else{
+                                            window.location = "../flaremob-sagip-webapp/login.html";
+                                        }
+                                    });
+                                }, function(error) {
+                                    console.error('Sign Out Error', error);
+                                });
+                            }else{
+                                DisplayMessageResult(0,error);
+                            }
+                        });
+
+                    }
+
                 });
+
             }else{
                 alert('Failure in authenticating driver\'s email address and password.\nDriver record not created.');
             }
