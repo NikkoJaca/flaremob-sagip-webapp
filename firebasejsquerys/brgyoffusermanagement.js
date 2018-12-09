@@ -17,8 +17,8 @@ var table1 = $('#User').DataTable({
     ],
     "columnDefs": [ {
         "targets": -1,
-        "data": null,
-        "defaultContent": "<button id='edituser' class='edit-user btn btn-warning m-2' data-toggle='modal' data-target='#adminUserEditModalWindow' onClick='editButtonClicked()'>Edit</button>  <button id='delete123' class='edit-user btn btn-danger m-2' onclick='delete123()'>Delete</button>"
+        "data": null
+        // "defaultContent": "<button id='edituser' class='edit-user btn btn-warning m-2' data-toggle='modal' data-target='#adminUserEditModalWindow' onClick='editButtonClicked()'>Edit</button>  <button id='delete123' class='edit-user btn btn-danger m-2' onclick='delete123()'>Delete</button>"
     } ]
 });
 
@@ -58,18 +58,18 @@ function readUserData() {
             deleteIconUI.setAttribute("userid", key);
             deleteIconUI.addEventListener("click", deleteButtonClicked);
 
-            $li.innerHTML = value.offFname + " "+value.offLname + " || Email Address: "+ value.offEmail;
-            $li.append(editIconUI);
-            $li.append(deleteIconUI);
+            // $li.innerHTML = value.offFname + " "+value.offLname + " || Email Address: "+ value.offEmail;
+            // $li.append(editIconUI);
+            // $li.append(deleteIconUI);
 
 
-            $li.setAttribute("user-key", key);
-            $li.addEventListener("click", userClicked);
-            userListUI.append($li);
+            // $li.setAttribute("user-key", key);
+            // $li.addEventListener("click", userClicked);
+            // userListUI.append($li);
             let name = value.offFname + " "+value.offLname ;
 
-            let editButtonOnTable = "<button id='edituser' userid='"+key+"' class='edit-user btn btn-warning m-2' data-toggle='modal' data-target='#adminUserEditModalWindow' onClick='editButtonClicked'>Edit</button>"
-            let dataset = [editButtonOnTable,value.offEmail,value.offBday];
+            let editButtonOnTable = "<button id='edituser' userid='"+key+"' class='edit-user btn btn-warning m-2' data-toggle='modal' data-target='#adminUserEditModalWindow' onClick='editButtonClicked'>Edit</button>";
+            let dataset = [name,value.offEmail,value.offBday,editButtonOnTable];
             console.log(dataset);
             table1.rows.add([dataset]).draw();
         })
