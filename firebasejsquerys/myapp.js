@@ -101,6 +101,7 @@ function login(){
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+            let n = false;
           ref5.child(user.uid).once('value',snap =>{
             if(snap.val()) {
                 window.location = "../flaremob-sagip-webapp/index.html";
@@ -117,6 +118,21 @@ function login(){
                   window.location = "../flaremob-sagip-webapp/pledging.html";
               }
           });
+          if(n){
+              firebase.auth().signOut().then(function() {
+                  firebase.auth().onAuthStateChanged(function(user) {
+                      if (user) {
+
+                      }
+                      else{
+                          window.location = "../flaremob-sagip-webapp/login.html";
+                      }
+                  });
+              }, function(error) {
+                  console.error('Sign Out Error', error);
+              });
+          }
+
             console.log(user.uid);
         }
         else {
