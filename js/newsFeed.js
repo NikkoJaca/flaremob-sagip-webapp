@@ -15,6 +15,8 @@ function getArrTblPostsKeys() {
     return firebase.database().ref().child('tblPosts').once('value').then(objArrKeysTblPosts);
 }
 
+
+
 // function queryNewsFeed(key) {
 //     console.log(key);
 //     return firebase.database().ref('tblPosts').child('' + key).once('value');
@@ -49,7 +51,7 @@ getArrTblPostsKeys().then(function (keys) {
                         '<div class="card-body">' +
                         '<div class="font-italic font-bold"><span class="fa fa-building fa-3x img-thumbnail rounded-circle" style="vertical-align: middle;"></span> Evacuation Center Announcement<hr></div>' +
                         '<h6 class="card-title mb-1"> ' + evacPlace + '</h6>' +
-                        '<p class="card-text small">The evacuation center located at ' + evacPlace + 'is accomodating ' + evacCount + ' families and is in need of ' + evacItem + '.</p>' +
+                        '<p class="card-text small">The evacuation center located at ' + evacPlace + ' is accomodating ' + evacCount + ' families and is in need of ' + evacItem + '.</p>' +
                         '</div>' +
                         '<hr class="my-0">' +
                         '<div class="card-footer small text-muted align-items-end">' + postDate + '</div>' +
@@ -63,13 +65,13 @@ getArrTblPostsKeys().then(function (keys) {
                     var postLname = snapshot2.child('postLname').val();
                     var userImageURL = snapshot2.child('userImage').val();
                     var imageUrl = snapshot2.child('imageUrl').val();
+                    var sagipAdminPic = 'images/img-04.jpg';
 
 
-
-                    if (postName == 'SAGIP Flood Alerts') {
+                    if (postName == 'Barangay Nangka Admin') {
                         $('#feedItems').append('<div class="card card- mb-3">' +
                             '<div class="card-body">' +
-                            '<div class="font-italic font-bold"><span class="img-thumbnail rounded-circle fa fa-warning fa-3x" style="vertical-align: middle;"></span> ' +
+                            '<div class="font-italic font-bold"><img class="img-thumbnail rounded-circle img-fluid" style="height:80px; width:80px" src="' + sagipAdminPic + '"> ' +
                             postName + '<hr></div>' +
                             '<h6 class="card-title mb-1">' + postTitle + '</h6>' +
                             '<p class="card-text small">' + postDesc + '</p>' +

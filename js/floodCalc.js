@@ -1,4 +1,9 @@
 //initialize data object
+//note that all of the timestamps here are only useful if you need the time as the page loaded
+//using the native js code of Date function does not update overtime
+//so instead, refer to clock.js -> where the getClock variable is from
+//the getClock variable is updated with an interval of 1 sec and is used for flood forecast firebase push
+
 var timeFramesChart = ["12am", "3am", "6am", "9am", "12pm", "3pm", "6pm", "9pm"];
 var timeFramesChart2 = new Array();
 var timeFrames = ["0", "3", "6", "9", "12", "15", "18", "21"];
@@ -13,6 +18,7 @@ var timeStamp = DateTimeNow(9);
 var timeStamp2 = new Date().toISOString().substr(0, 19).replace('T', ' ');
 var waterLevel;
 var waterLevel1hr;
+var weatherForecastForToday;
 
 var currentUserID;
 var currentUserPassword;
@@ -115,7 +121,7 @@ $(document).ready(function () {
                     //forecast data selector for the current date only
                 }
                 if (dateSelector == data.list[i].dt_txt) {
-                    var weatherForecastForToday = data.list[i].weather[0].description;
+                    weatherForecastForToday = data.list[i].weather[0].description;
                     console.log('Time of calculation: ' + data.list[i].dt_txt);
                     console.log('Weather description: ' + data.list[i].weather[0].description);
                     if (jsonRain == null) {
@@ -168,20 +174,44 @@ $(document).ready(function () {
 
             severityCondition = checkSeverity(waterLevel);
             floodMsgControl(severityCondition);
-            writeDataToFirebaseTblPosts(timeStamp, severityCondition, waterLevel);
 
+            //get the forecast time selector and convert it into a date
+            //the forecast time selector serves as point of reference for the refresh time
+            //refresh time will be the forecast time selector plus 3 hours
+            var getForecastSelector = new Date(forecastSelector());
+            var currentSelectedHourForecast = getForecastSelector.getHours();
+            var nextHourRefresh = currentSelectedHourForecast + 3
 
-            console.log("Max flood discharge:" + maxFloodDischarge3hr);
+            //call the refresh function and pass the refresh time params
+            //the refresh will be triggered based on the time param
+            //i.e., refresh will be triggered at 21:00:00
 
-            document.getElementById("riverLevel3hr").innerHTML = waterLevel;
-            document.getElementById("riverLevel1hr").innerHTML = waterLevel1hr;
-            document.getElementById("maxDischargeLevel3hr").innerHTML = maxFloodDischarge3hr;
-            document.getElementById("rainfallVolume").innerHTML = Math.round(rainPer3Hour * 100) / 100;
-            document.getElementById("weatherForecast").innerHTML = weatherForecastForToday;
+            refreshAt(nextHourRefresh, 0, 0);
+
+            //handler for automatic flood forecast send of notification
+            //checks if the forecast reports have not been notified from the last 3 hours
+            //otherwise will not fire
+            //this is to prevent repetition of sending notifs
+            firebase.database().ref().child('tblForecastReport').once('value', function (snapshot) {
+                var lastForecastDate = new Date(snapshot.child('forecastLastReportDate').val());
+                var lastForecastHour = lastForecastDate.getHours();
+
+                if (lastForecastHour < currentSelectedHourForecast) {
+                    writeDataToFirebaseTblPosts(severityCondition, waterLevel);
+                };
+            })
+            writeFloodPredictionToHTML();
         }
     })
-
 })
+
+function writeFloodPredictionToHTML() {
+    document.getElementById("riverLevel3hr").innerHTML = waterLevel;
+    document.getElementById("riverLevel1hr").innerHTML = waterLevel1hr;
+    document.getElementById("maxDischargeLevel3hr").innerHTML = maxFloodDischarge3hr;
+    document.getElementById("rainfallVolume").innerHTML = Math.round(rainPer3Hour * 100) / 100;
+    document.getElementById("weatherForecast").innerHTML = weatherForecastForToday;
+}
 
 function checkSeverity(waterLevel) {
     if (waterLevel < 15) {
@@ -291,25 +321,64 @@ function DateTimeNow(Zero29) {
     } //returns YYYY-MM-DD hh:mm
 }
 
+//refresh function that asks for time
+//will refresh at later point of time while in page
+function refreshAt(hours, minutes, seconds) {
+    var now = new Date();
+    var then = new Date();
 
-function writeDataToFirebaseTblPosts(timeStamp, severityCondition, waterLevel) {
+    if (now.getHours() > hours ||
+        (now.getHours() == hours && now.getMinutes() > minutes) ||
+        now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
+        then.setDate(now.getDate() + 1);
+    }
+    then.setHours(hours);
+    then.setMinutes(minutes);
+    then.setSeconds(seconds);
+
+    var timeout = (then.getTime() - now.getTime());
+    setTimeout(function () {
+        window.location.reload(true);
+    }, timeout);
+}
+
+//automatic write to the firebase (uses severityCondition as trigger)
+function writeDataToFirebaseTblPosts(severityCondition, waterLevel) {
     if (severityCondition == "medium") {
         firebase.database().ref('tblPosts/').push({
-            postDate: timeStamp,
-            postDesc: 'BABALA! Inaasahang lagpas tuhod na pag-baha at kalat-kalat na pag-ulan ay posibleng maranasan. '+
-            'Inaabiso ang mga residenteng nakatira malapit sa Marikina River na agarang lumikas: (Kabayani Rd., Balubad St., Millagros St., Buen-Mar Ave., Washington St., Moscow St., Mahogany St., Narra St., Kamagong St., Acacia St., Banaba St., Balimbing St., Kingston St., Rosal St., Bangkal St., Bignay St.) '+
-            'Humandang pumunta sa pinakamalapit na evacuation center! Estimated river level: ' + waterLevel + 'm',
-            postName: 'SAGIP Flood Alerts',
-            postTitle: 'Flood Alert - Moderate Flooding'
+            postDate: getClock,
+            postDesc: 'BABALA! Inaasahang lagpas tuhod na pag-baha at kalat-kalat na pag-ulan ay posibleng maranasan. ' +
+                'Inaabiso ang mga residenteng nakatira malapit sa Marikina River na agarang lumikas: ' +
+                '(Kabayani Rd., Balubad St., Millagros St., Buen-Mar Ave., Washington St., Moscow St., Mahogany St., Narra St., Kamagong St., Acacia St., Banaba St., Balimbing St., Kingston St., Rosal St., Bangkal St., Bignay St.) ' +
+                'Humandang pumunta sa pinakamalapit na evacuation center! Estimated river level: ' + waterLevel + 'm',
+            postName: 'Barangay Nangka Admin',
+            postTitle: 'Flood Alert: Prepare Evacuation!'
+        }).then(() => {
+            firebase.database().ref('tblForecastReport/forecastLastReportDate').set(getClock, function (error) {
+                if (error) {
+                    console.log('Forecast report could not be overwritten! ' + error);
+                } else {
+                    console.log('Forecast has been sent, forecast report has been updated.');
+                }
+            });
         });
     } else if (severityCondition == "critical") {
         firebase.database().ref('tblPosts/').push({
-            postDate: timeStamp,
-            postDesc: 'ALERTO! Kritikal na lebel ng pagbabaha at malakas na pag-ulan ay posibleng maranasan. '+
-            'Inaabiso ang mga residenteng nakatira sa flood-prone areas ay ay agarang lumikas na: (Kabayani Rd., Balubad St., Millagros St., Buen-Mar Ave., Washington St., Moscow St., Mahogany St., Narra St., Kamagong St., Acacia St., Banaba St., Balimbing St., Kingston St., Rosal St., Bangkal St., Bignay St., Dama de Noche St., Langka St., Manga St., Saint Claire St., Saint Martin St., Kingsway St. J.P. Rizal St.) '+
-            'Estimated river level: ' + waterLevel + 'm',
-            postName: 'SAGIP Flood Alerts',
-            postTitle: 'Flood Alert - Critical Flooding'
+            postDate: getClock,
+            postDesc: 'ALERTO! Kritikal na lebel ng pagbabaha at malakas na pag-ulan ay posibleng maranasan. ' +
+                'Inaabiso ang mga lahat residenteng nakatira sa flood-prone areas ay agarang lumikas na: ' +
+                '(Kabayani Rd., Balubad St., Millagros St., Buen-Mar Ave., Washington St., Moscow St., Mahogany St., Narra St., Kamagong St., Acacia St., Banaba St., Balimbing St., Kingston St., Rosal St., Bangkal St., Bignay St., Dama de Noche St., Langka St., Manga St., Saint Claire St., Saint Martin St., Kingsway St. J.P. Rizal St.) ' +
+                'Estimated river level: ' + waterLevel + 'm',
+            postName: 'Barangay Nangka Admin',
+            postTitle: 'Flood Alert: Forced Evacuation!'
+        }).then(() => {
+            firebase.database().ref('tblForecastReport/forecastLastReportDate').set(getClock, function (error) {
+                if (error) {
+                    console.log('Forecast report could not be overwritten! ' + error);
+                } else {
+                    console.log('Forecast has been sent, forecast report has been updated.');
+                }
+            });
         });
     } else if (severityCondition == "normal") {
         console.log('Flood levels are normal!');
@@ -328,16 +397,24 @@ $('#btnManualSendCriticalWarning').on('click', function (event) {
             currentUserID = user.uid;
             firebase.database().ref('tblBrgyOff').child('' + currentUserID).on('value', function (snapshot) {
                 currentUserPassword = '' + snapshot.child('offPassword').val();
-                
+
                 if (inputPassword == currentUserPassword) {
 
                     firebase.database().ref('tblPosts/').push({
-                        postDate: timeStamp,
-                        postDesc: 'ALERTO! Kritikal na lebel ng pagbabaha at malakas na pag-ulan ay posibleng maranasan. '+
-                        'Inaabiso ang mga residenteng nakatira sa flood-prone areas ay ay agarang lumikas na: (Kabayani Rd., Balubad St., Millagros St., Buen-Mar Ave., Washington St., Moscow St., Mahogany St., Narra St., Kamagong St., Acacia St., Banaba St., Balimbing St., Kingston St., Rosal St., Bangkal St., Bignay St., Dama de Noche St., Langka St., Manga St., Saint Claire St., Saint Martin St., Kingsway St. J.P. Rizal St.) '+
-                        'Estimated river level: ',
-                        postName: 'SAGIP Flood Alerts',
-                        postTitle: 'Flood Alert - Critical Flooding'
+                        postDate: getClock,
+                        postDesc: 'ALERTO! Kritikal na lebel ng pagbabaha at malakas na pag-ulan ay posibleng maranasan. ' +
+                            'Inaabiso ang mga residenteng nakatira sa flood-prone areas ay agarang lumikas na: ' +
+                            '(Kabayani Rd., Balubad St., Millagros St., Buen-Mar Ave., Washington St., Moscow St., Mahogany St., Narra St., Kamagong St., Acacia St., Banaba St., Balimbing St., Kingston St., Rosal St., Bangkal St., Bignay St., Dama de Noche St., Langka St., Manga St., Saint Claire St., Saint Martin St., Kingsway St. J.P. Rizal St.) ',
+                        postName: 'Barangay Nangka Admin',
+                        postTitle: 'Flood Alert: Forced Evacuation!'
+                    }).then(() => {
+                        firebase.database().ref('tblForecastReport/forecastLastReportDate').set(getClock, function (error) {
+                            if (error) {
+                                console.log('Forecast report could not be overwritten! ' + error);
+                            } else {
+                                console.log('Forecast has been sent, forecast report has been updated.');
+                            }
+                        });
                     });
                     $('#overrideCriticalWarningModal').modal('hide');
                     $('#confirmedOverrideCriticalWarningModal').modal('show');
@@ -345,10 +422,8 @@ $('#btnManualSendCriticalWarning').on('click', function (event) {
                     $('#wrongPasswordOverrideCriticalWarningModal').modal('show');
                 }
             });
-
-
         } else {
-            console.log('Check if you are currently logged in or accessing the page not via LOCALHOST!!! Because the user ID was not found... SADLYF');
+            console.log('Check if you are currently logged in or accessing the page not via LOCALHOST!!! Because the user ID was not found...');
         }
     });
 });
@@ -359,18 +434,26 @@ $('#btnManualSendModerateWarning').on('click', function (event) {
     //password authentication for manual alert sending
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            currentUserID = user.uid;
-            firebase.database().ref('tblBrgyOff').child('' + currentUserID).on('value', function (snapshot) {
+            currentUserID = user.uid; //get user ID
+            firebase.database().ref('tblBrgyOff').child('' + currentUserID).once('value', function (snapshot) {
                 currentUserPassword = '' + snapshot.child('offPassword').val();
-                
-                if (inputPassword == currentUserPassword) {
+
+                if (inputPassword == currentUserPassword) { //compare the ID to the input
                     firebase.database().ref('tblPosts/').push({
-                        postDate: timeStamp,
-                        postDesc: 'BABALA! Inaasahang lagpas tuhod na pag-baha at kalat-kalat na pag-ulan ay posibleng maranasan. '+
-                        'Inaabiso ang mga residenteng nakatira malapit sa Marikina River na agarang lumikas: (Kabayani Rd., Balubad St., Millagros St., Buen-Mar Ave., Washington St., Moscow St., Mahogany St., Narra St., Kamagong St., Acacia St., Banaba St., Balimbing St., Kingston St., Rosal St., Bangkal St., Bignay St.) '+
-                        'Humandang pumunta sa pinakamalapit na evacuation center!',            
-                        postName: 'SAGIP Flood Alerts',
-                        postTitle: 'Flood Alert - Moderate Flooding'
+                        postDate: getClock,
+                        postDesc: 'BABALA! Inaasahang lagpas tuhod na pag-baha at kalat-kalat na pag-ulan ay posibleng maranasan. ' +
+                            'Inaabiso ang mga residenteng nakatira malapit sa Marikina River na agarang lumikas: (Kabayani Rd., Balubad St., Millagros St., Buen-Mar Ave., Washington St., Moscow St., Mahogany St., Narra St., Kamagong St., Acacia St., Banaba St., Balimbing St., Kingston St., Rosal St., Bangkal St., Bignay St.) ' +
+                            'Humandang pumunta sa pinakamalapit na evacuation center!',
+                        postName: 'Barangay Nangka Admin',
+                        postTitle: 'Flood Alert: Prepare Evacuation!'
+                    }).then(() => {
+                        firebase.database().ref('tblForecastReport/forecastLastReportDate').set(getClock, function (error) {
+                            if (error) {
+                                console.log('Forecast report could not be overwritten! ' + error);
+                            } else {
+                                console.log('Forecast has been sent, forecast report has been updated.');
+                            }
+                        });
                     });
                     $('#overrideModerateWarningModal').modal('hide');
                     $('#confirmedOverrideModerateWarningModal').modal('show');
@@ -379,15 +462,11 @@ $('#btnManualSendModerateWarning').on('click', function (event) {
                 }
             });
         } else {
-            console.log('Check if you are currently logged in or accessing the page not via LOCALHOST!!! Because the user ID was not found... SADLYF');
+            console.log('Check if you are currently logged in or accessing the page not via LOCALHOST!!! Because the user ID was not found...');
         }
     });
 
 });
-
-
-
-
 
 //get the current user password according to the ID.
 // if(currentUserID != null) {

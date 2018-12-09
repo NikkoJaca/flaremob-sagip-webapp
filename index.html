@@ -438,10 +438,15 @@
                   <div class="mb-0 mt-4">
                     <i class="fa fa-newspaper-o"></i> News Feed and Updates</div>
                   <hr class="mt-2">
-        
+                    
+                  <div id="feedItemsUpdate" class="p-2" style="overflow-y: auto">
+                    <!--newsfeed.js populates this division using firebase triggers-->
+                    <!--sadly, firebase triggers requires cloud functions, which uses nodejs-->
+                  </div>
+
                   <!--social card for news feed-->
                   <div id="feedItems" class="p-2" style="overflow-y: scroll; height:1053px">
-                    
+                    <!--newsfeed.js populates this division (non-realtime)-->
                   </div>
         
                 </div>
