@@ -192,7 +192,23 @@ function RecordFirebase(PSV,Action){
 
         //setTimeout(function(){ //alert(AuthResult); //returns object [Object]
             if(IsAuthError==false){
-                firebase.auth().signInWithEmailAndPassword(String(PSV.split('+')[0]),String(PSV.split('+')[4]));
+                firebase.auth().signOut().then(function() {
+                    firebase.auth().onAuthStateChanged(function(user) {
+                        if (user) {
+                        }
+                    });
+                }, function(error) {
+                    console.error('Sign Out Error', error);
+                });
+                firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(function () {
+                    return firebase.auth().signInWithEmailAndPassword(String(PSV.split('+')[0]),String(PSV.split('+')[4]));
+                })
+                    .catch(function(error) {
+                        // Handle Errors here.
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log(errorMessage);
+                    });
                 firebase.auth().onAuthStateChanged(function(user) {
                     if (user)
                     {
@@ -204,9 +220,6 @@ function RecordFirebase(PSV,Action){
                                     firebase.auth().onAuthStateChanged(function(user) {
                                         if (user) {
 
-                                        }
-                                        else{
-                                            window.location = "../flaremob-sagip-webapp/login.html";
                                         }
                                     });
                                 }, function(error) {
