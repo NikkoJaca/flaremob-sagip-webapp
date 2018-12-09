@@ -1,4 +1,5 @@
 // Firebase Database Reference and the child
+//push
 const dbRef = firebase.database().ref();
 const usersRef = dbRef.child('tblBrgyOff');
 var table1 = $('#User').DataTable({
