@@ -73,7 +73,7 @@ const saveButton = document.querySelector("#saveButton");
 function login(){
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     if (document.querySelector("#loginemail").value == "admin" && document.querySelector("#loginpassword").value == "admin"){
-        window.location = "../flaremob-sagip-webapp/index.html";
+        window.location = "../index.html";
     } else {
         firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(function () {
             return firebase.auth().signInWithEmailAndPassword(document.querySelector("#loginemail").value,document.querySelector("#loginpassword").value);
@@ -176,7 +176,7 @@ function signup() {
               donorBday: birthday.value
         }).then(function(){
           alert("Successfully created account!");
-          location.replace("../flaremob-sagip-webapp/pledging.html");
+          location.replace("../pledging.html");
         }).catch(function(error) {
           alert("Failed!", error);
         });
