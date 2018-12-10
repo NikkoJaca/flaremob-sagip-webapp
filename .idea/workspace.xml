@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f134547-4924-44c8-8e20-b0a5f1c5d385" name="Default" comment="Evac head management Update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebasejsquerys/Checkintro.js" beforeDir="false" afterPath="$PROJECT_DIR$/firebasejsquerys/Checkintro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebasejsquerys/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/firebasejsquerys/logout.js" afterDir="false" />
+    <list default="true" id="2f134547-4924-44c8-8e20-b0a5f1c5d385" name="Default" comment="Update Login!">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -157,17 +155,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="310" />
+          <entry key="html" value="314" />
           <entry key="js" value="1062" />
           <entry key="md" value="299" />
-          <entry key="txt" value="104" />
+          <entry key="txt" value="117" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="310" />
+          <entry key="HTML" value="314" />
           <entry key="JavaScript" value="1062" />
-          <entry key="PLAIN_TEXT" value="403" />
+          <entry key="PLAIN_TEXT" value="416" />
         </counts>
       </usages-collector>
     </session>
@@ -244,8 +242,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="619" column="41" selection-start-line="619" selection-start-column="41" selection-end-line="619" selection-end-column="41" />
+            <state relative-caret-position="207">
+              <caret line="615" column="11" lean-forward="true" selection-start-line="615" selection-start-column="11" selection-end-line="615" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -398,7 +396,6 @@
         <option value="$PROJECT_DIR$/DeliveryMonitoring.html" />
         <option value="$PROJECT_DIR$/dm7prototype.html" />
         <option value="$PROJECT_DIR$/firebasejsquerys/CHECKINGIFUSER.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/pledging.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/DriverDetailsManagement.html" />
@@ -410,6 +407,7 @@
         <option value="$PROJECT_DIR$/firebasejsquerys/myapp.js" />
         <option value="$PROJECT_DIR$/firebasejsquerys/logout.js" />
         <option value="$PROJECT_DIR$/firebasejsquerys/Checkintro.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -616,7 +614,7 @@
       <workItem from="1544358022396" duration="4004000" />
       <workItem from="1544375899184" duration="2858000" />
       <workItem from="1544378808615" duration="2742000" />
-      <workItem from="1544401724525" duration="13109000" />
+      <workItem from="1544401724525" duration="13178000" />
     </task>
     <task id="LOCAL-00001" summary="update for myapp.js">
       <created>1544374218668</created>
@@ -695,11 +693,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544427740373</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Update Login!">
+      <created>1544429562417</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1544429562417</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="437200000" />
+    <option name="totallyTimeSpent" value="437269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -795,7 +800,8 @@
     <MESSAGE value="Admin User management changes" />
     <MESSAGE value="Admin User management changes by 3:39pm" />
     <MESSAGE value="Evac head management Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Evac head management Update" />
+    <MESSAGE value="Update Login!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Login!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1206,8 +1212,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="619" column="41" selection-start-line="619" selection-start-column="41" selection-end-line="619" selection-end-column="41" />
+        <state relative-caret-position="207">
+          <caret line="615" column="11" lean-forward="true" selection-start-line="615" selection-start-column="11" selection-end-line="615" selection-end-column="11" />
         </state>
       </provider>
     </entry>
