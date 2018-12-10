@@ -3,6 +3,7 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
     //shit
+    //    test
     }
     else{
         window.location = "../login.html";

@@ -180,7 +180,7 @@ function signup() {
         }).catch(function(error) {
           alert("Failed!", error);
         });
-
+        //test
         donorRef.push({
           donorId: uid,
           donorOrg: organization.value,
