@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f134547-4924-44c8-8e20-b0a5f1c5d385" name="Default" comment="Updated Driver Details plus shit">
+    <list default="true" id="2f134547-4924-44c8-8e20-b0a5f1c5d385" name="Default" comment="Admin changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminUserManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminUserManagement.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firebasejsquerys/brgyoffusermanagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/firebasejsquerys/brgyoffusermanagement.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -131,40 +132,42 @@
     <session id="978504428">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.51" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.91" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="24" />
-          <entry key="js" value="11" />
+          <entry key="html" value="25" />
+          <entry key="js" value="13" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="24" />
-          <entry key="JavaScript" value="11" />
+          <entry key="HTML" value="25" />
+          <entry key="JavaScript" value="13" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="33" />
-          <entry key="js" value="253" />
+          <entry key="html" value="292" />
+          <entry key="js" value="1046" />
           <entry key="md" value="299" />
-          <entry key="txt" value="34" />
+          <entry key="txt" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="33" />
-          <entry key="JavaScript" value="253" />
-          <entry key="PLAIN_TEXT" value="333" />
+          <entry key="HTML" value="292" />
+          <entry key="JavaScript" value="1046" />
+          <entry key="PLAIN_TEXT" value="348" />
         </counts>
       </usages-collector>
     </session>
@@ -218,8 +221,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AdminUserManagement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="368" column="51" lean-forward="true" selection-start-line="368" selection-start-column="51" selection-end-line="368" selection-end-column="51" />
+            <state relative-caret-position="173">
+              <caret line="381" column="32" selection-start-line="381" selection-start-column="32" selection-end-line="381" selection-end-column="32" />
+              <folding>
+                <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -227,26 +233,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/firebasejsquerys/brgyoffusermanagement.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="51" column="59" lean-forward="true" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
+            <state relative-caret-position="253">
+              <caret line="116" column="67" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="67" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserManagement.html">
+        <entry file="file://$PROJECT_DIR$/updateforluquidation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="535" column="11" lean-forward="true" selection-start-line="535" selection-start-column="11" selection-end-line="535" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EvacHeadUserManagement.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="536" column="43" lean-forward="true" selection-start-line="536" selection-start-column="43" selection-end-line="536" selection-end-column="43" />
+            <state relative-caret-position="-14">
+              <caret line="496" column="48" lean-forward="true" selection-start-line="496" selection-start-column="48" selection-end-line="496" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -264,12 +264,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Flood Warning Notifications Manual Override</find>
-      <find>2</find>
-      <find>table2</find>
-      <find>userlist</find>
-      <find>data</find>
-      <find>edit-user-module</find>
       <find>edit-userid</find>
       <find>edit-user-input</find>
       <find>edit-user-btn</find>
@@ -292,8 +286,14 @@
       <find>push</find>
       <find>map</find>
       <find>table</find>
-      <find>modal</find>
       <find>user</find>
+      <find>edituser</find>
+      <find>read</find>
+      <find>Fname</find>
+      <find>modal</find>
+      <find>update</find>
+      <find>offCnum</find>
+      <find>modal-footer</find>
     </findStrings>
     <replaceStrings>
       <replace>imageUrl</replace>
@@ -341,7 +341,6 @@
         <option value="$PROJECT_DIR$/registrationevachead.html" />
         <option value="$PROJECT_DIR$/registrationadmin.html" />
         <option value="$PROJECT_DIR$/evacfamcount2.html" />
-        <option value="$PROJECT_DIR$/AdminUserManagement.html" />
         <option value="$PROJECT_DIR$/EvacHeadUserManagement.html" />
         <option value="$PROJECT_DIR$/UserManagement.html" />
         <option value="$PROJECT_DIR$/TargetLocationDetailsManagement.html" />
@@ -355,6 +354,7 @@
         <option value="$PROJECT_DIR$/firebasejsquerys/myapp.js" />
         <option value="$PROJECT_DIR$/DriverDetailsManagement.html" />
         <option value="$PROJECT_DIR$/js/DriverDetailsManagement_js.js" />
+        <option value="$PROJECT_DIR$/AdminUserManagement.html" />
         <option value="$PROJECT_DIR$/firebasejsquerys/brgyoffusermanagement.js" />
       </list>
     </option>
@@ -376,10 +376,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1681" />
-    <option name="y" value="197" />
-    <option name="width" value="656" />
-    <option name="height" value="456" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -412,7 +412,7 @@
             <path>
               <item name="flaremob-sagip-webapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="flaremob-sagip-webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="firebasejsquerys" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -561,6 +561,8 @@
       <workItem from="1543761726939" duration="3626000" />
       <workItem from="1544358022396" duration="4004000" />
       <workItem from="1544375899184" duration="2858000" />
+      <workItem from="1544378808615" duration="2742000" />
+      <workItem from="1544401724525" duration="9402000" />
     </task>
     <task id="LOCAL-00001" summary="update for myapp.js">
       <created>1544374218668</created>
@@ -604,18 +606,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544377562818</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Admin changes">
+      <created>1544378832983</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1544378832983</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="421349000" />
+    <option name="totallyTimeSpent" value="433493000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" sideWeight="0.5033557" side_tool="true" weight="0.18675596" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.4966443" visible="true" weight="0.16597222" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.4966443" visible="true" weight="0.1749634" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -625,7 +634,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32933334" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32847896" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074404" side_tool="true" weight="0.396" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -699,7 +708,8 @@
     <MESSAGE value="Updated Driver Details" />
     <MESSAGE value="Updated Driver Details 69" />
     <MESSAGE value="Updated Driver Details plus shit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Driver Details plus shit" />
+    <MESSAGE value="Admin changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -810,13 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="52" column="66" lean-forward="true" selection-start-line="48" selection-start-column="32" selection-end-line="52" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/firebasejsquerys/updateliquidation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="45" column="49" lean-forward="true" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -943,13 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/updateforluquidation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5097">
-          <caret line="323" column="10" selection-start-line="323" selection-start-column="10" selection-end-line="323" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Inventory.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -989,10 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="574" column="87" selection-start-line="574" selection-start-column="87" selection-end-line="574" selection-end-column="87" />
-          <folding>
-            <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,32 +1037,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="378" column="57" lean-forward="true" selection-start-line="378" selection-start-column="57" selection-end-line="378" selection-end-column="57" />
-          <folding>
-            <element signature="n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#td#2;n#tr#0;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#1;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#2;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#3;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#4;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#4;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#5;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#5;n#form#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#16756#16763#1" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#span#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1085,15 +1051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="200" column="59" lean-forward="true" selection-start-line="200" selection-start-column="59" selection-end-line="200" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1101,14 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="31" column="4" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="324" selection-end-column="10" />
-          <folding>
-            <element signature="n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1119,31 +1068,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EvacHeadUserManagement.html">
+    <entry file="file://$PROJECT_DIR$/UserManagement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="536" column="43" lean-forward="true" selection-start-line="536" selection-start-column="43" selection-end-line="536" selection-end-column="43" />
+        <state relative-caret-position="12305">
+          <caret line="535" column="11" selection-start-line="535" selection-start-column="11" selection-end-line="535" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserManagement.html">
+    <entry file="file://$PROJECT_DIR$/EvacHeadUserManagement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="535" column="11" lean-forward="true" selection-start-line="535" selection-start-column="11" selection-end-line="535" selection-end-column="11" />
+        <state relative-caret-position="12328">
+          <caret line="536" column="43" selection-start-line="536" selection-start-column="43" selection-end-line="536" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebasejsquerys/updateliquidation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-448">
+          <caret line="192" column="17" selection-start-line="192" selection-start-column="11" selection-end-line="192" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updateforluquidation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="496" column="48" lean-forward="true" selection-start-line="496" selection-start-column="48" selection-end-line="496" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AdminUserManagement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="368" column="51" lean-forward="true" selection-start-line="368" selection-start-column="51" selection-end-line="368" selection-end-column="51" />
+        <state relative-caret-position="173">
+          <caret line="381" column="32" selection-start-line="381" selection-start-column="32" selection-end-line="381" selection-end-column="32" />
+          <folding>
+            <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/firebasejsquerys/brgyoffusermanagement.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="51" column="59" lean-forward="true" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
+        <state relative-caret-position="253">
+          <caret line="116" column="67" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="67" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
