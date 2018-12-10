@@ -119,6 +119,7 @@ function readUserData() {
         })
     });
 }
+//test
 function editButtonClicked(){
     let email =document.getElementById("Email").value ;
     let bday = document.getElementById("Bday").value ;
