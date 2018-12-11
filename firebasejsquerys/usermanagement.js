@@ -107,6 +107,7 @@ $('#User tbody').on( 'click', 'tr', function () {
 var row20 =table1.row(0).data();
 console.log(row20);
 readUserData();
+//Updated Update shit
 function readUserData() {
     usersRef.on('value',snap =>{
         snap.forEach(childSnap=>{
