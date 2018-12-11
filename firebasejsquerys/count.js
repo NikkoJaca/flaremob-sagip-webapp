@@ -27,16 +27,55 @@ database = firebase.database();
 var ref = database.ref('tblDonatedItems');
 var ref2 = database.ref('tblDonors');
 var ref3 = database.ref('tblDonatedItems');
+let cref5 = database.ref('tblUsers');
+let countnes=0;
+let countacc=0;
+let countnhs=0;
 let count = 0;
+cref5.on('child_added',function (snap) {
+    let evacStatus = snap.child("evacStatus").val();
+
+        if (evacStatus!=0){
+            
+            var evacId = snap.child("userEvacId").val();
+
+            var evacAssign = "";
+
+            if (evacId == "TLOC20181023070849440"){
+                evacAssign = "Nangka High School"
+                countnhs+=1;
+                count += 1;
+                
+            }
+            else if (evacId == "TLOC20181023071503704"){
+                evacAssign = "Ateneoville"
+                countacc+=1;
+                count += 1;
+                
+            }
+            else if(evacId == "TLOC20181023070504196"){
+                evacAssign = "Nangka Elementary School";
+                countnes+=1;
+                count += 1;
+                
+            }else{
+                evacAssign = "Not Assigned to any Evacuation Center";
+            }
+        }
+      
+      document.getElementById('totalevacueesindex').innerText = count;
+    });
+
+let delcount = 0;
 ref.on('value',gotData,errData);
 ref2.on('value',gotData2,errData);
 // ref3.on('value',gotData3,errData);
 ref3.on('child_added', snap => {
     let status = snap.child("delStatus").val();
     if(status=='1'){
-        count +=1;
-        console.log(count);
-        document.getElementById('deliverymade').innerText = count;
+        delcount +=1;
+        console.log(delcount);
+        document.getElementById('deliverymade').innerText = delcount;
     }
 });
 
