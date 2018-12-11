@@ -111,10 +111,10 @@ function readUserData() {
     usersRef.on('value',snap =>{
         snap.forEach(childSnap=>{
             let key = childSnap.key, value = childSnap.val();
-            let name = value.offFname + " "+value.offLname ;
+            let name = value.userFname + " "+value.userLname ;
             let editButtonOnTable = "<button id='edituser' userid='"+key+"' class='edit-user btn btn-warning m-2' data-toggle='modal' data-target='#adminUserEditModalWindow' onClick='editButtonClicked'>Edit</button>";
             let deleteButtonOnTable = "<button id='deleteuser'  userid='"+key+"' class='edit-user btn btn-danger m-2' data-toggle='modal' data-target='#adminUserEditModalWindow' onClick='deleteButtonClicked'>Delete</button>";
-            let dataset1 = [name,value.offEmail,value.offBday,editButtonOnTable,key,value.offFname,value.offLname,value.offImgUrl,value.offPassword,value.offCnum];
+            let dataset1 = [name,value.userEmail,value.userBday,editButtonOnTable,key,value.userFname,value.userLname,value.userImageUrl,value.userPass,value.userCnum];
             table1.rows.add([dataset1]).draw();
         })
     });
@@ -131,13 +131,13 @@ function editButtonClicked(){
     let cnum = document.getElementById("cnum").value;
     if(email||bday||id||fname||lname||imgurl||pass||cnum !==""){
         usersRef.child(id).update({
-            offFname:fname,
-            offLname:lname,
-            offEmail:email,
-            offBday:bday,
-            offImgUrl:imgurl,
-            offPassword:pass,
-            offCnum:cnum
+            userFname:fname,
+            userLname:lname,
+            userEmail:email,
+            userBday:bday,
+            userImageUrl:imgurl,
+            userPass:pass,
+            userCnum:cnum
 
         });
         location.reload();
