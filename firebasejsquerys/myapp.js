@@ -204,7 +204,7 @@ function logout(){
     var user = firebase.auth().currentUser;
     alert(user);
     alert('Signed Out');
-    window.location.href = "../flaremob-sagip-webapp/login.html";
+    window.location.href = "../login.html";
   }, function(error) {
     console.error('Sign Out Error', error);
   });
