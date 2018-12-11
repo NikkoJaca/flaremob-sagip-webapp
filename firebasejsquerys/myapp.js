@@ -74,7 +74,7 @@ function login(){
     //GUMAGANA TO OY
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     if (document.querySelector("#loginemail").value == "admin" && document.querySelector("#loginpassword").value == "admin"){
-        window.location = "../flaremob-sagip-webapp/index.html";
+        window.location = "../index.html";
     } else {
         firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(function () {
             return firebase.auth().signInWithEmailAndPassword(document.querySelector("#loginemail").value,document.querySelector("#loginpassword").value);
