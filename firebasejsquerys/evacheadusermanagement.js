@@ -1,7 +1,23 @@
+$(document).ready(function () {
+    let locations10 = firebase.database().ref("tblTargetLoc");
+    locations10.on("child_added", snap => {
+        // console.log(snap.key);
+        // console.log(snap.child("tLocName").val());
+        let lockey = snap.key;
+        let locname = snap.child("tLocName").val();
+        let evaccenter = document.getElementById('evaccenters');
+        evaccenter.options[evaccenter.options.length] = new Option(locname, lockey);
+
+    });
+    // let str1 = "ThIs Is A Test On HOW tO counT UppeR CaSE";
+    // alert(str1.replace(/[^A-Z]/g, "").length);
+});
+
 // // Firebase Database Reference and the child
 // //push
 const dbRef = firebase.database().ref();
 const usersRef = dbRef.child('tblEvacHeads');
+const locref = dbRef.child('tblTargetLoc');
 // var table1 = $('#User').DataTable({
 //     // bSort: false,
 //     // _aSortData:true,
@@ -58,7 +74,7 @@ var table1 = $('#Evachead').DataTable({
     }]
 });
 
-$('#User tbody').on( 'click', 'tr', function () {
+$('#Evachead tbody').on( 'click', 'tr', function () {
     if ( $(this).hasClass('selected') ) {
         $(this).removeClass('selected');
         var row =table1.row(this).data();
@@ -71,13 +87,14 @@ $('#User tbody').on( 'click', 'tr', function () {
         console.log(row[7]);
         console.log(row[8]);
         document.getElementById("Email").value = row[1];
-        document.getElementById("Bday").value = row[2];
+        document.getElementById("cnum").value = row[2];
         document.getElementById("AdminID").value = row[4];
         document.getElementById("Fname").value = row[5];
         document.getElementById("Lname").value = row[6];
         document.getElementById("ImgUrl").value = row[7];
         document.getElementById("Password").value = row[8];
-        document.getElementById("cnum").value =  String(row[9]);
+        document.getElementById("evaccenters").value = row[9];
+
 
 
     }
@@ -111,32 +128,43 @@ function readUserData() {
     usersRef.on('value',snap =>{
         snap.forEach(childSnap=>{
             let key = childSnap.key, value = childSnap.val();
-            let name = value.offFname + " "+value.offLname ;
+            let name = value.echFname + " "+value.echLname ;
             let editButtonOnTable = "<button id='edituser' userid='"+key+"' class='edit-user btn btn-warning m-2' data-toggle='modal' data-target='#adminUserEditModalWindow' onClick='editButtonClicked'>Edit</button>";
             let deleteButtonOnTable = "<button id='deleteuser'  userid='"+key+"' class='edit-user btn btn-danger m-2' data-toggle='modal' data-target='#adminUserEditModalWindow' onClick='deleteButtonClicked'>Delete</button>";
-            let dataset1 = [name,value.echEmailAdd,value.echLicenseNum,editButtonOnTable,key,value.echFname,value.echLname,value.echImgUrl,value.echPassword,value.echtlocid];            table1.rows.add([dataset1]).draw();
+            locref.child(value.echtlocid).once('value',snap2 =>{
+                if(snap2.val()){
+                    let dataset1 = [name,value.echEmailAdd,value.echLicenseNum,editButtonOnTable,key,value.echFname,value.echLname,value.echImgUrl,value.echPassword,snap2.child("tLocName").val()];
+                    table1.rows.add([dataset1]).draw();
+                }else{
+                    let dataset1 = [name,value.echEmailAdd,value.echLicenseNum,editButtonOnTable,key,value.echFname,value.echLname,value.echImgUrl,value.echPassword,""];
+                    table1.rows.add([dataset1]).draw();
+                }
+            });
+
         })
     });
 }
 //Test
 function editButtonClicked(){
-    let email =document.getElementById("Email").value ;
-    let bday = document.getElementById("Bday").value ;
+    let email = document.getElementById("Email").value;
+    let cnum = document.getElementById("cnum").value;
     let id = document.getElementById("AdminID").value;
     let fname = document.getElementById("Fname").value ;
     let lname = document.getElementById("Lname").value;
     let imgurl = document.getElementById("ImgUrl").value;
     let pass = document.getElementById("Password").value;
-    let cnum = document.getElementById("cnum").value;
-    if(email||bday||id||fname||lname||imgurl||pass||cnum !==""){
+    let evcc = document.getElementById("evaccenters").value;
+
+
+    if(email||evcc||id||fname||lname||imgurl||pass||cnum !==""){
         usersRef.child(id).update({
-            offFname:fname,
-            offLname:lname,
-            offEmail:email,
-            offBday:bday,
-            offImgUrl:imgurl,
-            offPassword:pass,
-            offCnum:cnum
+            echFname:fname,
+            echLname:lname,
+            echEmailAdd:email,
+            echtlocid:evcc,
+            echImgUrl:imgurl,
+            echPassword:pass,
+            echLicenseNum:cnum
 
         });
         location.reload();

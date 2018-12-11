@@ -395,14 +395,14 @@
         <tr>
           <th>Name</th><!--0-->
           <th>Email Address</th><!--1-->
-          <th>Birth Date</th><!--2-->
+          <th>Contact Number</th><!--2-->
           <th>Edit / Delete</th><!--3-->
           <th>Admin ID</th><!--4-->
           <th>First Name</th><!--5-->
           <th>Last Name</th><!--6-->
           <th>Img Url</th><!--7-->
           <th>Password</th><!--8-->
-          <th>Contact Number</th><!--9-->
+          <th>Location</th><!--9-->
         </tr>
         </thead>
         <tfoot>
@@ -557,8 +557,9 @@
               <input type='text' data-key='offImgUrl' class='edit-user-input' disabled id="ImgUrl"><br>
               Contact Number:<br>
               <input type='text' data-key='offCnum' class='edit-user-input' id="cnum"><br>
-              Birth Date:<br>
-              <input type='text' data-key='offBday' class='edit-user-input' id="Bday"><br>
+              Evacuation Center:<br>
+              <select class="form-control" id="evaccenters">
+              </select>
 
               <button type='button' id="edit-user-btn">save</button>
             </form>
@@ -606,6 +607,15 @@
   </script>
   <script src="firebasejsquerys/CHECKINGIFUSER.js"></script>
   <script src="firebasejsquerys/logout.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.flash.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.print.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/JSZip-2.5.0/jszip.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+  <link href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
   <script src="firebasejsquerys/evacheadusermanagement.js"></script>
   <!--<script src="firebasejsquerys/evacneedspro.js"></script>-->
   <!--<script src="firebasejsquerys/CHECKINGIFUSER.js" type="text/javascript"></script>-->
