@@ -129,8 +129,8 @@ function SearchFirebase(Filter,Action,objID){
             }
         });
     }else if(Action==2){
-        var TheChild=Filter.split('+')[0]; //alert(TheChild);
-        var TheFilter=Filter.split('+')[1]; //alert(TheChild+": "+TheFilter);
+        var TheChild=Filter.split('+')[0];
+        var TheFilter=Filter.split('+')[1];
         var refFBDB=FBDB.ref('tblDrivers').orderByChild(TheChild).startAt(TheFilter).endAt(TheFilter+'\uf8ff');
         refFBDB.once('value',function(data){
             if(data.exists()){
@@ -192,14 +192,48 @@ function RecordFirebase(PSV,Action){
 
         //setTimeout(function(){ //alert(AuthResult); //returns object [Object]
             if(IsAuthError==false){
-                var refFBDB=FBDB.ref('tblDrivers');
-                refFBDB.push(TheData,function(error){
-                    if(!error){
-                        DisplayMessageResult(1,'Record successfully created.');
-                    }else{
-                        DisplayMessageResult(0,error);
-                    } 
+                firebase.auth().signOut().then(function() {
+                    firebase.auth().onAuthStateChanged(function(user) {
+                        if (user) {
+                        }
+                    });
+                }, function(error) {
+                    console.error('Sign Out Error', error);
                 });
+                firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(function () {
+                    return firebase.auth().signInWithEmailAndPassword(String(PSV.split('+')[0]),String(PSV.split('+')[4]));
+                })
+                    .catch(function(error) {
+                        // Handle Errors here.
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log(errorMessage);
+                    });
+                firebase.auth().onAuthStateChanged(function(user) {
+                    if (user)
+                    {
+                        var refFBDB=FBDB.ref('tblDrivers');
+                        refFBDB.child(user.uid).set(TheData,function(error){
+                            if(!error){
+                                DisplayMessageResult(1,'Record successfully created.');
+                                firebase.auth().signOut().then(function() {
+                                    firebase.auth().onAuthStateChanged(function(user) {
+                                        if (user) {
+//test test gago
+                                        }
+                                    });
+                                }, function(error) {
+                                    console.error('Sign Out Error', error);
+                                });
+                            }else{
+                                DisplayMessageResult(0,error);
+                            }
+                        });
+
+                    }
+
+                });
+
             }else{
                 alert('Failure in authenticating driver\'s email address and password.\nDriver record not created.');
             }

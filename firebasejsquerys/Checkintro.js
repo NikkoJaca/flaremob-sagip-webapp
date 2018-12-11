@@ -2,10 +2,11 @@
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-
+    //shit
+    //    test
     }
     else{
-        window.location = "../flaremob-sagip-webapp/login.html";
+        window.location = "../login.html";
         console.log(user);
     }
 

@@ -71,9 +71,10 @@ evacNeeds.on("child_added", snap=>{
 const saveButton = document.querySelector("#saveButton");
 
 function login(){
+    //GUMAGANA TO OY
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     if (document.querySelector("#loginemail").value == "admin" && document.querySelector("#loginpassword").value == "admin"){
-        window.location = "../flaremob-sagip-webapp/index.html";
+        window.location = "../index.html";
     } else {
         firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(function () {
             return firebase.auth().signInWithEmailAndPassword(document.querySelector("#loginemail").value,document.querySelector("#loginpassword").value);
@@ -98,9 +99,10 @@ function login(){
 
     //   const promise = auth.signInWithEmailAndPassword(document.querySelector("#loginemail").value, document.querySelector("#loginpassword").value);
     //   promise.catch(e=> console.log(e.message));
-
+    //OY ITONG LINYA NA TO GUMAGANA TO
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+            let n = false;
           ref5.child(user.uid).once('value',snap =>{
             if(snap.val()) {
                 window.location = "../flaremob-sagip-webapp/index.html";
@@ -116,7 +118,9 @@ function login(){
               if(snap.val()){
                   window.location = "../flaremob-sagip-webapp/pledging.html";
               }
+
           });
+
             console.log(user.uid);
         }
         else {
@@ -177,7 +181,7 @@ function signup() {
         }).catch(function(error) {
           alert("Failed!", error);
         });
-
+        //test
         donorRef.push({
           donorId: uid,
           donorOrg: organization.value,

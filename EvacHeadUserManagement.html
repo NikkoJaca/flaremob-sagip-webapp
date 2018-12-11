@@ -389,7 +389,38 @@
         </div>
       </div>
     </div>
-
+    <div class="table-responsive">
+      <table class="table table-bordered display" id="Evachead" width="100%" cellspacing="0">
+        <thead>
+        <tr>
+          <th>Name</th><!--0-->
+          <th>Email Address</th><!--1-->
+          <th>Contact Number</th><!--2-->
+          <th>Edit / Delete</th><!--3-->
+          <th>Admin ID</th><!--4-->
+          <th>First Name</th><!--5-->
+          <th>Last Name</th><!--6-->
+          <th>Img Url</th><!--7-->
+          <th>Password</th><!--8-->
+          <th>Location</th><!--9-->
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+          <th>Name</th>
+          <th>Email Address</th>
+          <th>Birth Date</th>
+          <th>Edit / Delete</th>
+          <th>Admin ID</th>
+          <th>First Name</th><!--5-->
+          <th>Last Name</th><!--6-->
+          <th>Img Url</th><!--7-->
+          <th>Password</th><!--8-->
+          <th>Contact Number</th><!--9-->
+        </tr>
+        </tfoot>
+      </table>
+    </div>
 
   </div>
   <!-- /.container-fluid-->
@@ -424,6 +455,7 @@
       </div>
     </div>
   </div>
+  <!--Test-->
   <div class="modal fade" id="evac_needs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -499,6 +531,47 @@
       </div>
     </div>
   </div>
+  <div class="modal fade" id="adminUserEditModalWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Cancel">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card card-register mx-auto">
+            <form>
+              <input type="hidden" class="edit-userid" id="AdminID">
+              First Name:<br>
+              <input type='text' data-key='offFname' class='edit-user-input' id="Fname"><br>
+              Last Name:<br>
+              <input type='text' data-key='offLname' class='edit-user-input' id="Lname"><br>
+              Email:<br>
+              <input type='text' data-key='offEmail' class='edit-user-input' id="Email"><br>
+              Password:<br>
+              <input type='password' data-key='offPassword' class='edit-user-input' id="Password"><br>
+              Image Url:<br>
+              <input type='text' data-key='offImgUrl' class='edit-user-input' disabled id="ImgUrl"><br>
+              Contact Number:<br>
+              <input type='text' data-key='offCnum' class='edit-user-input' id="cnum"><br>
+              Evacuation Center:<br>
+              <select class="form-control" id="evaccenters">
+              </select>
+
+              <button type='button' id="edit-user-btn">save</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="#" onclick="editButtonClicked()">Save Changes</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--<script src="firebasejsquerys/evacneedspro.js"></script>-->
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -534,6 +607,15 @@
   </script>
   <script src="firebasejsquerys/CHECKINGIFUSER.js"></script>
   <script src="firebasejsquerys/logout.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.flash.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.print.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/JSZip-2.5.0/jszip.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+  <link href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
   <script src="firebasejsquerys/evacheadusermanagement.js"></script>
   <!--<script src="firebasejsquerys/evacneedspro.js"></script>-->
   <!--<script src="firebasejsquerys/CHECKINGIFUSER.js" type="text/javascript"></script>-->
