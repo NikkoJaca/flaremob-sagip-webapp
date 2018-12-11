@@ -71,6 +71,7 @@ evacNeeds.on("child_added", snap=>{
 const saveButton = document.querySelector("#saveButton");
 
 function login(){
+    //GUMAGANA TO OY
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     if (document.querySelector("#loginemail").value == "admin" && document.querySelector("#loginpassword").value == "admin"){
         window.location = "../index.html";
@@ -98,7 +99,7 @@ function login(){
 
     //   const promise = auth.signInWithEmailAndPassword(document.querySelector("#loginemail").value, document.querySelector("#loginpassword").value);
     //   promise.catch(e=> console.log(e.message));
-
+    //OY ITONG LINYA NA TO GUMAGANA TO
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             let n = false;

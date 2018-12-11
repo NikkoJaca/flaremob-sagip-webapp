@@ -16,7 +16,7 @@ function logout(){
 
             }
             else{
-                window.location = "../login.html";
+                window.location = "../flaremob-sagip-webapp/login.html";
             }
         });
     }, function(error) {
