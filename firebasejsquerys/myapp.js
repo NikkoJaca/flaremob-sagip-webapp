@@ -105,18 +105,18 @@ function login(){
             let n = false;
           ref5.child(user.uid).once('value',snap =>{
             if(snap.val()) {
-                window.location = "../index.html";
+                window.location = "../flaremob-sagip-webapp/index.html";
             }
           });
           ref6.child(user.uid).once('value',snap =>{
             if(snap.val()){
-                window.location = "../pledging.html";
+                window.location = "../flaremob-sagip-webapp/pledging.html";
             }
 
           });
           ref7.child(user.uid).once('value',snap =>{
               if(snap.val()){
-                  window.location = "../pledging.html";
+                  window.location = "../flaremob-sagip-webapp/pledging.html";
               }
 
           });
