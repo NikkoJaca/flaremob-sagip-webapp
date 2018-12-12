@@ -428,6 +428,16 @@ $('#btnManualSendCriticalWarning').on('click', function (event) {
     });
 });
 
+$('#overrideCriticalWarningModal').on('click', function (event) {
+    //clears the password field of critical warning modal when openned
+    document.getElementById('inputCurrentUserPasswordCritical').value = '';
+});
+
+$('#overrideModerateWarningModal').on('click', function (event) {
+    //clears the password field of critical warning modal when openned
+    document.getElementById('inputCurrentUserPasswordModerate').value = '';
+});
+
 //manual send of moderate warning (modal view)
 $('#btnManualSendModerateWarning').on('click', function (event) {
     var inputPassword = document.getElementById('inputCurrentUserPasswordModerate').value;
