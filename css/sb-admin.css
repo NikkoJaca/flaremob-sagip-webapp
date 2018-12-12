@@ -529,3 +529,11 @@ footer.sticky-footer {
   color: white;
   margin-top: 10px;
 }
+
+.navbar-dark .navbar-text {
+  color: rgba(255,255,255);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255,255,255);
+}
