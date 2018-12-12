@@ -21,20 +21,22 @@ var table1 = $('#luquidation').DataTable({
     select: {
         style: 'single'
     },
-    buttons: [
-        {
-            text: 'Update',
-            action: function ( e, dt, node, config ) {
-                alert( 'Button activated' );
-            },
-            attr: {
-                id: 'seldata'
-            }
-        }
-
-    ],
+    
     "pageLength": 3
 });
+
+// buttons: [
+//     {
+//         text: 'Update',
+//         action: function ( e, dt, node, config ) {
+//             alert( 'Button activated' );
+//         },
+//         attr: {
+//             id: 'seldata'
+//         }
+//     }
+
+// ],
 
 $('#luquidation tbody').on( 'click', 'tr', function () {
     if ( $(this).hasClass('selected') ) {
