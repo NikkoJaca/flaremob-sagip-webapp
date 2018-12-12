@@ -434,7 +434,7 @@ $('#overrideCriticalWarningModal').on('click', function (event) {
 });
 
 $('#overrideModerateWarningModal').on('click', function (event) {
-    //clears the password field of critical warning modal when openned
+    //clears the password field of moderate warning modal when openned
     document.getElementById('inputCurrentUserPasswordModerate').value = '';
 });
 
