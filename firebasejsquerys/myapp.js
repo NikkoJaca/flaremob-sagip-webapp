@@ -177,7 +177,7 @@ function signup() {
               donorBday: birthday.value
         }).then(function(){
           alert("Successfully created account!");
-          location.replace("../flaremob-sagip-webapp/pledging.html");
+          location.replace("../pledging.html");
         }).catch(function(error) {
           alert("Failed!", error);
         });
