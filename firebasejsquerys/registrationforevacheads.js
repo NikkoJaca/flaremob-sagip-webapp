@@ -167,6 +167,11 @@ function EvacHeadOpenImage(event){
                 // }, function(error) {
                 //     console.error('Sign Out Error', error);
                 // });
+                firebase.auth().signOut().then(function() {
+                    // window.location.href = "../alisto/login.html";
+                }, function(error) {
+                    console.error('Sign Out Error', error);
+                });
                 firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
                     // Handle Errors here.
                     var errorCode = error.code;
