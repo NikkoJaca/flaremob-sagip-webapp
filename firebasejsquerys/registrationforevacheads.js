@@ -126,122 +126,218 @@ function EvacHeadOpenImage(event){
       document.getElementById('EvacHeadImg').src='no_image.png';
     }
   }
+function addtoevachead(){
+    var FBStore=firebase.storage().ref();
 
-  function addtoevachead(){
-    var FBStore=firebase.storage().ref();  
-    
     var metaData={contentType: 'image/'+extFile, name:evacHeadtxtCompareName.value};
-    var confMsg = confirm("Are you sure your data is correct?");  
-    
-      if(confMsg){    
+    var confMsg = confirm("Are you sure your data is correct?");
 
-            
-              var refFBStore=FBStore.child('evacHeadPictures/'+evacHeadtxtCompareName.value).put(selectedFile,metaData)
-              .then(snapshot => {
-                var progress=(snapshot.bytesTransferred / snapshot.totalBytes)*100;
-                span1.innerHTML='Progress: '+progress;
-                return snapshot.ref.getDownloadURL();   // Will return a promise with the download link
-            })
-  
-            .then(downloadURL => {
-                let firstname = document.getElementById("fname").value;
-                let lastname = document.getElementById("lname").value;
-                let contactnum = document.getElementById("contactnum").value;
-                let email = document.getElementById("emailadd").value;
-                let password = document.getElementById("passwordd").value;
-                let tlocid = document.getElementById("evacheadcenter").value;
-                var evachead = database.child("tblEvacHeads/");
-                firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {            
+    if(confMsg){
+        firebase.auth().onAuthStateChanged(function(user) {
+            var user = firebase.auth().currentUser;
+            // var uid = String(user.uid);
 
-                    // }).then(function() {
-                    //     alert("Successfully created account!");
-                    // });
-                }).catch(function(error) {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    // alert("Failure in creating account!", errorMessage);
-                    console.log(errorMessage);
-                });
-                // firebase.auth().signOut().then(function() {
-                //     // window.location.href = "../alisto/login.html";
-                // }, function(error) {
-                //     console.error('Sign Out Error', error);
-                // });
-                firebase.auth().signOut().then(function() {
-                    // window.location.href = "../alisto/login.html";
-                }, function(error) {
-                    console.error('Sign Out Error', error);
-                });
-                firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-                    // Handle Errors here.
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    // console.log("Login Failed", errorMessage);
-                    // console.log(user)
-                    // alert("Login Success", errorMessage);
-                });
-                firebase.auth().onAuthStateChanged(function(user) {
-                    var user = firebase.auth().currentUser;
-                    if(user){
-                        var uid = String(user.uid);
-                        firebase.database().ref('tblEvacHeads/'+uid).set({
-                            echcuid: uid,
-                            echFname: firstname,
-                            echLname: lastname,
-                            echLicenseNum: contactnum,
-                            echEmailAdd: email,
-                            echPassword: password,
-                            echtlocid: tlocid,
-                            echImgUrl:downloadURL
-                        },function (err) {
-                            if(err){
-                                console.log(err);
-                            }else{
-                                console.log("Successful");
-                                firebase.auth().signOut().then(function() {
-                                    // window.location.href = "../alisto/login.html";
-                                }, function(error) {
-                                    console.error('Sign Out Error', error);
+            if (user) {
+
+                var refFBStore=FBStore.child('evacHeadPictures/'+evacHeadtxtCompareName.value).put(selectedFile,metaData)
+                    .then(snapshot => {
+                        var progress=(snapshot.bytesTransferred / snapshot.totalBytes)*100;
+                        span1.innerHTML='Progress: '+progress;
+                        return snapshot.ref.getDownloadURL();   // Will return a promise with the download link
+                    })
+
+                    .then(downloadURL => {
+                        let firstname = document.getElementById("fname").value;
+                        let lastname = document.getElementById("lname").value;
+                        let contactnum = document.getElementById("contactnum").value;
+                        let email = document.getElementById("emailadd").value;
+                        let password = document.getElementById("passwordd").value;
+                        let tlocid = document.getElementById("evacheadcenter").value;
+                        var evachead = database.child("tblEvacHeads/");
+                        firebase.auth().createUserWithEmailAndPassword(email, password)
+                            .catch(function(error) {
+                                var errorCode = error.code;
+                                var errorMessage = error.message;
+                                // alert("Failure in creating account!", errorMessage);
+                                console.log(errorMessage);
+                            });
+                        // firebase.auth().signOut().then(function() {
+                        //     // window.location.href = "../alisto/login.html";
+                        // }, function(error) {
+                        //     console.error('Sign Out Error', error);
+                        // });
+                        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+                            // Handle Errors here.
+                            var errorCode = error.code;
+                            var errorMessage = error.message;
+                            // console.log("Login Failed", errorMessage);
+                            console.log(user);
+                            // alert("Login Success", errorMessage);
+                        });
+                        firebase.auth().onAuthStateChanged(function(user) {
+                            var user = firebase.auth().currentUser;
+                            if(user) {
+                                var uid = String(user.uid);
+                                console.log(uid);
+                                firebase.database().ref('tblEvacHeads').child(uid).set({
+                                    echcuid: uid,
+                                    echFname: firstname,
+                                    echLname: lastname,
+                                    echLicenseNum: contactnum,
+                                    echEmailAdd: email,
+                                    echPassword: password,
+                                    echtlocid: tlocid,
+                                    echImgUrl:downloadURL
+
                                 });
+
+
                             }
                         });
-                        // evachead.push({
-                        //     evacuid: uid,
-                        //     evhFname: firstname,
-                        //     echLname: lastname,
-                        //     echLicenseNum: contactnum,
-                        //     echEmailAdd: email,
-                        //     echPassword: password,
-                        //     echtlocid: tlocid
+
+                        // admins.push({
+                        //     offFname:firstname,
+                        //     offLname:lastname,
+                        //     offCnum:contactnum,
+                        //     offEmail:email,
+                        //     offBday:birthday,
+                        //     offPassword:password,
+                        //     offImgUrl:downloadURL
+                        // }).then(function() {
+                        //     alert("Successfully created account!");
                         // });
-                    }
-                });
+                        console.log(`Successfully uploaded file and got download link - ${downloadURL}`);
+                        // window.location.reload();
+                        return downloadURL;
 
-                // var data ={
-                //         evhFname:firstname,
-                //         echLname:lastname,
-                //         echLicenseNum:contactnum,
-                //         echEmailAdd:email,
-                //         echPassword:password,
-                //         echtlocid:tlocid,
-                //         echImgUrl:downloadURL
-                // };
-                // evachead.push(data);
-              console.log(`Successfully uploaded file and got download link - ${downloadURL}`);
-              // window.location.reload();
-              return downloadURL;
-            })
-  
-            .catch(error => {
-              // Use to signal error if something goes wrong.
-              console.log(`Failed to upload file and get link - ${error}`);
-            });
+                    })
 
-      }else{
-        alert("Cancelled!");      
-      }
-  
+                    .catch(error => {
+                        // Use to signal error if something goes wrong.
+                        console.log(`Failed to upload file and get link - ${error}`);
+                    });
+            }else{
+                alert("No user signed in!");
+            }
+        });
+    }else{
+        alert("Cancelled!");
     }
+
+}
+  // function addtoevachead(){
+  //   var FBStore=firebase.storage().ref();
+  //
+  //   var metaData={contentType: 'image/'+extFile, name:evacHeadtxtCompareName.value};
+  //   var confMsg = confirm("Are you sure your data is correct?");
+  //
+  //     if(confMsg){
+  //             var refFBStore=FBStore.child('evacHeadPictures/'+evacHeadtxtCompareName.value).put(selectedFile,metaData)
+  //             .then(snapshot => {
+  //               var progress=(snapshot.bytesTransferred / snapshot.totalBytes)*100;
+  //               span1.innerHTML='Progress: '+progress;
+  //               return snapshot.ref.getDownloadURL();   // Will return a promise with the download link
+  //           })
+  //
+  //           .then(downloadURL => {
+  //               let firstname = document.getElementById("fname").value;
+  //               let lastname = document.getElementById("lname").value;
+  //               let contactnum = document.getElementById("contactnum").value;
+  //               let email = document.getElementById("emailadd").value;
+  //               let password = document.getElementById("passwordd").value;
+  //               let tlocid = document.getElementById("evacheadcenter").value;
+  //               var evachead = database.child("tblEvacHeads/");
+  //               firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
+  //
+  //                   // }).then(function() {
+  //                   //     alert("Successfully created account!");
+  //                   // });
+  //               }).catch(function(error) {
+  //                   var errorCode = error.code;
+  //                   var errorMessage = error.message;
+  //                   // alert("Failure in creating account!", errorMessage);
+  //                   console.log(errorMessage);
+  //               });
+  //               // firebase.auth().signOut().then(function() {
+  //               //     // window.location.href = "../alisto/login.html";
+  //               // }, function(error) {
+  //               //     console.error('Sign Out Error', error);
+  //               // });
+  //               firebase.auth().signOut().then(function() {
+  //                   // window.location.href = "../alisto/login.html";
+  //               }, function(error) {
+  //                   console.error('Sign Out Error', error);
+  //               });
+  //               firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  //                   // Handle Errors here.
+  //                   var errorCode = error.code;
+  //                   var errorMessage = error.message;
+  //                   // console.log("Login Failed", errorMessage);
+  //                   // console.log(user)
+  //                   // alert("Login Success", errorMessage);
+  //               });
+  //               firebase.auth().onAuthStateChanged(function(user) {
+  //                   var user = firebase.auth().currentUser;
+  //                   if(user){
+  //                       var uid = String(user.uid);
+  //                       firebase.database().ref('tblEvacHeads').child(uid).set({
+  //                           echcuid: uid,
+  //                           echFname: firstname,
+  //                           echLname: lastname,
+  //                           echLicenseNum: contactnum,
+  //                           echEmailAdd: email,
+  //                           echPassword: password,
+  //                           echtlocid: tlocid,
+  //                           echImgUrl:downloadURL
+  //                       },function (err) {
+  //                           if(err){
+  //                               console.log(err);
+  //                           }else{
+  //                               console.log("Successful");
+  //                               firebase.auth().signOut().then(function() {
+  //                                   // window.location.href = "../alisto/login.html";
+  //                               }, function(error) {
+  //                                   console.error('Sign Out Error', error);
+  //                               });
+  //                           }
+  //                       });
+  //                       // evachead.push({
+  //                       //     evacuid: uid,
+  //                       //     evhFname: firstname,
+  //                       //     echLname: lastname,
+  //                       //     echLicenseNum: contactnum,
+  //                       //     echEmailAdd: email,
+  //                       //     echPassword: password,
+  //                       //     echtlocid: tlocid
+  //                       // });
+  //                   }
+  //               });
+  //
+  //               // var data ={
+  //               //         evhFname:firstname,
+  //               //         echLname:lastname,
+  //               //         echLicenseNum:contactnum,
+  //               //         echEmailAdd:email,
+  //               //         echPassword:password,
+  //               //         echtlocid:tlocid,
+  //               //         echImgUrl:downloadURL
+  //               // };
+  //               // evachead.push(data);
+  //             console.log(`Successfully uploaded file and got download link - ${downloadURL}`);
+  //             // window.location.reload();
+  //             return downloadURL;
+  //           })
+  //
+  //           .catch(error => {
+  //             // Use to signal error if something goes wrong.
+  //             console.log(`Failed to upload file and get link - ${error}`);
+  //           });
+  //
+  //     }else{
+  //       alert("Cancelled!");
+  //     }
+  //
+  //   }
 
     function DateTimeNow(Zero29){
         var datetoday=new Date();
