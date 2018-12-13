@@ -46,7 +46,7 @@ getArrTblPostsKeys().then(function (keys) {
                 var evacItem = '' + snapshot2.child('evacItem').val();
                 var evacPlace = snapshot2.child('evacPlace').val();
 
-                if (evacCount != null) {
+                if (evacCount > null) {
                     $('#feedItems').append('<div class="card card- mb-3">' +
                         '<div class="card-body">' +
                         '<div class="font-italic font-bold"><span class="fa fa-building fa-3x img-thumbnail rounded-circle" style="vertical-align: middle;"></span> Evacuation Center Announcement<hr></div>' +
@@ -57,8 +57,7 @@ getArrTblPostsKeys().then(function (keys) {
                         '<div class="card-footer small text-muted align-items-end">' + postDate + '</div>' +
                         '</div>');
                 }
-                if (snapshot2.child('postTitle').val() != null || snapshot2.child('postDesc').val() != null || snapshot2.child('postName').val() != null ||
-                    snapshot2.child('postLname').val() != null) {
+                if (snapshot2.child('postTitle').val() != null && snapshot2.child('postDesc').val() != null && snapshot2.child('postName').val() != null) {
                     var postTitle = snapshot2.child('postTitle').val();
                     var postDesc = snapshot2.child('postDesc').val();
                     var postName = snapshot2.child('postName').val();
