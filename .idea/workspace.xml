@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f134547-4924-44c8-8e20-b0a5f1c5d385" name="Default" comment="Update Login!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebasejsquerys/registrationforevacheads.js" beforeDir="false" afterPath="$PROJECT_DIR$/firebasejsquerys/registrationforevacheads.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EvacHeadUserManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/EvacHeadUserManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagement.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -213,25 +213,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="86" />
+          <entry key="html" value="87" />
           <entry key="js" value="365" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="86" />
+          <entry key="HTML" value="87" />
           <entry key="JavaScript" value="365" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="8" />
+          <entry key="html" value="10" />
           <entry key="js" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="8" />
+          <entry key="HTML" value="10" />
           <entry key="JavaScript" value="10" />
         </counts>
       </usages-collector>
@@ -242,57 +242,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UserManagement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4274">
-              <caret line="352" column="40" lean-forward="true" selection-start-line="352" selection-start-column="40" selection-end-line="352" selection-end-column="40" />
+            <state relative-caret-position="397">
+              <caret line="363" column="22" selection-start-line="363" selection-start-column="22" selection-end-line="363" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/registrationevachead.html">
+        <entry file="file://$PROJECT_DIR$/AdminUserManagement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-172">
-              <caret line="511" column="40" lean-forward="true" selection-start-line="511" selection-start-column="40" selection-end-line="511" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/registrationadmin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="529" column="54" lean-forward="true" selection-start-line="529" selection-start-column="54" selection-end-line="529" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/firebasejsquerys/registrationforadmin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="80" column="2" selection-start-line="80" selection-start-column="2" selection-end-line="177" selection-end-column="5" />
+            <state relative-caret-position="127">
+              <caret line="384" column="48" lean-forward="true" selection-start-line="384" selection-start-column="48" selection-end-line="384" selection-end-column="48" />
               <folding>
-                <element signature="n#!!block;n#addtobrgy#0" />
-                <element signature="e#3181#7069#0" />
-                <element signature="e#7073#7117#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/firebasejsquerys/registrationforevacheads.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
-              <folding>
-                <element signature="e#4543#4571#0" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -301,10 +272,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EvacHeadUserManagement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3134">
-              <caret line="392" column="62" selection-start-line="392" selection-start-column="54" selection-end-line="392" selection-end-column="62" />
+            <state relative-caret-position="414">
+              <caret line="412" column="18" selection-start-line="412" selection-start-column="18" selection-end-line="412" selection-end-column="18" />
               <folding>
                 <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/firebasejsquerys/usermanagement.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -323,9 +306,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tblBrgyOff</find>
-      <find>sessi</find>
-      <find>edit</find>
       <find>newsfeed</find>
       <find>edit-user</find>
       <find>ALIST</find>
@@ -352,7 +332,10 @@
       <find>adminUserEditModalWindow</find>
       <find>modal</find>
       <find>evaccenter</find>
+      <find>edit</find>
       <find>window</find>
+      <find>Donor</find>
+      <find>Edit</find>
     </findStrings>
     <replaceStrings>
       <replace>imageUrl</replace>
@@ -403,18 +386,18 @@
         <option value="$PROJECT_DIR$/DriverDetailsManagement.html" />
         <option value="$PROJECT_DIR$/js/DriverDetailsManagement_js.js" />
         <option value="$PROJECT_DIR$/firebasejsquerys/brgyoffusermanagement.js" />
-        <option value="$PROJECT_DIR$/AdminUserManagement.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/firebasejsquerys/Checkintro.js" />
-        <option value="$PROJECT_DIR$/EvacHeadUserManagement.html" />
         <option value="$PROJECT_DIR$/firebasejsquerys/evacheadusermanagement.js" />
         <option value="$PROJECT_DIR$/firebasejsquerys/logout.js" />
         <option value="$PROJECT_DIR$/firebasejsquerys/myapp.js" />
-        <option value="$PROJECT_DIR$/UserManagement.html" />
         <option value="$PROJECT_DIR$/firebasejsquerys/usermanagement.js" />
         <option value="$PROJECT_DIR$/firebasejsquerys/CHECKINGIFUSER.js" />
         <option value="$PROJECT_DIR$/registrationadmin.html" />
         <option value="$PROJECT_DIR$/firebasejsquerys/registrationforevacheads.js" />
+        <option value="$PROJECT_DIR$/UserManagement.html" />
+        <option value="$PROJECT_DIR$/AdminUserManagement.html" />
+        <option value="$PROJECT_DIR$/EvacHeadUserManagement.html" />
       </list>
     </option>
   </component>
@@ -719,7 +702,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="446791000" />
+    <option name="totallyTimeSpent" value="447014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -727,7 +710,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" sideWeight="0.5033557" side_tool="true" weight="0.18675596" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.4966443" weight="0.35095447" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.4966443" visible="true" weight="0.35065886" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -1112,16 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/firebasejsquerys/usermanagement.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/firebasejsquerys/myapp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1656">
@@ -1153,50 +1126,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EvacHeadUserManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3134">
-          <caret line="392" column="62" selection-start-line="392" selection-start-column="54" selection-end-line="392" selection-end-column="62" />
-          <folding>
-            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/registrationevachead.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-172">
           <caret line="511" column="40" lean-forward="true" selection-start-line="511" selection-start-column="40" selection-end-line="511" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AdminUserManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="651" column="53" lean-forward="true" selection-start-line="651" selection-start-column="53" selection-end-line="651" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4274">
-          <caret line="352" column="40" lean-forward="true" selection-start-line="352" selection-start-column="40" selection-end-line="352" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registrationadmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="529" column="54" lean-forward="true" selection-start-line="529" selection-start-column="54" selection-end-line="529" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -1214,10 +1147,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/firebasejsquerys/registrationforevacheads.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+        <state relative-caret-position="-514">
+          <caret line="163" column="3" selection-start-line="163" selection-start-column="3" selection-end-line="167" selection-end-column="30" />
           <folding>
             <element signature="e#4543#4571#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebasejsquerys/usermanagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registrationadmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="476" column="33" lean-forward="true" selection-start-line="476" selection-start-column="33" selection-end-line="476" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EvacHeadUserManagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="412" column="18" selection-start-line="412" selection-start-column="18" selection-end-line="412" selection-end-column="18" />
+          <folding>
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminUserManagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="384" column="48" lean-forward="true" selection-start-line="384" selection-start-column="48" selection-end-line="384" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserManagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="363" column="22" selection-start-line="363" selection-start-column="22" selection-end-line="363" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
