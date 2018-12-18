@@ -20,10 +20,10 @@
             messagingSenderId: "431077212235"
             };
             firebase.initializeApp(config); -->
-    
-<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
-<script>
-  // Initialize Firebase
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAsREyRj2u1GDG1sKF1gyAE476u5pp2PxQ",
     authDomain: "flaremob-b55d8.firebaseapp.com",
@@ -44,9 +44,9 @@
     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/AreaDetailsManagement_css.css" rel="stylesheet" type="text/css">	
+    <link href="css/AreaDetailsManagement_css.css" rel="stylesheet" type="text/css">
     <script src="js/AreaDetailsManagement_js.js"></script>
-    <script src="js/CharRestrictions_js.js"></script> 
+    <script src="js/CharRestrictions_js.js"></script>
 </head>
 
 <body onload="Preload();" class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -60,117 +60,118 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" style="overflow-y: auto" id="exampleAccordion">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="index.html">
-                    <i class="fa fa-fw fa-dashboard"></i>
-                    <span class="nav-link-text">Dashboard</span>
-                  </a>
+                    <a class="nav-link" href="index.html">
+                        <i class="fa fa-fw fa-dashboard"></i>
+                        <span class="nav-link-text">Dashboard</span>
+                    </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
-                  <a class="nav-link" href="flood.html">
-                    <i class="fa fa-fw fa-map"></i>
-                    <span class="nav-link-text">Flood Monitoring</span>
-                  </a>
+                    <a class="nav-link" href="flood.html">
+                        <i class="fa fa-fw fa-map"></i>
+                        <span class="nav-link-text">Flood Monitoring</span>
+                    </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation">
-                  <a class="nav-link" href="pledging.html">
-                    <i class="fa fa-fw fa-calculator"></i>
-                    <span class="nav-link-text">Donation</span>
-                  </a>
+                    <a class="nav-link" href="pledging.html">
+                        <i class="fa fa-fw fa-calculator"></i>
+                        <span class="nav-link-text">Donation</span>
+                    </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation Management">
-                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-database"></i>
-                    <span class="nav-link-text">Donation Monitoring</span>
-                  </a>
-                  <ul class="sidenav-second-level collapse" id="collapseComponents">
-                    <li>
-                      <a href="donationman.html">Donation Items</a>
-                    </li>
-                    <li>
-                      <a href="donationcash.html">Donation Cash</a>
-                    </li>
-                    <li>
-                      <a href="updateforluquidation.html">Liquidation</a>
-                    </li>
-                    <li>
-                      <a href="Inventory.html">Inventory</a>
-                    </li>
-                  </ul>
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents"
+                        data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-database"></i>
+                        <span class="nav-link-text">Donation Monitoring</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                        <li>
+                            <a href="donationman.html">Donation Items</a>
+                        </li>
+                        <li>
+                            <a href="donationcash.html">Donation Cash</a>
+                        </li>
+                        <li>
+                            <a href="updateforluquidation.html">Liquidation</a>
+                        </li>
+                        <li>
+                            <a href="Inventory.html">Inventory</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registration">
-                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1"
-                    data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-pencil"></i>
-                    <span class="nav-link-text">Registration</span>
-                  </a>
-                  <ul class="sidenav-second-level collapse" id="collapseComponents1">
-                    <li>
-                      <a href="registrationadmin.html">Registration for Admin</a>
-                    </li>
-                    <li>
-                      <a href="DriverDetailsManagement.html">Registration for Drivers</a>
-                    </li>
-                    <li>
-                      <a href="registrationevachead.html">Registration for Evacuation Heads</a>
-                    </li>
-                    <li>
-                      <a href="TargetLocationDetailsManagement.html">Registration for New Evacuation Center</a>
-                    </li>
-                    <li>
-                      <a href="AreaDetailsManagement.html">Registration for Area Details</a>
-                    </li>
-                  </ul>
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1"
+                        data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-pencil"></i>
+                        <span class="nav-link-text">Registration</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents1">
+                        <li>
+                            <a href="registrationadmin.html">Registration for Admin</a>
+                        </li>
+                        <li>
+                            <a href="DriverDetailsManagement.html">Registration for Drivers</a>
+                        </li>
+                        <li>
+                            <a href="registrationevachead.html">Registration for Evacuation Heads</a>
+                        </li>
+                        <li>
+                            <a href="TargetLocationDetailsManagement.html">Registration for New Evacuation Center</a>
+                        </li>
+                        <li>
+                            <a href="AreaDetailsManagement.html">Registration for Area Details</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
-                  <a class="nav-link" data-toggle="modal" data-target="#evac_needs">
-                    <i class="fa fa-fw fa-exclamation-triangle"></i>
-                    <span class="nav-link-text">Evacuation Center Needs</span>
-                  </a>
+                    <a class="nav-link" data-toggle="modal" data-target="#evac_needs">
+                        <i class="fa fa-fw fa-exclamation-triangle"></i>
+                        <span class="nav-link-text">Evacuation Center Needs</span>
+                    </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
-                  <a class="nav-link" href="DeliveryMonitoring.html">
-                    <i class="fa fa-fw fa-car"></i>
-                    <span class="nav-link-text">Delivery Monitoring</span>
-                  </a>
+                    <a class="nav-link" href="DeliveryMonitoring.html">
+                        <i class="fa fa-fw fa-car"></i>
+                        <span class="nav-link-text">Delivery Monitoring</span>
+                    </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
-                  <a class="nav-link" href="dm7prototype.html">
-                    <i class="fa fa-fw fa-car"></i>
-                    <span class="nav-link-text">Delivery Management</span>
-                  </a>
+                    <a class="nav-link" href="dm7prototype.html">
+                        <i class="fa fa-fw fa-car"></i>
+                        <span class="nav-link-text">Delivery Management</span>
+                    </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Evacuees Allocation">
-                  <a class="nav-link" href="evacfamcount2.html">
-                    <i class="fa fa-fw fa-map"></i>
-                    <span class="nav-link-text">Evacuees Allocation</span>
-                  </a>
+                    <a class="nav-link" href="evacfamcount2.html">
+                        <i class="fa fa-fw fa-map"></i>
+                        <span class="nav-link-text">Evacuees Allocation</span>
+                    </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users Management">
-                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2"
-                    data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-address-card"></i>
-                    <span class="nav-link-text">User Management</span>
-                  </a>
-                  <ul class="sidenav-second-level collapse" id="collapseComponents2">
-                    <li>
-                      <a href="AdminUserManagement.html">Admin User Management</a>
-                    </li>
-                    <li>
-                      <a href="EvacHeadUserManagement.html">Evacuation Head User Management</a>
-                    </li>
-                    <li>
-                      <a href="UserManagement.html">User Management</a>
-                    </li>
-                  </ul>
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2"
+                        data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-address-card"></i>
+                        <span class="nav-link-text">User Management</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents2">
+                        <li>
+                            <a href="AdminUserManagement.html">Admin User Management</a>
+                        </li>
+                        <li>
+                            <a href="EvacHeadUserManagement.html">Evacuation Head User Management</a>
+                        </li>
+                        <li>
+                            <a href="UserManagement.html">User Management</a>
+                        </li>
+                    </ul>
                 </li>
-              </ul>
-              <ul class="navbar-nav sidenav-toggler">
+            </ul>
+            <ul class="navbar-nav sidenav-toggler">
                 <li class="nav-item">
-                  <a class="nav-link text-center" id="sidenavToggler">
-                    <i class="fa fa-fw fa-angle-left"></i>
-                  </a>
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
                 </li>
-              </ul>
+            </ul>
             <ul class="navbar-nav ml-auto">
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -213,7 +214,8 @@
                     </div>
                 </li> -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-fw fa-bell"></i>
                         <span class="d-lg-none">Alerts
                             <span class="badge badge-pill badge-warning">6 New</span>
@@ -231,7 +233,8 @@
                                     <i class="fa fa-bell fa-fw"></i>Marikina DRRMO</strong>
                             </span>
                             <span class="small float-right text-muted">4:37 PM</span>
-                            <div class="dropdown-message small">Marikina Alert Level has been raised to 2nd (Evacuation)</div>
+                            <div class="dropdown-message small">Marikina Alert Level has been raised to 2nd
+                                (Evacuation)</div>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">
@@ -281,16 +284,16 @@
 
             <div class="card mb-3">
                 <div class="card-header">
-                        <!--<iframe style="width:100%;height:1000px;" src="http://localhost/Flaremob_Firebase/DeliveryManagement2.html"></iframe>-->
+                    <!--<iframe style="width:100%;height:1000px;" src="http://localhost/Flaremob_Firebase/DeliveryManagement2.html"></iframe>-->
                     <i class="fa fa-table"></i> Area Details Management</div>
                 <div class="card-body">
-                        <!--<iframe style="width:100%;height:1500px;" src="http://localhost/Flaremob_Firebase/DeliveryManagement2.html"></iframe>-->
+                    <!--<iframe style="width:100%;height:1500px;" src="http://localhost/Flaremob_Firebase/DeliveryManagement2.html"></iframe>-->
                 </div>
                 <div id="divEnclosure" class="enclosure">
                     <div id="divMainDisplay" style="width:1000px;height:400px;position:relative;background-color:#fff;">
                         <h2 style="opacity:0.7;padding:10px 0px 20px 30px;">Area details</h2>
                         <table class="table3" style="max-width:850px;width:100%;">
-                                <form id="frmDriverDetailFields">
+                            <form id="frmDriverDetailFields">
 
                                 <tr>
                                     <td class="tdLabel">
@@ -308,7 +311,8 @@
                                         <input type="text" id="txtADFAreaNumber" style="" readonly placeholder="Area number" />
                                         <input type="text" id="txtADFAreaNumberRetainer" class="hide" readonly />
                                         <button type="button" id="btnADFAddAreaNumber" onclick="AddAreaNumber();" class="btnMinusAdd">+</button>
-                                        <button type="button" id="btnADFMinusAreaNumber" onclick="MinusAreaNumber();" class="btnMinusAdd">–</button>
+                                        <button type="button" id="btnADFMinusAreaNumber" onclick="MinusAreaNumber();"
+                                            class="btnMinusAdd">–</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -316,9 +320,12 @@
                                         <label for="txtADFStreets">Streets</label>
                                     </td>
                                     <td style="width:250px;">
-                                        <input type="text" id="txtADFStreets" onkeyup="CharRestriction(2,this);" placeholder="Street" />
-                                        <button type="button" id="btnADFAddStreets" onclick="AddSelectOption(0,txtADFStreets,slcADFStreets,txtADFStreets.value,txtADFStreets.value);" class="btnMinusAdd">+</button>
-                                        <button type="button" id="btnADFMinusStreets" onclick="RemoveSelectOption('slcADFStreets');" class="btnMinusAdd">–</button>
+                                        <input type="text" id="txtADFStreets" onkeyup="CharRestriction(2,this);"
+                                            placeholder="Street" />
+                                        <button type="button" id="btnADFAddStreets" onclick="AddSelectOption(0,txtADFStreets,slcADFStreets,txtADFStreets.value,txtADFStreets.value);"
+                                            class="btnMinusAdd">+</button>
+                                        <button type="button" id="btnADFMinusStreets" onclick="RemoveSelectOption('slcADFStreets');"
+                                            class="btnMinusAdd">–</button>
                                         <br />
                                         <select id="slcADFStreets" size="3" style="width:370px;"></select>
                                     </td>
@@ -328,17 +335,20 @@
                                         <label for="txtADFSubdivision">Subdivision</label>
                                     </td>
                                     <td style="width:250px;">
-                                        <input type="text" id="txtADFSubdivision" onkeyup="CharRestriction(2,this);" placeholder="Subdivision" />
+                                        <input type="text" id="txtADFSubdivision" onkeyup="CharRestriction(2,this);"
+                                            placeholder="Subdivision" />
                                         <!-- <button type="button" id="btnADFAddSubdivision" onclick="AddSubdivision();">Add</button> -->
-                                        <button type="button" id="btnADFAddSubdivision" onclick="AddSelectOption(0,txtADFSubdivision,slcADFSubdivision,txtADFSubdivision.value,txtADFSubdivision.value);" class="btnMinusAdd">+</button>
-                                        <button type="button" id="btnADFMinusSubdivision" onclick="RemoveSelectOption('slcADFSubdivision');" class="btnMinusAdd">–</button>
+                                        <button type="button" id="btnADFAddSubdivision" onclick="AddSelectOption(0,txtADFSubdivision,slcADFSubdivision,txtADFSubdivision.value,txtADFSubdivision.value);"
+                                            class="btnMinusAdd">+</button>
+                                        <button type="button" id="btnADFMinusSubdivision" onclick="RemoveSelectOption('slcADFSubdivision');"
+                                            class="btnMinusAdd">–</button>
                                         <br />
                                         <select id="slcADFSubdivision" size="3" style="width:370px;"></select>
                                     </td>
                                 </tr>
-                                </form>
-                            </table>
-                        </div>
+                            </form>
+                        </table>
+                    </div>
 
                     <div class="mapBar" style="display:relative;height:125px;">
                         <div class="btnWrapper" style="position:relative;float:right;transform:translateY(350%)">
@@ -378,10 +388,11 @@
                         </table>
                     </div>
                     <div class="mapBar"></div>
-                </div><!--///////////////////////////// end of AreaDetailsManagement /////////////////////////////////////-->
+                </div>
+                <!--///////////////////////////// end of AreaDetailsManagement /////////////////////////////////////-->
 
 
-                    <!--<div class="table-responsive">
+                <!--<div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
@@ -523,144 +534,145 @@
                             </tbody>
                         </table>
                     </div>-->
-                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-8">
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
 
-            </div>
-
-            <div class="col-lg-4">
-
-            </div>
         </div>
 
-        <div class="modal fade" id="evac_needs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel2">Needs in the Evacuation Center</h5>
-                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-      
-                  <div class="needs">
-                    <ul class="list-group">
-                      <li class="list-group-item">
-                        Food
-                        <div class="material-switch pull-right">
-                          <input name="someSwitchOption001" id="food" value="Food" type="checkbox" />
-                        </div>
-                      </li>
-                      <li class="list-group-item">
-                        Water
-                        <div class="material-switch pull-right">
-                          <input name="someSwitchOption001" id="water" value="Water" type="checkbox" />
-                        </div>
-                      </li>
-                      <li class="list-group-item">
-                        Medicine
-                        <div class="material-switch pull-right">
-                          <input name="someSwitchOption001" id="medicine" value="Medicine" type="checkbox" />
-                        </div>
-                      </li>
-                      <li class="list-group-item">
-                        Clothes
-                        <div class="material-switch pull-right">
-                          <input name="someSwitchOption001" id="clothes" value="Clothes" type="checkbox" />
-                        </div>
-                      </li>
-                      <li class="list-group-item">
-                        Toiletries
-                        <div class="material-switch pull-right">
-                          <input name="someSwitchOption001" id="toiletries" value="Toiletries" type="checkbox" />
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <br>
-                  <div class="onameee" id="onameee" style="display:none">
-                    <input type="text" class="form-control" id="othersname" class="form-control" name="othersname" width="50%">
-                  </div>
-                  <br>
-                  <script>
-                    if (document.getElementById("othersss").checked==true){
-                          document.getElementById("onameee").style.display = "block";
-                      }
-                  </script>
-                  <div class="form-group">
-                    Which EVACUATION CENTER?
-                    <select class="form-control" id="evaccenter">
-                    </select>
-                  </div>
-      
-                  <div class="form-group">
-                    <label for="familycount">Family Count:</label>
-                    <input type="number" class="form-control" id="familycount" class="form-control" name="familycount" width="50%">
-                  </div>
-      
-      
-                </div>
-                <div class="modal-footer">
-                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                  <a class="btn btn-primary" id="evacneeds" onclick="submit()">Submit</a>
-                </div>
+        <div class="col-lg-4">
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="evac_needs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel2">Needs in the Evacuation Center</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+  
+              <div class="needs">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    Food
+                    <div class="material-switch pull-right">
+                      <input name="someSwitchOption001" id="food" value="Food" type="checkbox" />
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    Water
+                    <div class="material-switch pull-right">
+                      <input name="someSwitchOption001" id="water" value="Water" type="checkbox" />
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    Medicine
+                    <div class="material-switch pull-right">
+                      <input name="someSwitchOption001" id="medicine" value="Medicine" type="checkbox" />
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    Clothes
+                    <div class="material-switch pull-right">
+                      <input name="someSwitchOption001" id="clothes" value="Clothes" type="checkbox" />
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    Toiletries
+                    <div class="material-switch pull-right">
+                      <input name="someSwitchOption001" id="toiletries" value="Toiletries" type="checkbox" />
+                    </div>
+                  </li>
+                </ul>
               </div>
+              <br>
+              <div class="onameee" id="onameee" style="display:none">
+                <input type="text" class="form-control" id="othersname" class="form-control" name="othersname" width="50%">
+              </div>
+              <br>
+              <script>
+                if (document.getElementById("othersss").checked==true){
+                      document.getElementById("onameee").style.display = "block";
+                  }
+              </script>
+              <div class="form-group">
+                Which EVACUATION CENTER?
+                <select class="form-control" id="evaccenter">
+                </select>
+              </div>
+  
+              <div class="form-group">
+                <label for="familycount">Family Count:</label>
+                <input type="number" class="form-control" id="familycount" class="form-control" name="familycount" width="50%">
+              </div>
+  
+  
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" id="evacneeds" onclick="submit()">Submit</a>
             </div>
           </div>
+        </div>
+      </div>
 
-        <!-- /.container-fluid-->
-        <!-- /.content-wrapper-->
-        <footer class="sticky-footer">
-            <div class="container">
-                <div class="text-center">
-                    <small>FlareMob: Sagip - Officials Admin Panel 2018</small>
-                </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+        <div class="container">
+            <div class="text-center">
+                <small>FlareMob: Sagip - Officials Admin Panel 2018</small>
             </div>
-        </footer>
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fa fa-angle-up"></i>
-        </a>
-        <!-- Logout Modal-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
-                    </div>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-        <!-- Page level plugin JavaScript-->
-        <script src="vendor/chart.js/Chart.min.js"></script>
-        <script src="vendor/datatables/jquery.dataTables.js"></script>
-        <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-        <!-- Moment plugin for real-time clock display -->
-        <script src="vendor/moment/moment.js"></script>
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin.min.js"></script>
-        <!-- Custom scripts for this page-->
-        <script src="js/sb-admin-datatables.min.js"></script>
-        <script src="js/sb-admin-charts.js"></script>
-        <script src="js/clock.js"></script>
-        <script src="firebasejsquerys/evacneedspro.js"></script>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Moment plugin for real-time clock display -->
+    <script src="vendor/moment/moment.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="js/sb-admin-charts.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="firebasejsquerys/evacneedspro.js"></script>
     </div>
 
 </body>

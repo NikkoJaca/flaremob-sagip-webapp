@@ -22,118 +22,122 @@
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">FlareMob: Sagip - Officials Admin Panel</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="index.html">FlareMob: Sagip - Officials Admin Panel</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="index.html">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" style="overflow-y: auto" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                  <a class="nav-link" href="index.html">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
-                <a class="nav-link" href="flood.html">
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
+                  <a class="nav-link" href="flood.html">
                     <i class="fa fa-fw fa-map"></i>
                     <span class="nav-link-text">Flood Monitoring</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation">
-                <a class="nav-link" href="pledging.html">
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation">
+                  <a class="nav-link" href="pledging.html">
                     <i class="fa fa-fw fa-calculator"></i>
                     <span class="nav-link-text">Donation</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation Management">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-database"></i>
                     <span class="nav-link-text">Donation Monitoring</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseComponents">
+                  </a>
+                  <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="donationman.html">Donation Items</a>
+                      <a href="donationman.html">Donation Items</a>
                     </li>
                     <li>
-                        <a href="donationcash.html">Donation Cash</a>
+                      <a href="donationcash.html">Donation Cash</a>
                     </li>
                     <li>
-                        <a href="updateforluquidation.html">Liquidation</a>
+                      <a href="updateforluquidation.html">Liquidation</a>
                     </li>
                     <li>
-                        <a href="Inventory.html">Inventory</a>
+                      <a href="Inventory.html">Inventory</a>
                     </li>
-                </ul>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1" data-parent="#exampleAccordion">
+                  </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registration">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1"
+                    data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-pencil"></i>
                     <span class="nav-link-text">Registration</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseComponents1">
+                  </a>
+                  <ul class="sidenav-second-level collapse" id="collapseComponents1">
                     <li>
-                        <a href="registrationadmin.html">Registration for Admin</a>
+                      <a href="registrationadmin.html">Registration for Admin</a>
                     </li>
                     <li>
-                        <a href="DriverDetailsManagement.html">Registration for Drivers</a>
+                      <a href="DriverDetailsManagement.html">Registration for Drivers</a>
                     </li>
                     <li>
-                        <a href="registrationevachead.html">Registration for Evacuation Heads</a>
+                      <a href="registrationevachead.html">Registration for Evacuation Heads</a>
                     </li>
                     <li>
-                        <a href="TargetLocationDetailsManagement.html">Registration for New Evacuation Center</a>
+                      <a href="TargetLocationDetailsManagement.html">Registration for New Evacuation Center</a>
                     </li>
-                </ul>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
-                <a class="nav-link" data-toggle="modal" data-target="#evac_needs">
+                    <li>
+                      <a href="AreaDetailsManagement.html">Registration for Area Details</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                  <a class="nav-link" data-toggle="modal" data-target="#evac_needs">
                     <i class="fa fa-fw fa-exclamation-triangle"></i>
                     <span class="nav-link-text">Evacuation Center Needs</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
-                <a class="nav-link" href="DeliveryMonitoring.html">
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                  <a class="nav-link" href="DeliveryMonitoring.html">
                     <i class="fa fa-fw fa-car"></i>
                     <span class="nav-link-text">Delivery Monitoring</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
-                <a class="nav-link" href="dm7prototype.html">
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                  <a class="nav-link" href="dm7prototype.html">
                     <i class="fa fa-fw fa-car"></i>
                     <span class="nav-link-text">Delivery Management</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Evacuees Allocation">
-                <a class="nav-link" href="evacfamcount2.html">
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Evacuees Allocation">
+                  <a class="nav-link" href="evacfamcount2.html">
                     <i class="fa fa-fw fa-map"></i>
                     <span class="nav-link-text">Evacuees Allocation</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users Management">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2"
+                    data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-address-card"></i>
                     <span class="nav-link-text">User Management</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseComponents2">
+                  </a>
+                  <ul class="sidenav-second-level collapse" id="collapseComponents2">
                     <li>
-                        <a href="AdminUserManagement.html">Admin User Management</a>
+                      <a href="AdminUserManagement.html">Admin User Management</a>
                     </li>
                     <li>
-                        <a href="EvacHeadUserManagement.html">Evacuation Head User Management</a>
+                      <a href="EvacHeadUserManagement.html">Evacuation Head User Management</a>
                     </li>
                     <li>
-                        <a href="UserManagement.html">User Management</a>
+                      <a href="UserManagement.html">User Management</a>
                     </li>
+                  </ul>
+                </li>
+              </ul>
 
-                </ul>
-            </li>
-        </ul>
-
-        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Components</span>
@@ -147,7 +151,7 @@
             </li>
           </ul>
         </li> -->
-        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-file"></i>
             <span class="nav-link-text">Example Pages</span>
@@ -167,7 +171,7 @@
             </li>
           </ul>
         </li> -->
-        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-sitemap"></i>
             <span class="nav-link-text">Menu Levels</span>
@@ -198,22 +202,22 @@
             </li>
           </ul>
         </li> -->
-        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Link</span>
           </a>
         </li> -->
-        </ul>
-        <ul class="navbar-nav sidenav-toggler">
-            <li class="nav-item">
-                <a class="nav-link text-center" id="sidenavToggler">
-                    <i class="fa fa-fw fa-angle-left"></i>
-                </a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <!-- <li class="nav-item dropdown">
+            </ul>
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-fw fa-envelope"></i>
                 <span class="d-lg-none">Messages
@@ -253,7 +257,7 @@
                 <a class="dropdown-item small" href="#">View all messages</a>
               </div>
             </li> -->
-            <!-- <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-fw fa-bell"></i>
                     <span class="d-lg-none">Alerts
@@ -296,11 +300,11 @@
                     <a class="dropdown-item small" href="#">View all alerts</a>
                 </div>
             </li> -->
-            <li class="nav-item">
-                <form class="form-inline my-2 my-lg-0 mr-lg-2">
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0 mr-lg-2">
 
-                    <!-- THE BELOW COMMENTED CODE IS A SEARCH BAR -->
-                    <!-- <div class="input-group">
+                        <!-- THE BELOW COMMENTED CODE IS A SEARCH BAR -->
+                        <!-- <div class="input-group">
                       <input class="form-control" type="text" placeholder="Search for...">
                       <span class="input-group-append">
                         <button class="btn btn-primary" type="button">
@@ -308,225 +312,227 @@
                         </button>
                       </span>
                     </div> -->
-                    <!-- SEARCH BAR CODE ENDS HERE -->
+                        <!-- SEARCH BAR CODE ENDS HERE -->
 
-                    <!-- Refer to clock.js -->
-                    <div id="clock" class="navbar-text clock">Time is loading...</div>
-                </form>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="content-wrapper">
-    <div class="container-fluid">
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">Registration</a>
-            </li>
-            <li class="breadcrumb-item active">Registration for Drivers</li>
-        </ol>
-        <div class="card card-register mx-auto mt-5">
-            <div class="card-header">Register an Account</div>
-            <div class="card-body">
-                <form>
-                    <div class="form-group">
-                        <center>
-                            <span id="span1"></span>
-                            <img id="DriverImg" name="DriverImg" src="wevb/image.png" width="200dp" height="200dp"/><br>
-                            <input type="file" id="DriverImageOpen" name="DriverImageOpen" onchange="DriverOpenImage(event);" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.PNG" />
-                            <input type="text" id="drivertxtCompareName" disabled/>
-                        </center>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-row">
-                            <div class="col-md-6">
-                                <label for="exampleInputName">First name</label>
-                                <input class="form-control" type="text" aria-describedby="nameHelp" id="fname">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="exampleInputLastName">Last name</label>
-                                <input class="form-control" type="text" aria-describedby="nameHelp" id="lname">
+                        <!-- Refer to clock.js -->
+                        <div id="clock" class="navbar-text clock">Time is loading...</div>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Registration</a>
+                </li>
+                <li class="breadcrumb-item active">Registration for Drivers</li>
+            </ol>
+            <div class="card card-register mx-auto mt-5">
+                <div class="card-header">Register an Account</div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <center>
+                                <span id="span1"></span>
+                                <img id="DriverImg" name="DriverImg" src="wevb/image.png" width="200dp" height="200dp" /><br>
+                                <input type="file" id="DriverImageOpen" name="DriverImageOpen" onchange="DriverOpenImage(event);"
+                                    accept=".jpg,.jpeg,.png,.JPG,.JPEG,.PNG" />
+                                <input type="text" id="drivertxtCompareName" disabled />
+                            </center>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="exampleInputName">First name</label>
+                                    <input class="form-control" type="text" aria-describedby="nameHelp" id="fname">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="exampleInputLastName">Last name</label>
+                                    <input class="form-control" type="text" aria-describedby="nameHelp" id="lname">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label>License Number</label>
-                        <input type="text" class="form-control" id="licensenum" align="center">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input class="form-control" type="email" id="emailadd" aria-describedby="emailHelp">
-                    </div>
-                    <div class="form-group">
-                        <div class="form-row">
-                            <div class="col-md-6">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input class="form-control" type="password" id="password">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="exampleConfirmPassword">Confirm password</label>
-                                <input class="form-control" type="password">
+                        <div class="form-group">
+                            <label>License Number</label>
+                            <input type="text" class="form-control" id="licensenum" align="center">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input class="form-control" type="email" id="emailadd" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input class="form-control" type="password" id="password">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="exampleConfirmPassword">Confirm password</label>
+                                    <input class="form-control" type="password">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <a class="btn btn-success btn-block" onclick="addtodrivers()">Register</a>
-                </form>
+                        <a class="btn btn-success btn-block" onclick="addtodrivers()">Register</a>
+                    </form>
+                </div>
             </div>
         </div>
+        <!-- /.container-fluid-->
+        <!-- /.content-wrapper-->
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="text-center">
+                    <small>FlareMob: Sagip - Officials 2018</small>
+                </div>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" id="logout" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="evac_needs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Needs in the Evacuation Center</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="needs">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    Food
+                                    <div class="material-switch pull-right">
+                                        <input name="someSwitchOption001" id="food" value="Food" type="checkbox" />
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    Water
+                                    <div class="material-switch pull-right">
+                                        <input name="someSwitchOption001" id="water" value="Water" type="checkbox" />
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    Medicine
+                                    <div class="material-switch pull-right">
+                                        <input name="someSwitchOption001" id="medicine" value="Medicine" type="checkbox" />
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    Clothes
+                                    <div class="material-switch pull-right">
+                                        <input name="someSwitchOption001" id="clothes" value="Clothes" type="checkbox" />
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    Toiletries
+                                    <div class="material-switch pull-right">
+                                        <input name="someSwitchOption001" id="toiletries" value="Toiletries" type="checkbox" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="onameee" id="onameee" style="display:none">
+                            <input type="text" class="form-control" id="othersname" class="form-control" name="othersname"
+                                width="50%">
+                        </div>
+                        <br>
+                        <script>
+                            if (document.getElementById("othersss").checked==true){
+                          document.getElementById("onameee").style.display = "block";
+                      }
+                  </script>
+                        <div class="form-group">
+                            Which EVACUATION CENTER?
+                            <select class="form-control" id="evaccenter">
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="familycount">Family Count:</label>
+                            <input type="number" class="form-control" id="familycount" class="form-control" name="familycount"
+                                width="50%">
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" id="evacneeds" onclick="submit()">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Page level plugin JavaScript-->
+        <script src="vendor/chart.js/Chart.min.js"></script>
+        <script src="vendor/datatables/jquery.dataTables.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+        <!--Pie Slices Label Plugin for Chart.js-->
+        <script src="vendor/chart-piece-label.js/Chart.PieceLabel.js"></script>
+        <!-- Moment plugin for real-time clock display -->
+        <script src="vendor/moment/moment.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin.min.js"></script>
+        <!-- Custom scripts for this page-->
+        <script src="js/sb-admin-datatables.min.js"></script>
+        <script src="js/sb-admin-charts.js"></script>
+        <script src="js/clock.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+        <!--<script>-->
+        <!--// Initialize Firebase-->
+        <!--var config = {-->
+        <!--apiKey: "AIzaSyABJ3MmCKzQCVKm-FcZdXFHWlbK9am00O8",-->
+        <!--authDomain: "flaremob-aa0aa.firebaseapp.com",-->
+        <!--databaseURL: "https://flaremob-aa0aa.firebaseio.com",-->
+        <!--projectId: "flaremob-aa0aa",-->
+        <!--storageBucket: "flaremob-aa0aa.appspot.com",-->
+        <!--messagingSenderId: "715257296951"-->
+        <!--};-->
+        <!--firebase.initializeApp(config);-->
+        <!--</script>-->
+        <script src="firebasejsquerys/registrationfordrivers.js"></script>
+        <script src="firebasejsquerys/evacneedspro.js"></script>
+        <script src="firebasejsquerys/logout.js"></script>
+        <script src="firebasejsquerys/Checkintro.js"></script>
+
     </div>
-    <!-- /.container-fluid-->
-    <!-- /.content-wrapper-->
-    <footer class="sticky-footer">
-        <div class="container">
-            <div class="text-center">
-                <small>FlareMob: Sagip - Officials 2018</small>
-            </div>
-        </div>
-    </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fa fa-angle-up"></i>
-    </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" id="logout" onclick="logout()">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="evac_needs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel2">Needs in the Evacuation Center</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="needs">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                Food
-                                <div class="material-switch pull-right">
-                                    <input name="someSwitchOption001" id="food" value="Food" type="checkbox"/>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                Water
-                                <div class="material-switch pull-right">
-                                    <input name="someSwitchOption001" id="water" value="Water" type="checkbox"/>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                Medicine
-                                <div class="material-switch pull-right">
-                                    <input name="someSwitchOption001" id="medicine" value="Medicine" type="checkbox"/>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                Clothes
-                                <div class="material-switch pull-right">
-                                    <input name="someSwitchOption001" id="clothes" value="Clothes" type="checkbox"/>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                Toiletries
-                                <div class="material-switch pull-right">
-                                    <input name="someSwitchOption001" id="toiletries" value="Toiletries" type="checkbox"/>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <br>
-                    <div class="onameee" id="onameee" style="display:none">
-                        <input type="text" class="form-control" id="othersname" class="form-control" name="othersname" width="50%">
-                    </div>
-                    <br>
-                    <script>
-                        if (document.getElementById("othersss").checked==true){
-                            document.getElementById("onameee").style.display = "block";
-                        }
-                    </script>
-                    <div class="form-group">
-                        Which EVACUATION CENTER?
-                        <select class="form-control" id="evaccenter">
-                            <option value="Nangka Elementary School">Nangka Elementary School</option>
-                            <option value="St. Mary Elementary School">St. Mary Elementary School</option>
-                            <option value="Ateneoville Covered Court">Ateneoville Covered Court</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="familycount">Family Count:</label>
-                        <input type="number" class="form-control" id="familycount" class="form-control" name="familycount" width="50%">
-                    </div>
-
-
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" id="evacneeds" onclick="submit()">Submit</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-    <!--Pie Slices Label Plugin for Chart.js-->
-    <script src="vendor/chart-piece-label.js/Chart.PieceLabel.js"></script>
-    <!-- Moment plugin for real-time clock display -->
-    <script src="vendor/moment/moment.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
-    <!-- Custom scripts for this page-->
-    <script src="js/sb-admin-datatables.min.js"></script>
-    <script src="js/sb-admin-charts.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-    <!--<script>-->
-    <!--// Initialize Firebase-->
-    <!--var config = {-->
-    <!--apiKey: "AIzaSyABJ3MmCKzQCVKm-FcZdXFHWlbK9am00O8",-->
-    <!--authDomain: "flaremob-aa0aa.firebaseapp.com",-->
-    <!--databaseURL: "https://flaremob-aa0aa.firebaseio.com",-->
-    <!--projectId: "flaremob-aa0aa",-->
-    <!--storageBucket: "flaremob-aa0aa.appspot.com",-->
-    <!--messagingSenderId: "715257296951"-->
-    <!--};-->
-    <!--firebase.initializeApp(config);-->
-    <!--</script>-->
-    <script src="firebasejsquerys/registrationfordrivers.js"></script>
-    <script src="firebasejsquerys/evacneedspro.js"></script>
-    <script src="firebasejsquerys/logout.js"></script>
-    <script src="firebasejsquerys/Checkintro.js"></script>
-
-</div>
 </body>
 
 </html>
