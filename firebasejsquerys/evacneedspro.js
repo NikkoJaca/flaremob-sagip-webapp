@@ -34,44 +34,50 @@ function submit() {
     var famcount = document.getElementById('familycount').value;
     var getevac = document.getElementById('evaccenter').value;
 
-    $("input:checkbox[name=someSwitchOption001]:checked").each(function () {
-        valuecheck.push($(this).val());
-    });
-    //start of problem2
-    let locations10 = firebase.database().ref("tblTargetLoc");
-    locations10.on("child_added", snap => {
-        var str = snap.child("tLocName").val();
-        var sL = str.length;
-        var i = 0;
-        let arr = [];
-        for (; i < sL; i++) {
-            if (str.charAt(i) === str.charAt(i).toUpperCase()) {
-                if (str.charAt(i) !== " ") {
-                    console.log('uppercase:', str.charAt(i));
-                    arr.push(str.charAt(i));
-                    console.log(arr);
-                }
-
-            }
-        }
-        let joinedar = arr.join();
-        console.log(joinedar.replace(/[, ]+/g, "").trim());
-        let final = joinedar.replace(/[, ]+/g, "").trim();
-        console.log(arr.join());
-        locations10.child(getevac).once("value", snap3 => {
-            console.log(snap3.child("tLocName").val());
-            if (snap3.child("tLocName").val() === str) {
-                evacneeds.child(final).set({
-                    evacFamilyCount: famcount,
-                    evacitems: valuecheck,
-                    evacplace: str
-                });
-            }
+    if (famcount <= 0) {
+        alert("Please indicate all of the required fields with appropriate values.");
+    } else {
+        $("input:checkbox[name=someSwitchOption001]:checked").each(function () {
+            valuecheck.push($(this).val());
         });
-    });
-    alert("Evacuation needs has been successfully set!");
-    $("#evac_needs").modal("hide");
-    //end of problem2
+        //start of problem2
+        let locations10 = firebase.database().ref("tblTargetLoc");
+        locations10.on("child_added", snap => {
+            var str = snap.child("tLocName").val();
+            var sL = str.length;
+            var i = 0;
+            let arr = [];
+            for (; i < sL; i++) {
+                if (str.charAt(i) === str.charAt(i).toUpperCase()) {
+                    if (str.charAt(i) !== " ") {
+                        console.log('uppercase:', str.charAt(i));
+                        arr.push(str.charAt(i));
+                        console.log(arr);
+                    }
+
+                }
+            }
+            let joinedar = arr.join();
+            console.log(joinedar.replace(/[, ]+/g, "").trim());
+            let final = joinedar.replace(/[, ]+/g, "").trim();
+            console.log(arr.join());
+            locations10.child(getevac).once("value", snap3 => {
+                console.log(snap3.child("tLocName").val());
+                if (snap3.child("tLocName").val() === str) {
+                    evacneeds.child(final).set({
+                        evacFamilyCount: famcount,
+                        evacitems: valuecheck,
+                        evacplace: str
+                    });
+                }
+            });
+        });
+        alert("Evacuation needs has been successfully set!");
+        $("#evac_needs").modal("hide");
+        //end of problem2
+    }
+
+
 
 
 
