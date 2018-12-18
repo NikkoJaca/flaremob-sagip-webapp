@@ -49,7 +49,7 @@
             <span class="nav-link-text">Donation</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation Management">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-database"></i>
             <span class="nav-link-text">Donation Monitoring</span>
@@ -69,8 +69,9 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1" data-parent="#exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registration">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1"
+            data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-pencil"></i>
             <span class="nav-link-text">Registration</span>
           </a>
@@ -116,8 +117,9 @@
             <span class="nav-link-text">Evacuees Allocation</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users Management">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2"
+            data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-address-card"></i>
             <span class="nav-link-text">User Management</span>
           </a>
@@ -131,7 +133,6 @@
             <li>
               <a href="UserManagement.html">User Management</a>
             </li>
-
           </ul>
         </li>
       </ul>
@@ -337,125 +338,125 @@
       <div>
         <div style="float: left; width: 70%">
 
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <i class="fa"></i> Donated Items</div>
-                        <div class="card-body">
-                            <span class="text-success" id="donateditem" style="font-size:50px;font-style:bold;" ></span>
-                        </div>
-                        <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
-                    </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa"></i> Donated Items</div>
+                <div class="card-body">
+                  <span class="text-success" id="donateditem" style="font-size:50px;font-style:bold;"></span>
                 </div>
-        
-                <div class="col-lg-3">
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <i class="fa"></i> Total Donors</div>
-                        <div class="card-body">
-                        <span class="text-success" id="donors" style="font-size:50px;font-style:bold;" ></span>
-                        </div>
-                        <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
-                    </div>
-        
-        
+                <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+              </div>
+            </div>
+
+            <div class="col-lg-3">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa"></i> Total Donors</div>
+                <div class="card-body">
+                  <span class="text-success" id="donors" style="font-size:50px;font-style:bold;"></span>
                 </div>
-        
-                <div class="col-lg-3">
-        
-                    <!-- Example Notifications Card-->
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <i class="fa"></i> Deliveries Made</div>
-                        <div class="list-group list-group-flush small" style="width: 100%">
-                            <div class="card-body">
-                                <span class="text-success" id="deliverymade" style="font-size:50px;font-style:bold;" ></span>
-                            </div>
-        
-                        </div>
-                        <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
-                    </div>
-                </div>
-        
-                <div class="col-lg-3">
-                  <div class="card mb-4">
-                          <div class="card-header">
-                              <i class="fa"></i> Total Evacuees</div>
-                          <div class="list-group list-group-flush small" style="width: 100%">
-                              <div class="card-body" style="text-align:center">
-                                      <span class="text-success" id="totalevacueesindex" style="font-size:50px;font-style:bold;" ></span>
-                                  </div>
-  
-                          </div>
-                          <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
-                      </div>
+                <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+              </div>
+
+
+            </div>
+
+            <div class="col-lg-3">
+
+              <!-- Example Notifications Card-->
+              <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa"></i> Deliveries Made</div>
+                <div class="list-group list-group-flush small" style="width: 100%">
+                  <div class="card-body">
+                    <span class="text-success" id="deliverymade" style="font-size:50px;font-style:bold;"></span>
                   </div>
-        
-            </div>
-        
-            <!--<div class="row">-->
-              <!--<div class="col-lg-12">-->
-                <!--<div class="card mb-10">-->
-                    <!--<div class="card-header">-->
-                        <!--<i class="fa fa-line-chart"></i> Family Count per Evacuation Center</div>-->
-                    <!--<div class="card-body">-->
-                                <!--<div id="evacfamcountchart" style="height: 400px;"></div>-->
-                                <!--&lt;!&ndash;<canvas id="myChart" width="400" height="200"></canvas>&ndash;&gt;-->
-        <!---->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; <div class="card-footer small text-muted">Updated 5 minutes ago</div> &ndash;&gt;-->
-                <!--</div>-->
-              <!--</div>-->
-              <!--</div>-->
-        
-              <br>
-        
-              <div class="row">
-              <div class="col-lg-12">
-                <div class="card mb-12">
-                    <div class="card-header">
-                        <i class="fa fa-line-chart"></i> Donations Made</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-12 my-auto">
-                                <div id="main" style="height: 400px;"></div>
-                                <!--<canvas id="myChart" width="400" height="200"></canvas>-->
-          
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+
                 </div>
+                <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+              </div>
             </div>
-        
+
+            <div class="col-lg-3">
+              <div class="card mb-4">
+                <div class="card-header">
+                  <i class="fa"></i> Total Evacuees</div>
+                <div class="list-group list-group-flush small" style="width: 100%">
+                  <div class="card-body" style="text-align:center">
+                    <span class="text-success" id="totalevacueesindex" style="font-size:50px;font-style:bold;"></span>
+                  </div>
+
+                </div>
+                <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+              </div>
             </div>
-          
+
+          </div>
+
+          <!--<div class="row">-->
+          <!--<div class="col-lg-12">-->
+          <!--<div class="card mb-10">-->
+          <!--<div class="card-header">-->
+          <!--<i class="fa fa-line-chart"></i> Family Count per Evacuation Center</div>-->
+          <!--<div class="card-body">-->
+          <!--<div id="evacfamcountchart" style="height: 400px;"></div>-->
+          <!--&lt;!&ndash;<canvas id="myChart" width="400" height="200"></canvas>&ndash;&gt;-->
+          <!---->
+          <!--</div>-->
+          <!--&lt;!&ndash; <div class="card-footer small text-muted">Updated 5 minutes ago</div> &ndash;&gt;-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+          <br>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card mb-12">
+                <div class="card-header">
+                  <i class="fa fa-line-chart"></i> Donations Made</div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-12 my-auto">
+                      <div id="main" style="height: 400px;"></div>
+                      <!--<canvas id="myChart" width="400" height="200"></canvas>-->
+
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
         <div style="float: right; width: 29%; margin-left:5dp;">
-            <div class="row">
-                <div class="col-12 mx-auto">
-                  <div class="mb-0 mt-4">
-                    <i class="fa fa-newspaper-o"></i> News Feed and Updates</div>
-                  <hr class="mt-2">
-                    
-                  <div id="feedItemsUpdate" class="p-2" style="overflow-y: auto">
-                    <!--newsfeed.js populates this division using firebase triggers-->
-                    <!--sadly, firebase triggers requires cloud functions, which uses nodejs-->
-                  </div>
+          <div class="row">
+            <div class="col-12 mx-auto">
+              <div class="mb-0 mt-4">
+                <i class="fa fa-newspaper-o"></i> News Feed and Updates</div>
+              <hr class="mt-2">
 
-                  <!--social card for news feed-->
-                  <div id="feedItems" class="p-2" style="overflow-y: scroll; height:1053px">
-                    <!--newsfeed.js populates this division (non-realtime)-->
-                  </div>
-        
-                </div>
+              <div id="feedItemsUpdate" class="p-2" style="overflow-y: auto">
+                <!--newsfeed.js populates this division using firebase triggers-->
+                <!--sadly, firebase triggers requires cloud functions, which uses nodejs-->
               </div>
-        </div>
-    </div>
 
-  
+              <!--social card for news feed-->
+              <div id="feedItems" class="p-2" style="overflow-y: scroll; height:1053px">
+                <!--newsfeed.js populates this division (non-realtime)-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
     </div>
     <!-- /.container-fluid-->
@@ -566,64 +567,64 @@
       </div>
     </div>
   </div>
-    <!--<script src="firebasejsquerys/evacneedspro.js"></script>-->
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-    <!--Pie Slices Label Plugin for Chart.js-->
-    <script src="vendor/chart-piece-label.js/Chart.PieceLabel.js"></script>
-    <!-- Moment plugin for real-time clock display -->
-    <script src="vendor/moment/moment.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
-    <!-- Custom scripts for this page-->
-    <script src="js/sb-admin-datatables.min.js"></script>
-    <script src="js/sb-admin-charts.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyAsREyRj2u1GDG1sKF1gyAE476u5pp2PxQ",
-            authDomain: "flaremob-b55d8.firebaseapp.com",
-            databaseURL: "https://flaremob-b55d8.firebaseio.com",
-            projectId: "flaremob-b55d8",
-            storageBucket: "flaremob-b55d8.appspot.com",
-            messagingSenderId: "27793888698"
-        };
-        firebase.initializeApp(config);
-    </script>
-    <!--TRIAL GETTING DATA-->
-        <!--<script type="text/javascript" src="vendor/datatables/datatables.min.js"></script>-->
-        <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.flash.min.js"></script>
-        <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/dataTables.buttons.min.js"></script>
-        <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.html5.min.js"></script>
-        <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.print.min.js"></script>
-        <script type="text/javascript" src="vendor/datatables/JSZip-2.5.0/jszip.min.js"></script>
-        <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
-        <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+  <!--<script src="firebasejsquerys/evacneedspro.js"></script>-->
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <!--Pie Slices Label Plugin for Chart.js-->
+  <script src="vendor/chart-piece-label.js/Chart.PieceLabel.js"></script>
+  <!-- Moment plugin for real-time clock display -->
+  <script src="vendor/moment/moment.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+  <!-- Custom scripts for this page-->
+  <script src="js/sb-admin-datatables.min.js"></script>
+  <script src="js/sb-admin-charts.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAsREyRj2u1GDG1sKF1gyAE476u5pp2PxQ",
+      authDomain: "flaremob-b55d8.firebaseapp.com",
+      databaseURL: "https://flaremob-b55d8.firebaseio.com",
+      projectId: "flaremob-b55d8",
+      storageBucket: "flaremob-b55d8.appspot.com",
+      messagingSenderId: "27793888698"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!--TRIAL GETTING DATA-->
+  <!--<script type="text/javascript" src="vendor/datatables/datatables.min.js"></script>-->
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.flash.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/Buttons-1.5.2/js/buttons.print.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/JSZip-2.5.0/jszip.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
 
-    <script type="text/javascript" src="firebasejsquerys/needsforevac.js"></script>
-    <script type="text/javascript" src="firebasejsquerys/count.js"></script>
-    <script type="text/javascript" src="firebasejsquerys/gototable.js"></script>
-    <!--<script type="text/javascript" src="firebasejsquerys/totaldonationreport.js"></script>-->
-    <script src="vendor/echarts/echarts.js">
-// <!--test-->
-    </script>
-    <script src="firebasejsquerys/evacfamcount.js"></script>    
-    <script src="firebasejsquerys/evacneedspro.js"></script>
-    <script src="firebasejsquerys/Checkintro.js"></script>
-    <script src="firebasejsquerys/chartfamcount.js"></script>
-    <script type="text/javascript" src="firebasejsquerys/chartnew.js"></script>
-    <!--<script src="firebasejsquerys/CHECKINGIFUSER.js"></script>-->
-    <script src="firebasejsquerys/logout.js"></script>
-    <script src="js/newsFeed.js"></script>    
+  <script type="text/javascript" src="firebasejsquerys/needsforevac.js"></script>
+  <script type="text/javascript" src="firebasejsquerys/count.js"></script>
+  <script type="text/javascript" src="firebasejsquerys/gototable.js"></script>
+  <!--<script type="text/javascript" src="firebasejsquerys/totaldonationreport.js"></script>-->
+  <script src="vendor/echarts/echarts.js">
+    // <!--test-->
+  </script>
+  <script src="firebasejsquerys/evacfamcount.js"></script>
+  <script src="firebasejsquerys/evacneedspro.js"></script>
+  <script src="firebasejsquerys/Checkintro.js"></script>
+  <script src="firebasejsquerys/chartfamcount.js"></script>
+  <script type="text/javascript" src="firebasejsquerys/chartnew.js"></script>
+  <!--<script src="firebasejsquerys/CHECKINGIFUSER.js"></script>-->
+  <script src="firebasejsquerys/logout.js"></script>
+  <script src="js/newsFeed.js"></script>
 </body>
 
 </html>

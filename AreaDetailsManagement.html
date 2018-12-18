@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="FLAREMOB: Alisto Administrator Panel">
-    <meta name="author" content="TIP QC">
+    <meta name="description" content="FlareMob: Sagip - Officials Admin Panel">
+    <meta name="author" content="FlareMob Team - TIPQC">
     <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script>
         
@@ -35,7 +35,7 @@
   firebase.initializeApp(config);
 </script>
     <link rel="icon" type="image/png" href="images/icons/alisto.ico" />
-    <title>FlareMob: Alisto</title>
+    <title>Sagip: Area Details Management</title>
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
@@ -52,71 +52,125 @@
 <body onload="Preload();" class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <a class="navbar-brand" href="index.html">FlareMob: Alisto - Admin Panel</a>
+        <a class="navbar-brand" href="index.html">FlareMob: Sagip - Officials Admin Panel</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <ul class="navbar-nav navbar-sidenav" style="overflow-y: auto" id="exampleAccordion">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                    <a class="nav-link" href="index.html">
-                        <i class="fa fa-fw fa-dashboard"></i>
-                        <span class="nav-link-text">Dashboard</span>
-                    </a>
+                  <a class="nav-link" href="index.html">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Dashboard</span>
+                  </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Marikina River Water Levels">
-          <a class="nav-link" href="river.html">
-            <i class="fa fa-fw fa-tint"></i>
-            <span class="nav-link-text">Marikina River Water Levels</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
-          <a class="nav-link" href="flood.html">
-            <i class="fa fa-fw fa-map"></i>
-            <span class="nav-link-text">Flood Monitoring</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Weather Forecasts">
-          <a class="nav-link" href="weather.html">
-            <i class="fa fa-fw fa-cloud"></i>
-            <span class="nav-link-text">Weather Forecasts</span>
-          </a>
-        </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
+                  <a class="nav-link" href="flood.html">
+                    <i class="fa fa-fw fa-map"></i>
+                    <span class="nav-link-text">Flood Monitoring</span>
+                  </a>
+                </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation">
-                    <a class="nav-link" href="pledging.html">
-                        <i class="fa fa-fw fa-calculator"></i>
-                        <span class="nav-link-text">Donation</span>
-                    </a>
+                  <a class="nav-link" href="pledging.html">
+                    <i class="fa fa-fw fa-calculator"></i>
+                    <span class="nav-link-text">Donation</span>
+                  </a>
                 </li>
-               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                <i class="fa fa-fw fa-database"></i>
-                <span class="nav-link-text">Donation Monitoring</span>
-              </a>
-              <ul class="sidenav-second-level collapse" id="collapseComponents">
-                <li>
-                  <a href="donationman.html">Donation Items</a>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donation Management">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-database"></i>
+                    <span class="nav-link-text">Donation Monitoring</span>
+                  </a>
+                  <ul class="sidenav-second-level collapse" id="collapseComponents">
+                    <li>
+                      <a href="donationman.html">Donation Items</a>
+                    </li>
+                    <li>
+                      <a href="donationcash.html">Donation Cash</a>
+                    </li>
+                    <li>
+                      <a href="updateforluquidation.html">Liquidation</a>
+                    </li>
+                    <li>
+                      <a href="Inventory.html">Inventory</a>
+                    </li>
+                  </ul>
                 </li>
-                <li>
-                  <a href="donationcash.html">Donation Cash</a>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registration">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1"
+                    data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-pencil"></i>
+                    <span class="nav-link-text">Registration</span>
+                  </a>
+                  <ul class="sidenav-second-level collapse" id="collapseComponents1">
+                    <li>
+                      <a href="registrationadmin.html">Registration for Admin</a>
+                    </li>
+                    <li>
+                      <a href="DriverDetailsManagement.html">Registration for Drivers</a>
+                    </li>
+                    <li>
+                      <a href="registrationevachead.html">Registration for Evacuation Heads</a>
+                    </li>
+                    <li>
+                      <a href="TargetLocationDetailsManagement.html">Registration for New Evacuation Center</a>
+                    </li>
+                    <li>
+                      <a href="AreaDetailsManagement.html">Registration for Area Details</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                  <a class="nav-link" data-toggle="modal" data-target="#evac_needs">
+                    <i class="fa fa-fw fa-exclamation-triangle"></i>
+                    <span class="nav-link-text">Evacuation Center Needs</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                  <a class="nav-link" href="DeliveryMonitoring.html">
+                    <i class="fa fa-fw fa-car"></i>
+                    <span class="nav-link-text">Delivery Monitoring</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
+                  <a class="nav-link" href="dm7prototype.html">
+                    <i class="fa fa-fw fa-car"></i>
+                    <span class="nav-link-text">Delivery Management</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Evacuees Allocation">
+                  <a class="nav-link" href="evacfamcount2.html">
+                    <i class="fa fa-fw fa-map"></i>
+                    <span class="nav-link-text">Evacuees Allocation</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users Management">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2"
+                    data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-address-card"></i>
+                    <span class="nav-link-text">User Management</span>
+                  </a>
+                  <ul class="sidenav-second-level collapse" id="collapseComponents2">
+                    <li>
+                      <a href="AdminUserManagement.html">Admin User Management</a>
+                    </li>
+                    <li>
+                      <a href="EvacHeadUserManagement.html">Evacuation Head User Management</a>
+                    </li>
+                    <li>
+                      <a href="UserManagement.html">User Management</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
-            </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Delivery Management">
-                    <a class="nav-link" href="dm2prototype.html">
-                        <i class="fa fa-fw fa-car"></i>
-                        <span class="nav-link-text">Delivery Management</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav sidenav-toggler">
+              <ul class="navbar-nav sidenav-toggler">
                 <li class="nav-item">
-                    <a class="nav-link text-center" id="sidenavToggler">
-                        <i class="fa fa-fw fa-angle-left"></i>
-                    </a>
+                  <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                  </a>
                 </li>
-            </ul>
+              </ul>
             <ul class="navbar-nav ml-auto">
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -222,13 +276,13 @@
                 <li class="breadcrumb-item">
                     <a href="#">Admin Panel</a>
                 </li>
-                <li class="breadcrumb-item active"> Area details management</li>
+                <li class="breadcrumb-item active"> Area Details Management</li>
             </ol>
 
             <div class="card mb-3">
                 <div class="card-header">
                         <!--<iframe style="width:100%;height:1000px;" src="http://localhost/Flaremob_Firebase/DeliveryManagement2.html"></iframe>-->
-                    <i class="fa fa-table"></i> Area details management</div>
+                    <i class="fa fa-table"></i> Area Details Management</div>
                 <div class="card-body">
                         <!--<iframe style="width:100%;height:1500px;" src="http://localhost/Flaremob_Firebase/DeliveryManagement2.html"></iframe>-->
                 </div>
@@ -470,7 +524,6 @@
                         </table>
                     </div>-->
                 </div>
-                <div class="card-footer small text-muted">Updated 5 minutes ago</div>
             </div>
         </div>
         <div class="row">
@@ -483,12 +536,88 @@
             </div>
         </div>
 
+        <div class="modal fade" id="evac_needs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel2">Needs in the Evacuation Center</h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+      
+                  <div class="needs">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        Food
+                        <div class="material-switch pull-right">
+                          <input name="someSwitchOption001" id="food" value="Food" type="checkbox" />
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        Water
+                        <div class="material-switch pull-right">
+                          <input name="someSwitchOption001" id="water" value="Water" type="checkbox" />
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        Medicine
+                        <div class="material-switch pull-right">
+                          <input name="someSwitchOption001" id="medicine" value="Medicine" type="checkbox" />
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        Clothes
+                        <div class="material-switch pull-right">
+                          <input name="someSwitchOption001" id="clothes" value="Clothes" type="checkbox" />
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        Toiletries
+                        <div class="material-switch pull-right">
+                          <input name="someSwitchOption001" id="toiletries" value="Toiletries" type="checkbox" />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <br>
+                  <div class="onameee" id="onameee" style="display:none">
+                    <input type="text" class="form-control" id="othersname" class="form-control" name="othersname" width="50%">
+                  </div>
+                  <br>
+                  <script>
+                    if (document.getElementById("othersss").checked==true){
+                          document.getElementById("onameee").style.display = "block";
+                      }
+                  </script>
+                  <div class="form-group">
+                    Which EVACUATION CENTER?
+                    <select class="form-control" id="evaccenter">
+                    </select>
+                  </div>
+      
+                  <div class="form-group">
+                    <label for="familycount">Family Count:</label>
+                    <input type="number" class="form-control" id="familycount" class="form-control" name="familycount" width="50%">
+                  </div>
+      
+      
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                  <a class="btn btn-primary" id="evacneeds" onclick="submit()">Submit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         <!-- /.container-fluid-->
         <!-- /.content-wrapper-->
         <footer class="sticky-footer">
             <div class="container">
                 <div class="text-center">
-                    <small>2018 FLAREMOB ALISTO WEB PANEL</small>
+                    <small>FlareMob: Sagip - Officials Admin Panel 2018</small>
                 </div>
             </div>
         </footer>
@@ -531,6 +660,7 @@
         <script src="js/sb-admin-datatables.min.js"></script>
         <script src="js/sb-admin-charts.js"></script>
         <script src="js/clock.js"></script>
+        <script src="firebasejsquerys/evacneedspro.js"></script>
     </div>
 
 </body>
