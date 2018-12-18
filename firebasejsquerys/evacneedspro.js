@@ -12,6 +12,7 @@ $(document).ready(function () {
     // let str1 = "ThIs Is A Test On HOW tO counT UppeR CaSE";
     // alert(str1.replace(/[^A-Z]/g, "").length);
 });
+
 function submit() {
     // var config = {
     //     apiKey: "AIzaSyAsREyRj2u1GDG1sKF1gyAE476u5pp2PxQ",
@@ -22,7 +23,7 @@ function submit() {
     //     messagingSenderId: "27793888698"
     // };
     // firebase.initializeApp(config);
-// Get a reference to the database service
+    // Get a reference to the database service
     var database = firebase.database().ref();
     var evacneeds = database.child("tblEvacNeeds/");
     let valuecheck = [];
@@ -33,10 +34,10 @@ function submit() {
     var famcount = document.getElementById('familycount').value;
     var getevac = document.getElementById('evaccenter').value;
 
-        $("input:checkbox[name=someSwitchOption001]:checked").each(function(){
+    $("input:checkbox[name=someSwitchOption001]:checked").each(function () {
         valuecheck.push($(this).val());
-        });
-        //start of problem2
+    });
+    //start of problem2
     let locations10 = firebase.database().ref("tblTargetLoc");
     locations10.on("child_added", snap => {
         var str = snap.child("tLocName").val();
@@ -57,9 +58,9 @@ function submit() {
         console.log(joinedar.replace(/[, ]+/g, "").trim());
         let final = joinedar.replace(/[, ]+/g, "").trim();
         console.log(arr.join());
-        locations10.child(getevac).once("value",snap3=>{
+        locations10.child(getevac).once("value", snap3 => {
             console.log(snap3.child("tLocName").val());
-            if(snap3.child("tLocName").val()===str){
+            if (snap3.child("tLocName").val() === str) {
                 evacneeds.child(final).set({
                     evacFamilyCount: famcount,
                     evacitems: valuecheck,
@@ -68,8 +69,9 @@ function submit() {
             }
         });
     });
-
-        //end of problem2
+    alert("Evacuation needs has been successfully set!");
+    $("#evac_needs").modal("hide");
+    //end of problem2
 
 
 
@@ -133,4 +135,3 @@ function submit() {
 //     alert("Evac Need submit");
 //
 // }
-
