@@ -106,9 +106,9 @@ $(document).ready(function () {
                     jsonRain = 0;
                 }
 
-                var jsonDate = new Date(data.list[i].dt_txt).getDate();
+                let jsonDate = new Date(data.list[i].dt_txt).getDate();
                 if (currentDate == jsonDate) {
-                    if (jsonRain != null) {
+                    if (jsonRain != undefined) {
                         accumulatedRainDay = accumulatedRainDay + jsonRain;
 
                         rainPerDayArray.push(jsonRain);
@@ -193,13 +193,26 @@ $(document).ready(function () {
             //otherwise will not fire
             //this is to prevent repetition of sending notifs
             firebase.database().ref().child('tblForecastReport').once('value', function (snapshot) {
-                var lastForecastDate = new Date(snapshot.child('forecastLastReportDate').val());
-                var lastForecastHour = lastForecastDate.getHours();
+                var firebaseLastForecastDate = ""+snapshot.child('forecastLastReportDate').val();
+                var getAMPM = firebaseLastForecastDate.substr(17,2);
+                var currentAMPM = isAMPM;
+                var get12HourForecastTime = firebaseLastForecastDate.substr(11,2);
+                var the24HourForecastTime;
 
-                if (lastForecastHour < currentSelectedHourForecast) {
+                if(getAMPM == 'PM') {
+                    the24HourForecastTime = parseInt(get12HourForecastTime) + 12;
+                }
+
+                if (the24HourForecastTime < currentSelectedHourForecast) {
                     writeDataToFirebaseTblPosts(severityCondition, waterLevel);
+                } else if (the24HourForecastTime > currentSelectedHourForecast && currentAMPM == 'AM') {
+                    writeDataToFirebaseTblPosts(severityCondition, waterLevel);
+                } else if (firebaseLastForecastDate == undefined) {
+                    console.log('The last forecast report shows null/undefined!');
+                } else {
+                    console.log('The automatic flood alert has not been activated!');
                 };
-            })
+            });
             writeFloodPredictionToHTML();
         }
     })

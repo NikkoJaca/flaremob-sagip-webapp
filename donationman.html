@@ -408,6 +408,47 @@
         <li class="breadcrumb-item active">Donation Monitoring</li>
         <li class="breadcrumb-item active">Donation Items</li>
       </ol>
+
+      <div class="col mb-3">
+        <div id="floodCritical" class="card text-white bg-danger h-100" style="display: none">
+          <div class="card-body">
+            <div class="card-body-icon">
+              <i class="fa fa-fw fa-exclamation-triangle"></i>
+            </div>
+            <div class="mr-5">
+              <strong>ALERTO! </strong> Kritikal na lebel ng pagbabaha ay maaring maranasan. <br>Kaagarang
+              lumikas sa pinakamalapit na evacuation center!
+            </div>
+          </div>
+          <div class="card-footer text-white clearfix small z-1" href="#">
+            <span class="float-left">Flood Alert Message</span>
+            <span class="float-right">
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <div id="floodMedium" class="card bg-warning h-100 " style="display: none">
+          <div class="card-body">
+            <div class="card-body-icon">
+              <i class="fa fa-fw fa-info-circle"></i>
+            </div>
+            <div class="mr-5 text-black">
+              <strong>BABALA! </strong> Inaasahang lagpas tuhod na pag-baha ang maaring maranasan.
+              <br>Humanda at pumunta sa pinakamalapit na evacuation center!
+              <br>
+
+            </div>
+          </div>
+          <div class="card-footer text-white clearfix small z-1" href="#">
+            <span class="float-left">Flood Alert Message</span>
+            <span class="float-right">
+            </span>
+          </div>
+        </div>
+      </div>
+
       <!-- Icon Cards-->
       <div class="row">
         <div class="col mb-3" style="display: none">
@@ -1060,7 +1101,7 @@
   <script src="firebasejsquerys/logout.js"></script>
   <script src="firebasejsquerys/CHECKINGIFUSER.js" type="text/javascript"></script>
   <script src="firebasejsquerys/evacneedspro.js"></script>
-
+  <script src="js/floodCalcBackground.js"></script>
   <script type="text/javascript" src="firebasejsquerys/chartnew.js">
     // // based on prepared DOM, initialize echarts instance
     // var myChart = echarts.init(document.getElementById('main'));
