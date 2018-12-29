@@ -237,7 +237,7 @@ $(document).ready(function () {
             var getForecastSelector = new Date(forecastSelector());
             var currentSelectedHourForecast = getForecastSelector.getHours();
             var nextHourRefresh = currentSelectedHourForecast + 3
-            
+
             //call the refresh function and pass the refresh time params
             //the refresh will be triggered based on the time param
             //i.e., refresh will be triggered at 21:00:00
@@ -249,14 +249,16 @@ $(document).ready(function () {
             //otherwise will not fire
             //this is to prevent repetition of sending notifs
             firebase.database().ref().child('tblForecastReport').once('value', function (snapshot) {
-                var firebaseLastForecastDate = ""+snapshot.child('forecastLastReportDate').val();
-                var getAMPM = firebaseLastForecastDate.substr(17,2);
+                var firebaseLastForecastDate = "" + snapshot.child('forecastLastReportDate').val();
+                var getAMPM = firebaseLastForecastDate.substr(17, 2);
                 var currentAMPM = isAMPM;
-                var get12HourForecastTime = firebaseLastForecastDate.substr(11,2);
+                var get12HourForecastTime = firebaseLastForecastDate.substr(11, 2);
                 var the24HourForecastTime;
 
-                if(getAMPM == 'PM') {
+                if (getAMPM == 'PM') {
                     the24HourForecastTime = parseInt(get12HourForecastTime) + 12;
+                } else {
+                    the24HourForecastTime = parseInt(get12HourForecastTime);
                 }
 
                 if (the24HourForecastTime < currentSelectedHourForecast) {

@@ -199,7 +199,7 @@ $(document).ready(function () {
                 var get12HourForecastTime = firebaseLastForecastDate.substr(11,2);
                 var the24HourForecastTime;
 
-                alert(get12HourForecastTime);
+                // alert(get12HourForecastTime);
 
                 if(getAMPM == 'PM') {
                     the24HourForecastTime = parseInt(get12HourForecastTime) + 12;
