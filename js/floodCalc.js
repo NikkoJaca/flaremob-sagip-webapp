@@ -199,9 +199,15 @@ $(document).ready(function () {
                 var get12HourForecastTime = firebaseLastForecastDate.substr(11,2);
                 var the24HourForecastTime;
 
+                alert(get12HourForecastTime);
+
                 if(getAMPM == 'PM') {
                     the24HourForecastTime = parseInt(get12HourForecastTime) + 12;
+                } else {
+                    the24HourForecastTime = parseInt(get12HourForecastTime);
                 }
+
+                // alert(the24HourForecastTime);
 
                 if (the24HourForecastTime < currentSelectedHourForecast) {
                     writeDataToFirebaseTblPosts(severityCondition, waterLevel);
