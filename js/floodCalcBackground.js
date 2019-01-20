@@ -17,7 +17,7 @@ var timeStamp2 = new Date().toISOString().substr(0, 19).replace('T', ' ');
 var waterLevel;
 var waterLevel1hr;
 var weatherForecastForToday;
-var constMaxDischargeMR = 78; //this is the daily maximum or peak discharge of marikina river. use this to achieve at least 12 meters of river level!
+var constMaxDischargeMR = 161; //this is the daily maximum or peak discharge of marikina river. use this to achieve at least 12 meters of river level!
 
 function checkSeverity(waterLevel) {
     if (waterLevel < 15) {
