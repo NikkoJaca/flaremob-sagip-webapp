@@ -227,11 +227,11 @@ $(document).ready(function () {
             // 1.1499 * maxFloodDischarge!!! <-- original
 
             if (maxFloodDischarge3hr > constMaxDischargeMR) {
-                waterLevel = (Math.round(Math.pow((1.1499 * maxFloodDischarge3hr), 0.3083) * 100) / 100) + 8;
-                waterLevel1hr = (Math.round(Math.pow((1.1499 * maxFloodDischarge1hr), 0.3083) * 100) / 100) + 8;
+                waterLevel = (Math.round(Math.pow((1.1499 * maxFloodDischarge3hr), 0.3083) * 100) / 100) + 7;
+                waterLevel1hr = (Math.round(Math.pow((1.1499 * maxFloodDischarge1hr), 0.3083) * 100) / 100) + 7;
             } else {
-                waterLevel = (Math.round(Math.pow((1.1499 * constMaxDischargeMR), 0.3083) * 100) / 100) + 8;
-                waterLevel1hr = (Math.round(Math.pow((1.1499 * constMaxDischargeMR), 0.3083) * 100) / 100) + 8;
+                waterLevel = (Math.round(Math.pow((1.1499 * constMaxDischargeMR), 0.3083) * 100) / 100) + 7;
+                waterLevel1hr = (Math.round(Math.pow((1.1499 * constMaxDischargeMR), 0.3083) * 100) / 100) + 7;
             }
 
             severityCondition = checkSeverity(waterLevel);

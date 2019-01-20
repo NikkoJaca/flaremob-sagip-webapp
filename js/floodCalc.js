@@ -175,11 +175,11 @@ $(document).ready(function () {
             //this conditional statement ensures that the monitoring of river level outputs at least 12meters of river level, otherwise, it will use the
             //calculated discharge if it is greater than the daily maximum
             if (maxFloodDischarge3hr > constMaxDischargeMR) {
-                waterLevel = (Math.round(Math.pow((1.1499 * maxFloodDischarge3hr), 0.3083) * 100) / 100) + 8;
-                waterLevel1hr = (Math.round(Math.pow((1.1499 * maxFloodDischarge1hr), 0.3083) * 100) / 100) + 8;
+                waterLevel = (Math.round(Math.pow((1.1499 * maxFloodDischarge3hr), 0.3083) * 100) / 100) + 7;
+                waterLevel1hr = (Math.round(Math.pow((1.1499 * maxFloodDischarge1hr), 0.3083) * 100) / 100) + 7;
             } else {
-                waterLevel = (Math.round(Math.pow((1.1499 * constMaxDischargeMR), 0.3083) * 100) / 100) + 8;
-                waterLevel1hr = (Math.round(Math.pow((1.1499 * constMaxDischargeMR), 0.3083) * 100) / 100) + 8;
+                waterLevel = (Math.round(Math.pow((1.1499 * constMaxDischargeMR), 0.3083) * 100) / 100) + 7;
+                waterLevel1hr = (Math.round(Math.pow((1.1499 * constMaxDischargeMR), 0.3083) * 100) / 100) + 7;
             }
 
 
