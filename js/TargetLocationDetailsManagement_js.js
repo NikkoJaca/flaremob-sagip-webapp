@@ -192,15 +192,18 @@
 				document.getElementById('txtMake').value=content[3].innerHTML;
 				document.getElementById('txtModel').value=content[4].innerHTML;
 				document.getElementById('slcSvcStat').value=content[5].innerHTML;
+				//6th column for partner mask
 				txtUID.value=content[0].innerHTML;
+				document.getElementById('txtEvacCap').value=content[9].innerHTML;
+				document.getElementById('txtEvacCount').value=content[10].innerHTML;
 
-				if (content[7].innerHTML!=''){
+				if (content[7].innerHTML!=''){ //the file/picture
 					document.getElementById('VehicleImg').src=content[7].innerHTML; //'upload_img/'+content[6].innerHTML;
 					document.getElementById('txtFileName').value=content[7].innerHTML;
 					//DownloadPicture('evacuation_pictures',txtFileName.value,VehicleImg);
 				}
 
-				if(content[8].innerHTML!=''){
+				if(content[8].innerHTML!=''){ //area number
 					var CSV=content[8].innerHTML.split(",");
 
 					for(var i=0;i<CSV.length;i++){
@@ -263,6 +266,9 @@
 											TheData={tLocId:txtVID.value,
 												tLocName:txtPlateNo.value,tLocAddress:txtColor.value,
 												tLocLat:txtMake.value,tLocLng:txtModel.value,tLocIsPartner:slcSvcStat.value,
+												evacuationCapacity:txtEvacCap.value,
+												evacueeCount:txtEvacCount.value,
+												evacId:txtVID.value,
 												imageUrl:''};
 
 											var FBDB=firebase.database();
@@ -289,6 +295,9 @@
 													TheData={tLocId:txtVID.value,
 														tLocName:txtPlateNo.value,tLocAddress:txtColor.value,
 														tLocLat:txtMake.value,tLocLng:txtModel.value,tLocIsPartner:slcSvcStat.value,
+														evacuationCapacity:txtEvacCap.value,
+														evacueeCount:txtEvacCount.value,
+														evacId:txtVID.value,
 														imageUrl:txtImageURL.value};
 
 													var FBDB=firebase.database();
@@ -361,11 +370,17 @@
 											TheData={
 												tLocId:txtVID.value,tLocName:txtPlateNo.value,tLocAddress:txtColor.value,
 												tLocLat:txtMake.value,tLocLng:txtModel.value,tLocIsPartner:slcSvcStat.value,
+												evacuationCapacity:txtEvacCap.value,
+												evacueeCount:txtEvacCount.value,
+												evacId:txtVID.value,
 												imageUrl:''};
 										}else if(txtFileName.value!=''){ //record has a picture
 											TheData={
 												tLocId:txtVID.value,tLocName:txtPlateNo.value,tLocAddress:txtColor.value,
 												tLocLat:txtMake.value,tLocLng:txtModel.value,tLocIsPartner:slcSvcStat.value,
+												evacuationCapacity:txtEvacCap.value,
+												evacueeCount:txtEvacCount.value,
+												evacId:txtVID.value,
 												imageUrl:txtFileName.value};											
 										}
 
@@ -395,6 +410,9 @@
 												TheData={
 													tLocId:txtVID.value,tLocName:txtPlateNo.value,tLocAddress:txtColor.value,
 													tLocLat:txtMake.value,tLocLng:txtModel.value,tLocIsPartner:slcSvcStat.value,
+													evacuationCapacity:txtEvacCap.value,
+													evacueeCount:txtEvacCount.value,
+													evacId:txtVID.value,
 													imageUrl:txtImageURL.value};
 													
 												var FBDB=firebase.database();
@@ -611,7 +629,7 @@
 					refFBDB=FBDB.ref('tblTargetLoc').orderByChild('tLocName').equalTo(Filter);
 					//refFBDB.once('value',RetrieveData,RetrieveError);
 				}else if(Action==4){
-                        refFBDB=FBDB.ref('tblTargetLoc').child(Filter);
+                    refFBDB=FBDB.ref('tblTargetLoc').child(Filter);
                 }else if(Action==5){ //retrieves location area number
 					refFBDB=FBDB.ref('tblLocations');
 				}/* else if(Action==6){ //retrieves area per target location key
@@ -646,7 +664,9 @@
 								'<td class="hide">'+TheTable[k].tLocIsPartner+'</td>'+
 								'<td>'+IsPartnerMask+'</td>'+
 								'<td class="hide">'+TheTable[k].imageUrl+'</td>'+
-								'<td class="hide"></td></tr>';
+								'<td class="hide"></td>'+ //area number
+								'<td class="hide">'+TheTable[k].evacuationCapacity+'</td>'+
+								'<td class="hide">'+TheTable[k].evacueeCount+'</td></tr>';
 
 								RetrieveAreaDetails(k,objID,i);
 								//var TargetDisplay=document.getElementById("tBody").rows[0].cells[9];alert(TargetDisplay);
@@ -693,9 +713,11 @@
                             '<td>'+DataVal.tLocLat+'</td>'+
                             '<td>'+DataVal.tLocLng+'</td>'+
                             '<td class="hide">'+DataVal.tLocIsPartner+'</td>'+
-                            '<td>'+IsPartnerMask+'</td>'+
+							'<td>'+IsPartnerMask+'</td>'+
                             '<td class="hide">'+DataVal.imageUrl+'</td>'+
-                            '<td class="hide">'+Filter+'</td></tr>';   
+							'<td class="hide">'+Filter+'</td>'+
+							'<td class="hide">'+DataVal.evacuationCapacity+'</td>'+
+							'<td class="hide">'+DataVal.evacueeCount+'</td></tr>';   
                         }else{ objID.innerHTML='<tr><td colspan="8" style="text-align:center;"><b>Your search turned 0 result.</b></td></tr>';	}
                     }else if(Action==5){
 						if(data.exists()){
