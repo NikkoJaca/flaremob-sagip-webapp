@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="FlareMob: Sagip - Officials Admin Panel (Dashboard)">
+  <meta name="description" content="FlareMob: Sagip - Officials Admin Panel (Notification)">
   <meta name="author" content="FlareMob Team - TIPQC">
   <link rel="icon" type="image/png" href="images/icons/alisto.ico" />
-  <title>Sagip: Dashboard</title>
+  <title>Sagip: Notification</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -31,10 +31,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" style="overflow-y: auto" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Notification">
           <a class="nav-link" href="index.html">
             <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Dashboard</span>
+            <span class="nav-link-text">Notification</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flood Monitoring">
@@ -265,7 +265,7 @@
               <!--</div>-->
             <!--</a>-->
             <!--<div class="dropdown-divider"></div>-->
-            <a class="dropdown-item small" href="notification.html">View all new donations</a>
+            <a class="dropdown-item small" href="#">View all new donations</a>
           </div>
         </li>
         <!-- <li class="nav-item dropdown">
@@ -343,7 +343,7 @@
         <li class="breadcrumb-item">
           <a href="#">Admin Panel</a>
         </li>
-        <li class="breadcrumb-item active">Dashboard</li>
+        <li class="breadcrumb-item active">Notification</li>
       </ol>
 
       <div class="col mb-3">
@@ -387,106 +387,7 @@
     </div>
 
       <div>
-        <div style="float: left; width: 70%">
-
-          <div class="row">
-            <div class="col-lg-3">
-              <div class="card mb-3">
-                <div class="card-header">
-                  <i class="fa"></i> Donated Items</div>
-                <div class="card-body">
-                  <span class="text-success" id="donateditem" style="font-size:50px;font-style:bold;"></span>
-                </div>
-                <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
-              </div>
-            </div>
-
-
-            <div class="col-lg-3">
-              <div class="card mb-3">
-                <div class="card-header">
-                  <i class="fa"></i> Total Donors</div>
-                <div class="card-body">
-                  <span class="text-success" id="donors" style="font-size:50px;font-style:bold;"></span>
-                </div>
-                <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
-              </div>
-
-
-            </div>
-
-            <div class="col-lg-3">
-
-              <!-- Example Notifications Card-->
-              <div class="card mb-3">
-                <div class="card-header">
-                  <i class="fa"></i> Deliveries Made</div>
-                <div class="list-group list-group-flush small" style="width: 100%">
-                  <div class="card-body">
-                    <span class="text-success" id="deliverymade" style="font-size:50px;font-style:bold;"></span>
-                  </div>
-
-                </div>
-                <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
-              </div>
-            </div>
-
-            <div class="col-lg-3">
-              <div class="card mb-4">
-                <div class="card-header">
-                  <i class="fa"></i> Total Evacuees</div>
-                <div class="list-group list-group-flush small" style="width: 100%">
-                  <div class="card-body" style="text-align:center">
-                    <span class="text-success" id="totalevacueesindex" style="font-size:50px;font-style:bold;"></span>
-                  </div>
-
-                </div>
-                <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
-              </div>
-            </div>
-
-          </div>
-
-          <!--<div class="row">-->
-          <!--<div class="col-lg-12">-->
-          <!--<div class="card mb-10">-->
-          <!--<div class="card-header">-->
-          <!--<i class="fa fa-line-chart"></i> Family Count per Evacuation Center</div>-->
-          <!--<div class="card-body">-->
-          <!--<div id="evacfamcountchart" style="height: 400px;"></div>-->
-          <!--&lt;!&ndash;<canvas id="myChart" width="400" height="200"></canvas>&ndash;&gt;-->
-          <!---->
-          <!--</div>-->
-          <!--&lt;!&ndash; <div class="card-footer small text-muted">Updated 5 minutes ago</div> &ndash;&gt;-->
-          <!--</div>-->
-          <!--</div>-->
-          <!--</div>-->
-
-          <br>
-
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="card mb-12">
-                <div class="card-header">
-                  <i class="fa fa-line-chart"></i> Donations Made</div>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-12 my-auto">
-                      <div id="main" style="height: 400px;"></div>
-                      <!--<canvas id="myChart" width="400" height="200"></canvas>-->
-
-                    </div>
-                  </div>
-                </div>
-                <!-- <div class="card-footer small text-muted">Updated 5 minutes ago</div> -->
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div style="float: right; width: 29%; margin-left:5dp;">
+        <div>
           <div class="row">
             <div class="col-12 mx-auto">
               <div class="mb-0 mt-4">
@@ -663,22 +564,23 @@
   <script type="text/javascript" src="vendor/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
 
   <script type="text/javascript" src="firebasejsquerys/needsforevac.js"></script>
-  <script type="text/javascript" src="firebasejsquerys/count.js"></script>
-  <script type="text/javascript" src="firebasejsquerys/gototable.js"></script>
+  <!--<script type="text/javascript" src="firebasejsquerys/count.js"></script>-->
+  <!--<script type="text/javascript" src="firebasejsquerys/gototable.js"></script>-->
   <!--<script type="text/javascript" src="firebasejsquerys/totaldonationreport.js"></script>-->
   <script src="vendor/echarts/echarts.js">
     // <!--test-->
   </script>
-  <script src="firebasejsquerys/evacfamcount.js"></script>
+  <!--<script src="firebasejsquerys/evacfamcount.js"></script>-->
   <script src="firebasejsquerys/evacneedspro.js"></script>
   <script src="firebasejsquerys/Checkintro.js"></script>
-  <script src="firebasejsquerys/chartfamcount.js"></script>
-  <script type="text/javascript" src="firebasejsquerys/chartnew.js"></script>
+  <!--<script src="firebasejsquerys/chartfamcount.js"></script>-->
+  <!--<script type="text/javascript" src="firebasejsquerys/chartnew.js"></script>-->
   <!--<script src="firebasejsquerys/CHECKINGIFUSER.js"></script>-->
   <script src="firebasejsquerys/logout.js"></script>
-  <script src="js/floodCalcBackground.js"></script>
-  <script src="js/newsFeed.js"></script>
+  <!--<script src="js/floodCalcBackground.js"></script>-->
+  <!--<script src="js/newsFeed.js"></script>-->
   <script src="firebasejsquerys/notification.js"></script>
+  <script src="firebasejsquerys/notificationshow.js"></script>
 </body>
 
 </html>

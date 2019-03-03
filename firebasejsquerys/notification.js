@@ -16,7 +16,8 @@ moneyRef.on("child_added",snap=>{
     if(snap.child("isAdminNotified").val()==="0"){
         adminnotseen+=1;
         document.getElementById('notifcount').innerText = adminnotseen;
-        console.log(snap.key)
+        document.getElementById('notifcount1').innerText = adminnotseen;
+        console.log(snap.key);
     }else if(snap.child("isAdminNotified").val()==="1"){
 
     }
