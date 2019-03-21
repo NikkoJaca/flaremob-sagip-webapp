@@ -1,13 +1,13 @@
 # FlareMob: Sagip - a Web Application for Barangay Officials of Nangka, Marikina City
 
-## FlareMob: Sagip is the web application module, part of the whole FlareMob project.
+### FlareMob: Sagip is the web application module, part of the whole FlareMob project.
 
 ### Key features:
--Uses the Rational Method and Rating Curve formulas to achieve flood forecasting and predictions.
--Actively monitors the flow of donations, pledged by the donors that uses the mobile application.
--Monitoring of money pledging, as well as liquidation to eliminate possible exploits in cash donations.
--Oversees the headcount of evacuees to certain evacuation centers in Brgy. Nangka.
--Intended to be used and administered by the barangay officials of Nangka, Marikina City.
+- Uses the Rational Method and Rating Curve formulas to achieve flood forecasting and predictions.
+- Actively monitors the flow of donations, pledged by the donors that uses the mobile application.
+- Monitoring of money pledging, as well as liquidation to eliminate possible exploits in cash donations.
+- Oversees the headcount of evacuees to certain evacuation centers in Brgy. Nangka.
+- Intended to be used and administered by the barangay officials of Nangka, Marikina City.
 
 ### Installation:
 1. Clone/download the repository into your XAMPP/LAMPP/Apache web directory. Certain parts of the web application requires to be accessed via HTTP in order to function (such as the Google Maps API).
