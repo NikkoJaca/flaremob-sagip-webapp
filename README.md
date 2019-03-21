@@ -1,4 +1,4 @@
-# FlareMob: Sagip - a Web Application for Barangay Officials of Nangka, Marikina City
+# FlareMob: Sagip - A Web Application for Barangay Officials of Nangka, Marikina City
 
 ### FlareMob: Sagip is the web application module, part of the whole FlareMob project.
 
